@@ -1,0 +1,34 @@
+{
+  "properties": {
+    "displayName": "Inherit AA Standard Tags are set from parent Resource Group to new Resources unless already set.",
+    "policyType": "Custom",
+    "description": "When assigned, give a tag name as parameter. Adds or replaces the specified tag and value from the parent resource group when any resource is created or updated. Existing resources can be remediated by triggering a remediation task.",
+    "metadata": {
+      "category": "Tags"
+    },
+    "parameters": {},
+    "policyDefinitions": [
+      {
+        "policyDefinitionReferenceId": "",
+        "policyDefinitionId": "",
+        "parameters": {
+          "tagName": {
+            "value": "aa-app-shortname"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "",
+        "policyDefinitionId": "",
+        "parameters": {
+          "tagName": {
+            "value": "aa-sdlc-environment"
+          }
+        }
+      }
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policySetDefinitions",
+  "name": "52fb8f9f-dc0b-4302-8371-904e85a86956"
+}

@@ -1,0 +1,80 @@
+{
+  "properties": {
+    "displayName": "Enforce valid aa-sdlc-environment tag value on resources",
+    "policyType": "Custom",
+    "mode": "Indexed",
+    "description": "This policy will prevent the creation or modfication of aa-sdlc-environment tag with invalid values on resources.",
+    "metadata": {},
+  "parameters": {
+    "tagName": {
+      "type": "String",
+      "metadata": {
+        "displayName": "tagName",
+        "description": "Name of the tag, such as aa-sdlc-environment"
+      },
+      "defaultValue": "aa-sdlc-environment"
+    },
+    "tagValue": {
+      "type": "Array",
+      "metadata": {
+        "displayName": "tagValue",
+        "description": "Possible Tag Values"
+      },
+      "defaultValue": [
+        "prod",
+        "nonprod",
+        "dev",
+        "test",
+        "stage",
+        "poc",
+        "prod#",
+        "nonprod#",
+        "dev#",
+        "test#",
+        "stage#",
+        "poc#",
+        "prod##",
+        "nonprod##",
+        "dev##",
+        "test##",
+        "stage##",
+        "poc##",
+        "prod###",
+        "nonprod###",
+        "dev###",
+        "test###",
+        "stage###",
+        "poc###",
+        "prod####",
+        "nonprod####",
+        "dev####",
+        "test####",
+        "stage####",
+        "poc####"
+      ]
+    }
+  },
+  "policyRule": {
+    "if": {
+          "allOf": [
+            {
+              "field": "[concat('tags[', parameters('tagName'), ']')]",
+              "exists": "true"
+            },
+            {
+              "not": {
+                "field": "[concat('tags[',parameters('tagName'), ']')]",
+                "in": "[parameters('tagValue')]"
+              }
+            }
+          ]
+    },
+    "then": {
+      "effect": "Deny"
+    }
+  }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "d0d9ff79-96b4-4aa6-98da-df63de350a03"
+}

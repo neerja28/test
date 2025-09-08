@@ -1,0 +1,79 @@
+{
+  "properties": {
+    "displayName": "Enforce Function App ftp state to use ftps_only or disabled",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Enable ftps_only or ftp disabled for Function App's enhanced security",
+    "metadata": {
+      "category": "App Service",
+      "createdBy": "",
+      "createdOn": "",
+      "updatedBy": "",
+      "updatedOn": ""
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "Append",
+          "Disabled"
+        ],
+        "defaultValue": "Append"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Web/sites"
+          },
+          {
+            "like": "functionapp*",
+            "field": "kind"
+          },
+          {
+            "anyOf": [
+              {
+                "allOf": [
+                  {
+                    "exists": "true",
+                    "field": "Microsoft.Web/sites/siteConfig.ftpsState"
+                  },
+                  {
+                    "equals": "AllAllowed",
+                    "field": "Microsoft.Web/sites/siteConfig.ftpsState"
+                  }
+                ]
+              },
+              {
+                "allOf": [
+                  {
+                    "exists": "false",
+                    "field": "Microsoft.Web/sites/siteConfig.ftpsState"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]",
+        "details": [
+          {
+            "field": "Microsoft.Web/sites/siteConfig.ftpsState",
+            "value": "Disabled"
+          }
+        ]
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "63c0f8bc-b0b3-4267-b2b4-8025421f68ed"
+}

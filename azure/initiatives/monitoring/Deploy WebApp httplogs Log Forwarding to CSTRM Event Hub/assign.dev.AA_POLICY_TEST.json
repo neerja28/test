@@ -1,0 +1,28 @@
+{
+    "properties": {
+      "displayName": "Deploy App Service (Web App) HTTPLogs diagnostic settings to CSTRM Eventhub",
+      "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+      "notScopes": [],
+      "parameters": {},
+      "description": "Deploys AppServiceHTTPLogs diagnostic settings for Azure App Service (Web App) resources to (ensure all http requests are captured and centrally logged) a CSTRM Eventhub when any App Service (Web App) which is missing this diagnostic settings is created or updated.",
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        "App Service (Web Apps) logging doesn't meet AA SCCF benchmark: App Service diagnostic settings HTTP logs should be sent to the approved CSTRM EventHub. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+    },
+    "identity": {
+        "type": "SystemAssigned",
+        "roleAssignments": [
+          "Monitoring Contributor",
+          "Log Analytics Contributor",
+          "Azure Event Hubs Data Owner:/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c",
+          "Azure Event Hubs Data Owner"
+        ]
+      },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "GaaSPolicyrEJpn6mPV0CNis",
+    "location": "eastus"
+  }
+  

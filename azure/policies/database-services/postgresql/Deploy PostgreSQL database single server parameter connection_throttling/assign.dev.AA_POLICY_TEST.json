@@ -1,0 +1,28 @@
+{
+  "properties": {
+    "displayName": "Deploy PostgreSQL database single server parameter connection_throttling ON",
+    "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "DeployIfNotExists"
+      }
+    },
+    "description": "Enabling connection_throttling helps the PostgreSQL Database to Set the verbosity of logged messages which in turn generates query and error logs with respect to concurrent connections, that could lead to a successful Denial of Service(DoS) attack by exhausting connection resources.A system can also fail or be degraded by an overload of legitimate users.Query and error logs can be used to identify, troubleshoot, and repair configuration errors and sub - optimal performance.",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "PostgreSQL database single server configuration does not meet AA SCCF Benchmark control: PostgreSQL parameter connection_throttling must be enabled. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "identity": {
+    "type": "SystemAssigned",
+    "roleAssignments": [
+      "Contributor"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicyGnbq2wcCVYrvHx",
+  "location": "eastus"
+}

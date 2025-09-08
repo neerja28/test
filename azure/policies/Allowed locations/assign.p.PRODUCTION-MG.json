@@ -1,0 +1,56 @@
+{
+  "properties": {
+    "displayName": "Allowed locations for Prod MG",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c",
+    "scope": "/providers/Microsoft.Management/managementGroups/production-mg",
+    "notScopes": [
+      "/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourceGroups/cstrm-p-eaus-cir-securityanalytics-rg",
+      "/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourceGroups/cstrm-p-zceus-cir-secanalytc-rg",
+      "/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourceGroups/cstrm-p-zeau2-cir-secanalytc-rg",
+      "/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourceGroups/cstrm-p-zncus-cir-secanalytc-rg",
+      "/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourceGroups/cstrm-p-zscus-cir-secanalytc-rg",
+      "/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourceGroups/cstrm-p-zweus-cir-secanalytc-rg",
+      "/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourceGroups/cstrm-p-zweu2-cir-secanalytc-rg",
+      "/subscriptions/8e5e91ba-9fca-4b3d-9858-4f6fcba19ee1",
+      "/subscriptions/16e932f5-8a58-4441-9219-2b4a673b7415",
+      "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-zeaus-ecm-rg",
+      "/subscriptions/292368fe-4287-4eb0-bea9-709569d9aa24/resourceGroups/ct-p-zscus-custhub-rg",
+      "/subscriptions/292368fe-4287-4eb0-bea9-709569d9aa24/resourceGroups/ct-p-zscus-network-rg",
+      "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-orion-dxe-rg",
+      "/subscriptions/ddac617f-218e-4b7d-a2d4-e03482224c74",
+      "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-OpKnowSrch-prod-westus-rg",
+      "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-OpKnowSrch-prod-eastus-rg",
+      "subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/corp-p-zeaus-paxyldopt-rg",
+      "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/corp-p-zweus-paxyldopt-rg",
+      "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/ets-p-zceus-network-rg"
+    ],
+    "parameters": {
+      "listOfAllowedLocations": {
+        "value": [
+          "eastus",
+          "westus",
+          "northcentralus",
+          "southcentralus"
+        ]
+      }
+    },
+    "description": "",
+    "metadata": {
+      "assignedBy": "Samuel J. Garcia",
+      "parameterScopes": {
+        "listOfAllowedLocations": "/providers/Microsoft.Management/managementGroups/production-mg"
+      },
+      "createdBy": "3f1d2da4-2185-4ea5-93b3-fed9e7f81310",
+      "createdOn": "2020-01-17T16:20:52.1825552Z",
+      "updatedBy": "96f0c2f3-bb5b-4699-9b0b-523326d23f16",
+      "updatedOn": "2021-07-02T17:31:20.5010364Z"
+    },
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "The Azure region/location chosen is not part of the Allowed AA Locations. If you would like to seek an exception for this policy or add a new location, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicyS7t1VYo70N3zoJ"
+}

@@ -1,0 +1,28 @@
+{
+  "properties": {
+    "displayName": "Deploy PostgreSQL database single server parameter log_connections ON",
+    "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "DeployIfNotExists"
+      }
+    },
+    "description": "Enabling log_connections helps PostgreSQL Database to log attempted connection to the server, as well as successful completion of client authentication. Log data can be used to identify, troubleshoot, and repair configuration errors and suboptimal performance.",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "PostgreSQL database single server configuration does not meet AA SCCF Benchmark control: PostgreSQL parameter log_connections must be enabled. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "identity": {
+    "type": "SystemAssigned",
+    "roleAssignments": [
+      "Contributor"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicyejrxZg2FaFc69p",
+  "location": "eastus"
+}

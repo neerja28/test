@@ -1,0 +1,59 @@
+{
+    "properties": {
+      "displayName": "ACR Creation not allowed",
+      "policyType": "Custom",
+      "mode": "All",
+      "description": "Creation of new container registries is not allowed. TSG representative and VP approval approval is required to get a policy exception. Refer to #10 at https://wiki.aa.com/bin/view/TnT%20Technology%20and%20Platform%20Support/TnT%20Technology%20and%20Platform%20Engineering%20%E2%80%93%20Governance%20as%20a%20Service%20%28GaaS%29/Cloud%20Governance%20Policies/Azure%20Policies/ for instructions to file an exception.",
+      "metadata": {
+        "version": "2.0.0",
+        "category": "General"
+      },
+      "version": "2.0.0",
+      "parameters": {
+        "listOfResourceTypesNotAllowed": {
+          "type": "Array",
+          "metadata": {
+            "description": "The list of resource types that cannot be deployed.",
+            "displayName": "Not allowed resource types",
+            "strongType": "resourceTypes"
+          }
+        },
+        "effect": {
+          "type": "string",
+          "defaultValue": "Deny",
+          "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+          ],
+          "metadata": {
+            "displayName": "Effect",
+            "description": "Enable or disable the execution of the policy"
+          }
+        }
+      },
+      "policyRule": {
+        "if": {
+          "allOf": [
+            {
+              "field": "type",
+              "in": "[parameters('listOfResourceTypesNotAllowed')]"
+            },
+            {
+                "value": "[resourceGroup().name]",
+                "notLike": "azureml-rg-*"            
+            },
+            {
+              "value": "[field('type')]",
+              "exists": true
+            }
+          ]
+        },
+        "then": {
+          "effect": "[parameters('effect')]"
+        }
+      }
+    },
+    "id": "",
+    "name": "29b9b57e-f506-40bc-a2cc-330c8e861b01"
+  }

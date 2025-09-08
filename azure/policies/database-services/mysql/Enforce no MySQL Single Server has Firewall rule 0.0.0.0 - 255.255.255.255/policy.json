@@ -1,0 +1,47 @@
+{
+    "properties": {
+      "displayName": "Block Creation of Azure MySQL Single Server",
+      "policyType": "Custom",
+      "mode": "All",
+      "description": "Blocking the firewall rule 0.0.0.0 - 255.255.255.255 will help mitigate unauthorized access from the internet.",
+      "metadata": {
+        "category": "AA SCCF benchmark"
+      },
+      "parameters": {
+        "effect": {
+          "type": "String",
+          "defaultValue": "Deny",
+          "metadata": {
+            "displayName": "Effect",
+            "description": "Enable or disable the execution of the policy"
+          },
+          "allowedValues": ["Audit", "Deny", "Disabled"]
+        }
+      },
+      "policyRule": {
+        "if": {
+          "allOf": [
+            {
+              "field": "type",
+              "equals": "Microsoft.DBforMySQL/servers/firewallRules"
+            },
+            {
+              "field": "Microsoft.DBforMySQL/servers/firewallRules/startIpAddress",
+              "equals": "0.0.0.0"
+            },
+            {
+              "field": "Microsoft.DBforMySQL/servers/firewallRules/endIpAddress",
+              "equals": "255.255.255.255"
+            }
+          ]
+        },
+        "then": {
+          "effect": "[parameters('effect')]"
+        }
+      }
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "acfa4af1-80a4-4a86-a0cd-5fcbd9754b01"
+  }
+  

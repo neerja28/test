@@ -1,0 +1,24 @@
+{
+    "properties": {
+      "displayName": "Audit Storage Account Soft Delete retention days for blobs",
+      "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+      "notScopes": [],
+      "parameters": {
+        "effect": {
+          "value": "AuditIfNotExists"
+        },
+        "retentionInDays": {
+            "value": 3
+        }
+      },
+      "description": "",
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        "Soft Delete retention period for blobs is less than 3 days. Please enable soft delete with a retention period of at least 3 days. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "ggPKO3SYng3GVmUHJsyztnPJ"
+  }

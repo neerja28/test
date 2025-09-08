@@ -1,0 +1,161 @@
+{
+  "properties": {
+    "displayName": "Deploy a flow log resource with target Network Security Group",
+    "policyType": "Custom",
+    "description": "Deploys the flow log resource for Network Watchers to a CSTRM approved storage account",
+    "metadata": {},
+    "parameters": {},
+    "policyDefinitions": [
+      {
+        "policyDefinitionReferenceId": "EastUSNetworkSecurityGroupFlowLogs",
+        "policyDefinitionId": "",
+        "parameters": {
+          "effect": {
+            "value": "DeployIfNotExists"
+          },
+          "nsgRegion": {
+            "value": "eastus"
+          },
+          "networkWatcherName": {
+            "value": "NetworkWatcher_eastus"
+          },
+          "storageId": {
+            "value": "/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourceGroups/cstrm-p-eaus-cir-securityanalytics-rg/providers/Microsoft.Storage/storageAccounts/secanalyticsnsgeaus"
+          },
+          "networkWatcherRG": {
+            "value": "networkwatcherrg"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "EastUS2NetworkSecurityGroupFlowLogs",
+        "policyDefinitionId": "",
+        "parameters": {
+          "effect": {
+            "value": "DeployIfNotExists"
+          },
+          "nsgRegion": {
+            "value": "eastus2"
+          },
+          "networkWatcherName": {
+            "value": "NetworkWatcher_eastus2"
+          },
+          "storageId": {
+            "value": "/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourceGroups/cstrm-p-zeau2-cir-secanalytc-rg/providers/Microsoft.Storage/storageAccounts/secanalyticsnsgzeau2"
+          },
+          "networkWatcherRG": {
+            "value": "networkwatcherrg"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "WestUSNetworkSecurityGroupFlowLogs",
+        "policyDefinitionId": "",
+        "parameters": {
+          "effect": {
+            "value": "DeployIfNotExists"
+          },
+          "nsgRegion": {
+            "value": "westus"
+          },
+          "networkWatcherName": {
+            "value": "NetworkWatcher_westus"
+          },
+          "storageId": {
+            "value": "/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourceGroups/cstrm-p-zweus-cir-secanalytc-rg/providers/Microsoft.Storage/storageAccounts/secanalyticsnsgzweus"
+          },
+          "networkWatcherRG": {
+            "value": "networkwatcherrg"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "WestUS2USNetworkSecurityGroupFlowLogs",
+        "policyDefinitionId": "",
+        "parameters": {
+          "effect": {
+            "value": "DeployIfNotExists"
+          },
+          "nsgRegion": {
+            "value": "westus2"
+          },
+          "networkWatcherName": {
+            "value": "NetworkWatcher_westus2"
+          },
+          "storageId": {
+            "value": "/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourceGroups/cstrm-p-zweu2-cir-secanalytc-rg/providers/Microsoft.Storage/storageAccounts/secanalyticsnsgzweu2"
+          },
+          "networkWatcherRG": {
+            "value": "networkwatcherrg"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "CentralUSNetworkSecurityGroupFlowLogs",
+        "policyDefinitionId": "",
+        "parameters": {
+          "effect": {
+            "value": "DeployIfNotExists"
+          },
+          "nsgRegion": {
+            "value": "centralus"
+          },
+          "networkWatcherName": {
+            "value": "NetworkWatcher_centralus"
+          },
+          "storageId": {
+            "value": "/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourceGroups/cstrm-p-zceus-cir-secanalytc-rg/providers/Microsoft.Storage/storageAccounts/secanalyticsnsgzceus"
+          },
+          "networkWatcherRG": {
+            "value": "networkwatcherrg"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "NorthCentralUSNetworkSecurityGroupFlowLogs",
+        "policyDefinitionId": "",
+        "parameters": {
+          "effect": {
+            "value": "DeployIfNotExists"
+          },
+          "nsgRegion": {
+            "value": "northcentralus"
+          },
+          "networkWatcherName": {
+            "value": "NetworkWatcher_northcentralus"
+          },
+          "storageId": {
+            "value": "/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourceGroups/cstrm-p-zncus-cir-secanalytc-rg/providers/Microsoft.Storage/storageAccounts/secanalyticsnsgzncus"
+          },
+          "networkWatcherRG": {
+            "value": "networkwatcherrg"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "SouthCentralUSNetworkSecurityGroupFlowLogs",
+        "policyDefinitionId": "",
+        "parameters": {
+          "effect": {
+            "value": "DeployIfNotExists"
+          },
+          "nsgRegion": {
+            "value": "southcentralus"
+          },
+          "networkWatcherName": {
+            "value": "NetworkWatcher_southcentralus"
+          },
+          "storageId": {
+            "value": "/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourceGroups/cstrm-p-zscus-cir-secanalytc-rg/providers/Microsoft.Storage/storageAccounts/secanalyticsnsgzscus"
+          },
+          "networkWatcherRG": {
+            "value": "networkwatcherrg"
+          }
+        }
+      }
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policySetDefinitions",
+  "name": "505293b4-8786-457f-84cc-b84c4648af1f"
+}

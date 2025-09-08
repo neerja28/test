@@ -1,0 +1,50 @@
+{
+  "properties": {
+    "displayName": "Block adding this firewall rule 0.0.0.0 - 255.255.255.255 on PostgreSQL Flexible server",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Ensure that no PostgreSQL Flexible servers have a firewall rule with StartIP of 0.0.0.0 and EndIP of 255.255.255.255",
+    "metadata": {
+      "category": "SQL Server"
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Deny"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.DBforPostgreSQL/flexibleServers/firewallRules"
+          },
+          {
+            "field": "Microsoft.DBforPostgreSQL/flexibleServers/firewallRules/startIpAddress",
+            "equals": "0.0.0.0"
+          },
+          {
+            "field": "Microsoft.DBforPostgreSQL/flexibleServers/firewallRules/endIpAddress",
+            "equals": "255.255.255.255"
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]"
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "b30b1ec2-5ee9-11ee-8c99-0242ac120002"
+}

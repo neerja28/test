@@ -1,0 +1,23 @@
+{
+  "properties": {
+    "displayName": "Block adding this firewall rule 0.0.0.0 - 255.255.255.255 on PostgreSQL Flexible server",
+    "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+    "notScopes": [
+      "/subscriptions/151e8825-89f3-4507-ac30-3ea54ea49f78/resourceGroups/dt-n-zeaus-cloudcost-automation-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/dt-n-zeaus-cloudcost-pgs"
+    ],
+    "parameters": {
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "Ensure that no PostgreSQL Flexible servers have a firewall rule with StartIP of 0.0.0.0 and EndIP of 255.255.255.255",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "PostgreSQL Flexible server doesn't meet AA SCCF benchmark: Block adding this firewall rule 0.0.0.0 - 255.255.255.255 on PostgreSQL Flexible server. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "yLFetWB9LG5HgTvEhKwbZM9o"
+}

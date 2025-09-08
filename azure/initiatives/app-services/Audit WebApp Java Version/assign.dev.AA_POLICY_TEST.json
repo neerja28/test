@@ -1,0 +1,17 @@
+{
+    "properties": {
+      "displayName": "Audit Web App Java Version",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementgroups/AA_POLICY_TEST/providers/Microsoft.Authorization/policySetDefinitions/49dd17ff-389a-4397-b4c8-0332b8fbf142_D",
+      "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+      "notScopes": [],
+      "parameters": {},
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": ["The web app is using an unsupported version of Java. Please update to a supported version."]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "ClPnICUz9s9DVYRUHlcRo5nf",
+    "location": "eastus"
+  }
+  

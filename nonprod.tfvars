@@ -1,0 +1,6 @@
+display_name_prefix = "NON-PRODUCTION-MG: "
+environment         = "NonProd"
+fileset_filter      = "assign.np.*.json"
+ex_fileset_filter   = "exemption.np.*.json"
+management_group_id = "NON-PRODUCTION-MG"
+name_suffix         = "_N"

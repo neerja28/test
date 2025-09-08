@@ -1,0 +1,28 @@
+{
+    "properties": {
+      "displayName": "Enforce Storage Account Public Access and Deploy Allowed IPs",
+      "scope": "/subscriptions/151e8825-89f3-4507-ac30-3ea54ea49f78/resourceGroups/dt-n-zeaus-dte-geekgurusdev-rg",
+      "notScopes": [],
+      "parameters": {
+        "effect": {
+          "value": "Audit"
+        }
+      },
+      "description": "",
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        "Storage account's public access configuration do not meet AA SCCF Benchmark control: Public access should be disabled and Vnet integration should be enabled. Please reference this guide for the Vnet integration process and requirements https://developer.aa.com/docs/default/component/devops-tech-enablement/ghec/Actions/gitHubHostedRunners/"
+      ]
+    },
+    "identity": {
+      "type": "SystemAssigned",
+      "roleAssignments": [
+        "Storage Account Contributor"
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "GaaSPolicyZtDGKAII82lhqy",
+    "location": "eastus"
+  }

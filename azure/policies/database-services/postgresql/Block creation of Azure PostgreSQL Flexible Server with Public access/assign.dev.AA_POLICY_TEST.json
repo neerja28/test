@@ -1,0 +1,22 @@
+{
+  "properties": {
+    "displayName": "Block creation of Azure PostgreSQL Flexible Server with Public access",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/5e1de0e3-42cb-4ebc-a86d-61d0c619ca48",
+    "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Azure PostgreSQL Flexible server network configuration does not meet AA SCCF Benchmark control: Net new creation of PostgreSQL Flexible Servers will be blocked when Public Access is enabled. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "iAuzfyXgkCYto0XsSLCjHNee"
+}

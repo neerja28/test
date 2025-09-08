@@ -1,0 +1,20 @@
+{
+  "properties": {
+    "displayName": "Enforce SQL database Transparent Database Encryption",
+    "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "SQL Database's encryption configuration does not meet AA SCCF Benchmark control: Data Encryption on SQL databases should be enabled. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "4YXksncqbpXtdK7bJydb0Uv2",
+  "location": "eastus"
+}

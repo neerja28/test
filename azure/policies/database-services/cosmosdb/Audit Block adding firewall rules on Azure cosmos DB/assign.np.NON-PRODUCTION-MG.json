@@ -1,0 +1,25 @@
+{
+    "properties": {
+      "displayName": "Audit - Block adding firewall rules and Allow access from my IP on Azure cosmos DB",
+      "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+      "notScopes": [
+        "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/cor-s-zweus-rm-reshold-rg",
+        "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/cor-n-zweus-rm-casper-rg"
+      ],
+      "parameters": {
+        "effect": {
+          "value": "Deny"
+        }
+      },
+      "description": "Deny if Cosmos DB is configured using Allow access from my IP and block adding firewall rules on Azure cosmos DB .",
+      "metadata": {},
+      "enforcementMode": "DoNotEnforce",
+      "nonComplianceMessages": [
+        "Azure Cosmos DB network configuration does not meet AA SCCF Benchmark control: Configuring Cosmos DB with Allow access from my IP and adding firewall rules is not permissible; only allowing access from the Azure portal is compliant with the requirements. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "AlakqRUdzznmgJWnmmQAvmEb",
+    "location": "eastus"
+  }

@@ -1,0 +1,95 @@
+{
+  "properties": {
+    "displayName": "Audit Storage Account Resilience",
+    "policyType": "Custom",
+    "mode": "Indexed",
+    "description": "Use geo-redundancy or zone-redundancy to create highly available storage account",
+    "metadata": {
+      "version": "1.0.0",
+      "category": "Storage"
+    },
+    "version": "1.0.0",
+    "parameters": {
+      "effect": {
+        "type": "string",
+        "defaultValue": "Audit",
+        "allowedValues": [
+          "Audit",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        }
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Storage/storageAccounts"
+          },
+          {
+            "anyOf": [
+              {
+                "allOf": [
+                  {
+                    "field": "tags['aa-criticality']",
+                    "in": [
+                      "Critical",
+                      "Vital"
+                    ]
+                  },
+                  {
+                    "not": {
+                      "field": "Microsoft.Storage/storageAccounts/sku.name",
+                      "in": [
+                        "Standard_GRS",
+                        "Standard_RAGRS",
+                        "Standard_GZRS",
+                        "Standard_RAGZRS"
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "allOf": [
+                  {
+                    "field": "tags['aa-criticality']",
+                    "in": [
+                      "Important",
+                      "Discretionary"
+                    ]
+                  },
+                  {
+                    "not": {
+                      "field": "Microsoft.Storage/storageAccounts/sku.name",
+                      "in": [
+                        "Standard_ZRS",
+                        "Standard_GRS",
+                        "Standard_RAGRS",
+                        "Standard_GZRS",
+                        "Standard_RAGZRS"
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]"
+      }
+    },
+    "versions": [
+      "1.0.0"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "de1af6d4-bd03-4c51-b12b-7e9228436860"
+}

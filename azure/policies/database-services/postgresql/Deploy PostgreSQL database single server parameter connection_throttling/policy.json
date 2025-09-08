@@ -1,0 +1,76 @@
+{
+  "properties": {
+    "displayName": "Deploy PostgreSQL database single server parameter connection_throttling ON",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Enabling connection_throttling helps the PostgreSQL Database to Set the verbosity of logged messages which in turn generates query and error logs with respect to concurrent connections, that could lead to a successful Denial of Service(DoS) attack by exhausting connection resources.A system can also fail or be degraded by an overload of legitimate users.Query and error logs can be used to identify, troubleshoot, and repair configuration errors and sub - optimal performance.",
+    "metadata": {},
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "AuditIfNotExists",
+          "DeployIfNotExists",
+          "Disabled"
+        ],
+        "defaultValue": "DeployIfNotExists"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "field": "type",
+        "equals": "Microsoft.DBforPostgreSQL/servers"
+      },
+      "then": {
+        "effect": "[parameters('effect')]",
+        "details": {
+          "type": "Microsoft.DBforPostgreSQL/servers/configurations",
+          "name": "[concat(field('name'), '/connection_throttling')]",
+          "evaluationDelay": "AfterProvisioning",
+          "roleDefinitionIds": [
+            "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+          ],
+          "existenceCondition": {
+            "field": "Microsoft.DBforPostgreSQL/servers/configurations/value",
+            "equals": "ON"
+          },
+          "deployment": {
+            "properties": {
+              "mode": "incremental",
+              "template": {
+                "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                "contentVersion": "1.0.0.0",
+                "parameters": {
+                  "serverName": {
+                    "type": "string"
+                  }
+                },
+                "resources": [{
+                  "name": "[concat(parameters('serverName'), '/connection_throttling')]",
+                  "type": "Microsoft.DBforPostgreSQL/servers/configurations",
+                  "apiVersion": "2017-12-01",
+                  "properties": {
+                    "value": "ON",
+                    "source": "user-override"
+                  }
+                }]
+              },
+              "parameters": {
+                "serverName": {
+                  "value": "[field('name')]"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "9C174CB2-A6F9-491B-A33D-CAE9FC93A3D5"
+}

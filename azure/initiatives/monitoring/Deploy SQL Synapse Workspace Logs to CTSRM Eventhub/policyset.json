@@ -1,0 +1,29 @@
+{
+  "properties": {
+    "displayName": "Enable logging by category group for Azure Synapse Workspace (Analytics) to Event Hub",
+    "policyType": "Custom",
+    "description": "This policy deploys a diagnostic setting using category groups to route logs to an Event Hub for Azure Synapse Workspaces (Analytics).",
+    "metadata": {},
+    "parameters": {},
+    "policyDefinitions": [
+      {
+        "policyDefinitionReferenceId": "",
+        "policyDefinitionId": "",
+        "parameters": {
+          "resourceLocation": {
+            "value": "eastus"
+          },
+          "eventHubAuthorizationRuleId": {
+            "value": "/subscriptions/55f702f9-17ee-4d42-8da3-3f0bc97c4158/resourceGroups/Zab-policies-test/providers/Microsoft.EventHub/namespaces/testingMILogs/authorizationrules/forSendingLogs"          
+          },
+          "eventHubName": {
+            "value": "mi-logs"          
+          }
+        }
+      }
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policySetDefinitions",
+  "name": "24b4449b-b9f5-4c30-b96e-6c4391f1441d"
+}

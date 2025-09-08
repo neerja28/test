@@ -1,0 +1,28 @@
+{
+  "properties": {
+    "displayName": "Enforce no MySQL Single Server has Firewall rule 0.0.0.0 - 255.255.255.255",
+    "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "Blocking the firewall rule 0.0.0.0 - 255.255.255.255 will help mitigate unauthorized access from the internet.",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "MySQL database Single server does not meet AA SCCF Benchmark control: MySQL Single server should not have a firewall rule of 0.0.0.0 - 255.255.255.255. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "identity": {
+    "type": "SystemAssigned",
+    "roleAssignments": [
+      "Contributor"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicy4xGng3FmQeDuEX",
+  "location": "eastus"
+}

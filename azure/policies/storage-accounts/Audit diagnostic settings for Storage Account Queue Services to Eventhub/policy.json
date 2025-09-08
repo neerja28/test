@@ -1,0 +1,67 @@
+{
+    "properties": {
+      "displayName": "Audit diagnostic settings for Storage Account Queue Services to Eventhub",
+      "policyType": "Custom",
+      "mode": "All",
+      "description": "Audits storage accounts for Queue service read, write and delete logs to make sure there are being sent to an event hub",
+      "metadata": {},
+      "parameters": {
+        "effect": {
+          "type": "String",
+          "metadata": {
+            "displayName": "Effect",
+            "description": "Enable or disable the execution of the policy"
+          },
+          "allowedValues": [
+            "AuditIfNotExists",
+            "DeployIfNotExists",
+            "Disabled"
+          ],
+          "defaultValue": "AuditIfNotExists"
+        },
+        "profileName": {
+          "type": "String",
+          "metadata": {
+            "displayName": "Profile name",
+            "description": "The diagnostic settings profile name"
+          },
+          "defaultValue": "CSTRM-Required-Logging"
+          }
+
+      },
+      "policyRule": {
+        "if": {
+          "field": "type",
+          "equals": "Microsoft.Storage/storageAccounts/queueServices"
+        },
+        "then": {
+          "effect": "[parameters('effect')]",
+          "details": {
+            "type": "Microsoft.Insights/diagnosticSettings",
+            "name": "[parameters('profileName')]",
+            "existenceCondition": {
+              "allOf": [
+                {
+                  "count": {
+                    "field": "Microsoft.Insights/diagnosticSettings/logs[*]",
+                    "where": {
+                      "allOf": [
+                        {
+                          "field": "Microsoft.Insights/diagnosticSettings/logs[*].enabled",
+                          "equals": "true"
+                        }
+                      ]
+                    }
+                  },
+                  "equals": 3
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "171C75A9-527C-4480-B037-C1AA0CEC61E4"
+  }

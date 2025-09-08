@@ -1,0 +1,21 @@
+{
+  "properties": {
+    "displayName": "Enforce no SQL Databases allow ingress 0.0.0.0/0",
+    "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "SQL FirewallRule does not meet AA SCCF Benchmark control: No firewall rule allowed with StartIp of 0.0.0.0 and EndIP of 255.255.255.255. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "JYKwpEu9iashDFWC4JZCvewr"
+}

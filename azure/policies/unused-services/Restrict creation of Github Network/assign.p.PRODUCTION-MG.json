@@ -1,0 +1,31 @@
+{
+  "properties": {
+    "displayName": "Restrict creation of Github Network",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6c112d4e-5bc7-47ae-a041-ea2d9dccd749",
+    "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+    "notScopes": [
+      "/subscriptions/8e5e91ba-9fca-4b3d-9858-4f6fcba19ee1"
+    ],
+    "parameters": {
+      "listOfResourceTypesNotAllowed": {
+        "value": [
+          "GitHub.Network/networkSettings",
+          "GitHub.Network/Operations",
+          "GitHub.Network/registeredSubscriptions"
+        ]
+      },
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Restricting Github Network that fall into either the 'Not the droids' category or do not have a Tech Radar disposition. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code."
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "wjOodzFDakFJPcBuLkjWgVQk"
+}

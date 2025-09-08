@@ -1,0 +1,28 @@
+{
+  "properties": {
+    "displayName": "Enforce no MySQL Flexible Server has Firewall rule 0.0.0.0 - 255.255.255.255",
+    "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "In order to reduce the potential attack surface for existing MySQL Flexible servers, firewall rules should be defined with more granular IP addresses by referencing the range of addresses available from trusted sources.",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "MySQL database Flexible server does not meet AA SCCF Benchmark control: MySQL Flexible server should not have a firewall rule of 0.0.0.0 - 255.255.255.255. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "identity": {
+    "type": "SystemAssigned",
+    "roleAssignments": [
+      "Contributor"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicyym5ns0SlKrI8Ep",
+  "location": "eastus"
+}

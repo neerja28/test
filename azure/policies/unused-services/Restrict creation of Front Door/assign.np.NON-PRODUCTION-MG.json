@@ -1,0 +1,37 @@
+{
+  "properties": {
+    "displayName": "Restrict creation of Front Door",
+    "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+    "notScopes": [
+      "/subscriptions/033d20ae-901d-4797-b93b-5c6c0c02534b/resourceGroups/rglns-n-pdtdisprel-rg",
+      "/subscriptions/033d20ae-901d-4797-b93b-5c6c0c02534b/resourceGroups/rgn-n-zeaus-pdt-crewsuite-rg",
+      "/subscriptions/033d20ae-901d-4797-b93b-5c6c0c02534b/resourceGroups/rgn-n-zeaus-psa-crewsuite-rg",
+      "/subscriptions/033d20ae-901d-4797-b93b-5c6c0c02534b/resourceGroups/rgn-n-zeaus-psacrewste-rg",
+      "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/ct-n-zeaus-cbro-rg",
+      "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/ct-n-zeaus-getng-rg",
+      "/subscriptions/b84e18af-0b2a-4c08-9a3b-272d7552b405/resourceGroups/aa-aot-eManuals-stage-eastus-rg",
+      "/subscriptions/bce6cd73-f8cf-415c-a502-900f7c53b881/resourceGroups/AOSRGProd",
+      "/subscriptions/bce6cd73-f8cf-415c-a502-900f7c53b881/resourceGroups/CrewMobileRGProd",
+      "/subscriptions/bce6cd73-f8cf-415c-a502-900f7c53b881/resourceGroups/CrewMobileRGTest",
+      "/subscriptions/bce6cd73-f8cf-415c-a502-900f7c53b881/resourceGroups/FlightReleaseRGTest",
+      "/subscriptions/bce6cd73-f8cf-415c-a502-900f7c53b881/resourceGroups/mxplanningvalidator-prod",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/cor-d-eaus-et-eds-epays-rg",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/cor-d-eaus-et-eds-shared-rg",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/cor-n-sales-eaus-saleshub-rg",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/cor-s-eaus-et-eds-epays-rg"
+    ],
+    "parameters": {
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Restricting Azure Services that fall into either the 'Not the droids' category or do not have a Tech Radar disposition. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]  
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "72J0Kx8SQNsYTYw4sYpXviEK",
+  "location": "eastus"
+}

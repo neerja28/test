@@ -1,0 +1,62 @@
+{
+  "properties": {
+    "displayName": "Azure AI service creation is not allowed",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "This Policy will block Azure AI service creation and update",
+    "metadata": {
+      "category": "AA Standards",
+      "createdBy": "",
+      "createdOn": "",
+      "updatedBy": "",
+      "updatedOn": ""
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Deny"
+      }
+    },
+    "policyRule": {      
+      "if": {
+        "anyOf": [
+          {
+            "field": "type",
+            "like": "Microsoft.AutonomousSystems/*"
+          },
+          {
+            "field": "type",
+            "like": "Microsoft.BotService/*"
+          },
+          {
+            "field": "type",
+            "like": "Microsoft.CognitiveServices/*"
+          },
+          {
+            "field": "type",
+            "like": "Microsoft.EnterpriseKnowledgeGraph/*"
+          },
+          {
+            "field": "type",
+            "like": "Microsoft.Search/*"
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]"
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "e7cf318f-d606-493a-8b23-ab1356dd41c0"
+}

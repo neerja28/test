@@ -1,0 +1,21 @@
+{
+  "properties": {
+    "displayName": "Azure AI service creation is not allowed",
+    "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+    "notScopes": [],
+    "parameters": {
+      "effect":{
+        "value": "Deny"
+      }
+    },
+    "description": "This Policy will block Azure AI service creation and update",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Creation of Azure AI services are not allowed in this subscription. Please work with your Enterprise Architect to discuss your AI use case to get access to the correct AI subscription."
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicyLuserd0yfNfT9u"
+}

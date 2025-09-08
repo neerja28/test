@@ -1,0 +1,56 @@
+{
+    "properties": {
+        "displayName": "Block the creation of 'FREE F1' SKU for App Service Plan",
+        "policyType": "Custom",
+        "mode": "Indexed",
+        "description": "Azure app service plan should use the Basic or Premium SKU.",
+        "metadata": {
+            "category": "App Service"
+        },
+        "parameters": {
+            "effect": {
+                "type": "String",
+                "metadata": {
+                    "displayName": "Effect",
+                    "description": "Enable or disable the execution of the policy"
+                },
+                "allowedValues": [
+                    "Audit",
+                    "Deny",
+                    "Disabled"
+                ],
+                "defaultValue": "Deny"
+            },
+            "listOfBlockedSKUs": {
+                "type": "Array",
+                "metadata": {
+                    "displayName": "Blocked SKUs",
+                    "description": "The list of SKUs that can be specified"
+                },
+                "defaultValue": [
+                    "F1"
+                ]
+            }
+        },
+        "policyRule": {
+            "if": {
+                "allOf": [
+                    {
+                        "field": "type",
+                        "equals": "Microsoft.Web/serverfarms"
+                    },
+                    {
+                        "field": "Microsoft.Web/serverfarms/sku.name",
+                        "in": "[parameters('listOfBlockedSKUs')]"
+                    }
+                ]
+            },
+            "then": {
+                "effect": "[parameters('effect')]"
+            }
+        }
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "5aab36f6-5ef1-11ee-8c99-0242ac120002"
+}

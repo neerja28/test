@@ -1,0 +1,22 @@
+{
+    "properties": {
+      "displayName": "Audit diagnostic settings for Storage Account Queue Services to Eventhub",
+      "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+      "notScopes": [],
+      "parameters": {
+        "effect": {
+          "value": "AuditIfNotExists"
+        }
+      },
+      "description": "Audits storage accounts for Queue service read, write and delete logs to make sure there are being sent to an event hub",
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        "The storage account Queue service should have read, write and delete logs enabled and forwarded to an Event Hub. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "2HE4ZOdWSnwHvnn5OjT3YlXE",
+    "location": "eastus"
+  }

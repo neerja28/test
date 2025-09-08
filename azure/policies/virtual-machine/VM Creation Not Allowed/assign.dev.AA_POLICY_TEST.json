@@ -1,0 +1,31 @@
+{
+  "properties": {
+    "displayName": "VM Creation not allowed",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6c112d4e-5bc7-47ae-a041-ea2d9dccd749",
+    "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+    "notScopes": [
+      "/subscriptions/55f702f9-17ee-4d42-8da3-3f0bc97c4158/resourceGroups/Neerja-Policy-Test",
+      "/subscriptions/55f702f9-17ee-4d42-8da3-3f0bc97c4158/resourceGroups/mq-905839-rg"
+    ],
+    "parameters": {
+      "listOfResourceTypesNotAllowed": {
+        "value": [
+          "microsoft.classiccompute/virtualmachines",
+          "microsoft.compute/virtualmachines"
+        ]
+      },
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Creation of new Virtual Machines is not allowed and VP approval is required to get a policy exception. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "JYKwpEu9ivOcDFWC4JZCvxtK"
+}

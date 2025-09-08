@@ -1,0 +1,35 @@
+{
+    "properties": {
+      "displayName": "Deploy Subscription Activity Log Diagnostic Settings to Forward Logs to CSTRM Log Analytics Workspace",
+      "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+      "notScopes": [],
+      "parameters": {
+        "effect": {
+          "value": "DeployIfNotExists"
+        },
+        "logAnalytics": {
+            "value": "/subscriptions/34dbcf6f-a9a0-4dd5-af52-1c9b23c30e3a/resourcegroups/gaas-policy-test/providers/microsoft.operationalinsights/workspaces/logfwdtest"
+        },
+        "diagnosticSettingsName": {
+            "value" : "to_security_loganalytics"
+        }
+      },
+      "description": "Deploys required diagnostic settings to forward subscription activity logs to CSTRM log analytics workspace.",
+      "metadata": {},
+      "enforcementMode": "DoNotEnforce",
+      "nonComplianceMessages": [
+        "Subscription diagnostic settings must be configured to send subscription activity logs to CSTRM log analytics workspace."
+      ]
+    },
+    "identity": {
+      "type": "SystemAssigned",
+      "roleAssignments": [
+        "Monitoring Contributor",
+        "Log Analytics Contributor"
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "GaaSPolicySkKCa8dtTMyNwp",
+    "location": "eastus"
+  }

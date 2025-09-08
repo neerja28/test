@@ -1,0 +1,21 @@
+{
+  "properties": {
+    "displayName": "Enforce Web App should only be accessible over HTTPS",
+    "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+    "notScopes": [],
+    "parameters": {
+      "effect":{
+        "value": "Append"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "The WebApp's http setting does not meet AA SCCF Benchmark control: Enforce Web App should only be accessible over HTTPS. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "JYKwpEu9ivOcDFWC4JZCvewr"
+}

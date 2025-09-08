@@ -1,0 +1,61 @@
+{
+  "properties": {
+    "displayName": "Enforce Azure Hybrid Benefit on Azure SQL Managed Instance",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Azure Hybrid Benefit is a licensing benefit that helps you to significantly reduce the costs of running your workloads in the cloud. It works by letting you use your on-premises Software Assurance-enabled Windows Server and SQL Server licenses on Azure",
+    "metadata": {
+      "category": "SQL",
+      "version": "1.0.0",
+      "createdBy": "",
+      "createdOn": "",
+      "updatedBy": null,
+      "updatedOn": null
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "Modify",
+          "Disabled"
+        ],
+        "defaultValue": "Modify"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [{
+            "field": "type",
+            "equals": "Microsoft.Sql/managedInstances"
+          },
+          {
+            "field": "Microsoft.Sql/managedInstances/licenseType",
+            "notEquals": "BasePrice"
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]",
+        "details": {
+          "roleDefinitionIds": [
+            "/providers/microsoft.authorization/roleDefinitions/4939a1f6-9ae0-4e48-a1e0-f2cbe897382d"
+          ],
+          "conflictEffect": "deny",
+          "operations": [{
+            "operation": "addOrReplace",
+            "field": "Microsoft.Sql/managedInstances/licenseType",
+            "value": "BasePrice"
+          }]
+        }
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "03c8d0d4-a062-4ee8-b161-489637ddc999"
+
+}

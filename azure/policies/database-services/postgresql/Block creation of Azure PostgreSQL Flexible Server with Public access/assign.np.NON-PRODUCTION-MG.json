@@ -1,0 +1,64 @@
+{
+  "properties": {
+    "displayName": "Block creation of Azure PostgreSQL Flexible Server with Public access",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/5e1de0e3-42cb-4ebc-a86d-61d0c619ca48",
+    "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+    "notScopes": [
+      "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/ct-n-zeaus-boardingpass-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/ct-n-zeaus-spe-stage-postgresql",
+      "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/ct-n-zeaus-dod-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/ct-n-zeaus-dodstage-db",
+      "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/ct-n-zeaus-dod-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/ct-n-zweus-dodstage-db",
+      "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/ct-n-zeaus-dod-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/ct-n-zeaus-dodstage-priv-db",
+      "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/ct-n-zeaus-dod-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/ct-n-zweus-dodstage-priv-db",
+      "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-fsa-test-westus-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/aaaotfsaoptimizerpostgres",
+      "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-fsa-test-westus-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/aaaotfsauatpostgres",
+      "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-fsa-test-westus-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/aaaotuatpostgresprodclone",
+      "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-fsa-test-westus-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/optigrammers",
+      "/subscriptions/151e8825-89f3-4507-ac30-3ea54ea49f78/resourceGroups/dt-d-zeaus-cldgovauto-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/dt-d-zeaus-cldgovauto-db",
+      "/subscriptions/151e8825-89f3-4507-ac30-3ea54ea49f78/resourceGroups/dt-n-zeaus-certmonitoring-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/dt-n-zeaus-certdb",
+      "/subscriptions/151e8825-89f3-4507-ac30-3ea54ea49f78/resourceGroups/dt-n-zeaus-cldgovauto-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/dt-n-zeaus-cldgovauto-db",
+      "/subscriptions/151e8825-89f3-4507-ac30-3ea54ea49f78/resourceGroups/dt-n-zeaus-cloudcost-automation-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/dt-n-zeaus-cloudcost-pgs",
+      "/subscriptions/151e8825-89f3-4507-ac30-3ea54ea49f78/resourceGroups/dt-n-zeaus-dte-datadev-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/aa-tnt-dte-psql-db-non-prod",
+      "/subscriptions/151e8825-89f3-4507-ac30-3ea54ea49f78/resourceGroups/dt-n-zeaus-Layover-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/layover-postgres",
+      "/subscriptions/151e8825-89f3-4507-ac30-3ea54ea49f78/resourceGroups/dt-n-zeaus-pandas-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/nonprod-pacdb",
+      "/subscriptions/151e8825-89f3-4507-ac30-3ea54ea49f78/resourceGroups/dt-n-zeaus-PostgreSQL-GG-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/general-grievous-postgres",
+      "/subscriptions/151e8825-89f3-4507-ac30-3ea54ea49f78/resourceGroups/dt-n-zeaus-runway-terraform-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/runwaydbnonprod",
+      "/subscriptions/151e8825-89f3-4507-ac30-3ea54ea49f78/resourceGroups/dt-n-zeaus-squad360-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/squad360-az-infra",
+      "/subscriptions/151e8825-89f3-4507-ac30-3ea54ea49f78/resourceGroups/dt-n-zeaus-squad360-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/squad360-az-infra-dr",
+      "/subscriptions/151e8825-89f3-4507-ac30-3ea54ea49f78/resourceGroups/dt-n-zeaus-tii-umnr-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/umnr-public",
+      "/subscriptions/36ae79ae-e3b0-409e-874c-aaecfc5d5cd3/resourceGroups/cstrm-n-zeaus-PF-PostgreSQL-NP-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/pf-postgresql-np",
+      "/subscriptions/8ac743df-669f-43b0-b197-9432f6684c74/resourceGroups/dt-n-zeaus-cnfgmgmttl-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/dt-n-zeaus-cnfgmgmttl-pg-db",
+      "/subscriptions/91c1395e-45ac-46d3-9c2e-734822dc13e2/resourceGroups/ct-n-zeaus-loyaltyinfra-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/ctnzeausloyaltypostgresdb",
+      "/subscriptions/ae0b13d9-e09c-4e54-b1e6-8e777d8fbe14/resourceGroups/ba-n-zeaus-group045-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/iocanalyticsserver",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/cor-n-eaus-corptech-rpt-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/pg-flex-burst-poc",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/corp-n-zeaus-financeaccountingintegrationhub-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/cor-n-fininthub-itfs-pgsqldb",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/corp-n-zeaus-financeaccountingintegrationhub-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/cor-n-fininthub-itfs-pgsqldb-stg",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/corp-n-FinanceAccountingDataHub-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/itfacs-payment-findatahub-ops-db-consumer",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/corp-n-FinanceAccountingDataHub-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/test-postgres-flexible",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/corp-n-FinanceAccountingDataHub-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/cor-n-findatahub-itfs-pgsqldb-flex",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/corp-n-FinanceAccountingDataHub-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/cor-n-findatahub-itfs-pgsqldb-flex-stg",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/corp-n-FinanceAccountingDataHub-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/cor-n-findatahub-itfs-staging-pgsqldb-flex",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/corp-n-FinanceAccountingDataHub-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/cor-n-findatahub-itfs-staging-co-pgsqldb-flex-stg",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/corp-n-FinanceAccountingDataHub-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/cor-n-findatahub-itfs-staging-pr-pgsqldb-flex-stg",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/corp-n-FinanceAccountingDataHub-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/corp-n-findatahub-itfs-pgsqldb-stg",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/corp-d-zeaus-finacccost-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/cor-d-zeaus-itfacs-finacccost-pgsqldb",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/corp-s-zeaus-finacccost-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/cor-s-zeaus-itfacs-finacccost-pgsqldb",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/corp-n-zeaus-CargoCRMIntegrationHub-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/postgresql-devcgocrm",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/corp-n-zeaus-CargoCRMIntegrationHub-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/postgresql-single",
+      "/subscriptions/90ea3d1d-cd33-4625-b2e9-fed7a61437d7/resourceGroups/gen-ai-wiki-vision-rg"
+    ],
+    "parameters": {
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Azure PostgreSQL Flexible server network configuration does not meet AA SCCF Benchmark control: Net new creation of PostgreSQL Flexible Servers will be blocked when Public Access is enabled. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "TXQQcpdEFMw759xVIPjF2Nee"
+}

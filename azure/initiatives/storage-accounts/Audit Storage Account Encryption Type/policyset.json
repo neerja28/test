@@ -1,0 +1,32 @@
+{
+    "properties": {
+      "displayName": "Audit Storage Account Encryption Type",
+      "policyType": "Custom",
+      "description": "Audit the encryption type of Storage Accounts for Platform Managed Keys and Cutsomer Managed keys.",
+      "metadata": {},
+      "parameters": {},
+      "policyDefinitions": [
+        {
+          "policyDefinitionReferenceId": "",
+          "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/AA_GLOBAL-MG/providers/Microsoft.Authorization/policyDefinitions/36b06ef3-97c8-46f3-9dab-99c69a1af50e",
+          "parameters": {
+            "encryptionType": {
+              "value": "Microsoft.Storage"
+            }
+          }
+        },
+        {
+            "policyDefinitionReferenceId": "",
+            "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/AA_GLOBAL-MG/providers/Microsoft.Authorization/policyDefinitions/36b06ef3-97c8-46f3-9dab-99c69a1af50e",
+            "parameters": {
+              "encryptionType": {
+                "value": "Microsoft.Keyvault"
+              }
+            }
+          }
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policySetDefinitions",
+    "name": "c958f9c6-f0f7-4047-a19d-688678293020"
+  }

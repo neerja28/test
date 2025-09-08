@@ -1,0 +1,17 @@
+{
+    "properties": {
+      "displayName": "Audit Web App Python Version EOL",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementgroups/NON-PRODUCTION-MG/providers/Microsoft.Authorization/policySetDefinitions/30425c76-4823-11ee-be56-0242ac120002_N",
+      "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+      "notScopes": [],
+      "parameters": {},
+      "metadata": {},
+      "enforcementMode": "DoNotEnforce",
+      "nonComplianceMessages": ["The web app is using an unsupported version of Python. Please update to a supported version"]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "aCoegTc8lyatEC0t8UzCVzJT",
+    "location": "eastus"
+  }
+  

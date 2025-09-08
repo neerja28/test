@@ -1,0 +1,80 @@
+{
+  "properties": {
+    "displayName": "Deploy MySQL single server parameter audit_log_events to CONNECTION",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Ensure audit_log_events parameter is include to add CONNECTION on Azure database for MySQL single Servers",
+    "metadata": {
+      "version": "1.0.0",
+      "category": "AA SCCF benchmark"
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "AuditIfNotExists",
+          "DeployIfNotExists",
+          "Disabled"
+        ],
+        "defaultValue": "DeployIfNotExists"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "equals": "Microsoft.DBforMySQL/servers",
+        "field": "type"
+      },
+      "then": {
+        "details": {
+          "deployment": {
+            "properties": {
+              "mode": "incremental",
+              "parameters": {
+                "serverName": {
+                  "value": "[field('name')]"
+                }
+              },
+              "template": {
+                "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+                "contentVersion": "1.0.0.0",
+                "parameters": {
+                  "serverName": {
+                    "type": "string"
+                  }
+                },
+                "resources": [{
+                  "apiVersion": "2017-12-01",
+                  "name": "[concat(parameters('serverName'), '/audit_log_events')]",
+                  "properties": {
+                    "source": "user-override",
+                    "value": "CONNECTION"
+                  },
+                  "type": "Microsoft.DBforMySQL/servers/configurations"
+                }]
+              }
+            }
+          },
+          "evaluationDelay": "AfterProvisioning",
+          "existenceCondition": {
+            "contains": "CONNECTION",
+            "field": "Microsoft.DBforMySQL/servers/configurations/value"
+          },
+          "name": "[concat(field('name'), '/audit_log_events')]",
+          "roleDefinitionIds": [
+            "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+          ],
+          "type": "Microsoft.DBforMySQL/servers/configurations"
+        },
+        "effect": "[parameters('effect')]"
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "5415e283-cdbe-422e-974a-ab34d9cc2d98"
+
+}

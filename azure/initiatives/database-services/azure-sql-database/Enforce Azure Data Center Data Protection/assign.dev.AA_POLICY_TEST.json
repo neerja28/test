@@ -1,0 +1,24 @@
+{
+  "identity": {
+    "type": "SystemAssigned",
+    "roleAssignments": [
+      "SQL Security Manager"
+    ]
+  },
+  "properties": {
+    "displayName": "Enforce Azure Data Center Data Protection",
+    "policyDefinitionId": "",
+    "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+    "notScopes": [],
+    "parameters": {},
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "This resource is not compliant with the 'Enforce Azure Data Center Data Protection' policy. Azure Data Center Data Protection. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicyvTAhJFE0BrUYVd",
+  "location": "eastus"
+}

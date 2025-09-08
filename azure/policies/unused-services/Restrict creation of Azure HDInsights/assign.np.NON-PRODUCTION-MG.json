@@ -1,0 +1,31 @@
+{
+  "properties": {
+    "displayName": "Restrict creation of Azure HDInsight",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6c112d4e-5bc7-47ae-a041-ea2d9dccd749",
+    "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+    "notScopes": [
+      "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aot-n-zeaus-prism-rg"
+    ],
+    "parameters": {
+      "listOfResourceTypesNotAllowed": {
+        "value": [
+                  "Microsoft.HDInsight/clusters",
+                  "Microsoft.HDInsight/clusterpools"
+        ]
+      },
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Restricting Azure Services that fall into either the 'Not the droids' category or do not have a Tech Radar disposition. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code."
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "gFFn8fOWzzoXO3gp2N5WWNee"
+}
+

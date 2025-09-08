@@ -1,0 +1,27 @@
+{
+    "identity": {
+      "type": "SystemAssigned",
+      "roleAssignments": [
+        "Azure Kubernetes Service Contributor Role",
+        "Azure Kubernetes Service Policy Add-on Deployment",
+        "Network Contributor"
+      ]
+    },
+    "properties": {
+      "displayName": "Deploy Azure Policy Add-on to Azure Kubernetes Service clusters",
+      "policyDefinitionId": "",
+      "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+      "notScopes": [],
+      "parameters": {},
+      "metadata": {},
+      "enforcementMode": "DoNotEnforce",
+      "nonComplianceMessages": [
+        "AKS Cluster configuration doesn't meet AA SCCF Benchmark control: Deploy Azure Policy Add-on to Azure Kubernetes Service clusters. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "GaaSPolicyYXW1DQm7SYneaC",
+    "location": "eastus"
+  }
+  

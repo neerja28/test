@@ -1,0 +1,22 @@
+{
+  "properties": {
+    "displayName": "Enforce Web App Update ftp state to use ftps_only or disabled",
+    "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+    "notScopes": [],
+    "parameters": {
+      "effect":{
+        "value": "Deny"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "The WebApp's FTP setting does not meet AA SCCF Benchmark control: Enforce Web App ftp state to use ftps_only or disabled. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "JYKwpEu9ivOcDFWC4JACbSFO"
+}
+

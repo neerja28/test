@@ -1,0 +1,50 @@
+{
+  "properties": {
+    "displayName": "Enforce PostgreSQL Single Server 'Allow access to Azure services' is disabled",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "If access from Azure services is enabled, the server's firewall will accept connections from all Azure resources, including resources not in your subscription. This is usually not a desired configuration. Instead, set up firewall rules to allow access from specific network ranges or VNET rules to allow access from specific virtual networks.",
+    "metadata": {
+      "category": "SQL"
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "Audit",
+          "Disabled",
+          "Deny"
+        ],
+        "defaultValue": "Deny"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.DBforPostgreSQL/servers/firewallRules"
+          },
+          {
+            "field": "Microsoft.DBforPostgreSQL/servers/firewallRules/startIpAddress",
+            "equals": "0.0.0.0"
+          },
+          {
+            "field": "Microsoft.DBforPostgreSQL/servers/firewallRules/endIpAddress",
+            "equals": "0.0.0.0"
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]"
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "db7f7f1c-41ff-11ee-be56-0242ac120002"
+}

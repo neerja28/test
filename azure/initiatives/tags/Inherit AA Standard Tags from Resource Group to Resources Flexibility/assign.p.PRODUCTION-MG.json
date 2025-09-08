@@ -1,0 +1,23 @@
+{
+    "identity": {
+      "type": "SystemAssigned",
+      "roleAssignments": [
+        "Tag Contributor"
+      ]
+    },
+    "properties": {
+      "displayName": "Inherit AA Standard Tags from parent Resource Group to new Resources unless already set to allow flexibility",
+      "policyDefinitionId": "",
+      "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+      "notScopes": [],
+      "parameters": {},
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": []
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "GaaSPolicygHcV4XO2uOMPk7",
+    "location": "eastus"
+  }
+  

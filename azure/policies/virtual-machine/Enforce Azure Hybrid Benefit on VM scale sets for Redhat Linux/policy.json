@@ -1,0 +1,90 @@
+{
+  "properties": {
+    "displayName": "Enforce Hybrid Benefit on Azure Redhat Linux VM ScaleSets",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Azure Hybrid Benefit is a licensing benefit that helps you to significantly reduce the costs of running your workloads in the cloud.It works by letting you use your on-premises Software Assurance-enabled Redhat Linux VM ScaleSets on Azure",
+    "metadata": {
+      "category": "Compute",
+      "version": "1.0.0",
+      "createdBy": "",
+      "createdOn": "",
+      "updatedBy": null,
+      "updatedOn": null
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "Modify",
+          "Disabled"
+        ],
+        "defaultValue": "Modify"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [{
+            "equals": "Microsoft.Compute/virtualMachineScaleSets",
+            "field": "type"
+          },
+          {
+            "equals": "Linux",
+            "field": "Microsoft.Compute/virtualMachineScaleSets/virtualMachineProfile.storageProfile.osDisk.osType"
+          },
+          {
+            "anyOf": [{
+                "exists": false,
+                "field": "Microsoft.Compute/virtualMachineScaleSets/virtualMachineProfile.licenseType"
+              },
+              {
+                "field": "Microsoft.Compute/virtualMachineScaleSets/virtualMachineProfile.licenseType",
+                "notEquals": "RHEL_BYOS"
+              }
+            ]
+          },
+          {
+            "anyOf": [{
+                "equals": "RedHat",
+                "field": "Microsoft.Compute/virtualMachineScaleSets/virtualMachineProfile.storageProfile.imageReference.publisher"
+              },
+              {
+                "contains": "RHEL",
+                "field": "Microsoft.Compute/virtualMachineScaleSets/virtualMachineProfile.storageProfile.imageReference.offer"
+              },
+              {
+                "contains": "RedHat",
+                "field": "Microsoft.Compute/imagePublisher"
+              },
+              {
+                "contains": "RHEL",
+                "field": "Microsoft.Compute/imageOffer"
+              }
+            ]
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]",
+        "details": {
+          "roleDefinitionIds": [
+            "/providers/microsoft.authorization/roleDefinitions/9980e02c-c2be-4d73-94e8-173b1dc7cf3c"
+          ],
+          "conflictEffect": "deny",
+          "operations": [{
+            "operation": "addOrReplace",
+            "field": "Microsoft.Compute/virtualMachineScaleSets/virtualMachineProfile.licenseType",
+            "value": "RHEL_BYOS"
+          }]
+        }
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "e12db534-0bb7-442f-bb6a-b4485a89357d"
+}

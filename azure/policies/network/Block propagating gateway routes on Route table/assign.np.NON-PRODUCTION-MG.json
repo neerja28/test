@@ -1,0 +1,21 @@
+{
+  "properties": {
+    "displayName": "Block propagating gateway routes on a Route table",
+    "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "DoNotEnforce",
+    "nonComplianceMessages": [
+      "Propagting routes to the network interfaces in the associated subnets is not allowed. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code. Please engage the GND team for any exceptions."
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicy6b03527547d54c"
+}

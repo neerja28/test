@@ -1,0 +1,22 @@
+{
+    "properties": {
+      "displayName": "Audit diagnostic settings for Storage Account Blob Services to Eventhub",
+      "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+      "notScopes": [],
+      "parameters": {
+        "effect": {
+          "value": "AuditIfNotExists"
+        }
+      },
+      "description": "Audits storage accounts for Blob service read, write and delete logs to make sure there are being sent to an event hub",
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        "The storage account Blob service should have read, write and delete logs enabled and forwarded to an CSTRM approved Event Hub. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "PouJU9NsK698B0f7qR1OVMDp",
+    "location": "eastus"
+  }

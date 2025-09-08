@@ -1,0 +1,38 @@
+{
+    "properties": {
+        "displayName": "Block creation of PostgreSQL Single server",
+        "policyType": "Custom",
+        "mode": "All",
+        "description": "Net new creation of Azure PostgreSQL Single Servers will be blocked.",
+        "metadata": {
+            "category": "SQL Server"
+        },
+        "parameters": {
+            "effect": {
+                "type": "String",
+                "metadata": {
+                    "displayName": "Effect",
+                    "description": "Enable or disable the execution of the policy"
+                },
+                "allowedValues": [
+                    "Audit",
+                    "Deny",
+                    "Disabled"
+                ],
+                "defaultValue": "Deny"
+            }
+        },
+        "policyRule": {
+            "if": {
+                "field": "type",
+                "equals": "Microsoft.DBforPostgreSQL/servers"
+            },
+            "then": {
+                "effect": "[parameters('effect')]"
+            }
+        }
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "a415ce58-5ee9-11ee-8c99-0242ac120002"
+}

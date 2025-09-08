@@ -1,0 +1,74 @@
+{
+  "properties": {
+    "displayName": "Auto Tag Resources with aa-criticality Tag",
+    "policyType": "Custom",
+    "description": "Adds aa-criticality tag and its corresponding value as per Archer record to Resource.",
+    "metadata": {},
+    "parameters": {},
+    "policyDefinitions": [
+      {
+        "policyDefinitionReferenceId": "",
+        "policyDefinitionId": "",
+        "parameters": {
+          "tagName": {
+            "value": "aa-app-shortname"
+          },
+          "criticalityTagName": {
+            "value": "aa-criticality"
+          },
+          "criticalityTagValue": {
+            "value": "vital"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "",
+        "policyDefinitionId": "",
+        "parameters": {
+          "tagName": {
+            "value": "aa-app-shortname"
+          },
+          "criticalityTagName": {
+            "value": "aa-criticality"
+          },
+          "criticalityTagValue": {
+            "value": "critical"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "",
+        "policyDefinitionId": "",
+        "parameters": {
+          "tagName": {
+            "value": "aa-app-shortname"
+          },
+          "criticalityTagName": {
+            "value": "aa-criticality"
+          },
+          "criticalityTagValue": {
+            "value": "important"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "",
+        "policyDefinitionId": "",
+        "parameters": {
+          "tagName": {
+            "value": "aa-app-shortname"
+          },
+          "criticalityTagName": {
+            "value": "aa-criticality"
+          },
+          "criticalityTagValue": {
+            "value": "discretionary"
+          }
+        }
+      }
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policySetDefinitions",
+  "name": "583c81aa-484d-466d-9049-18bdd98455f8"
+}

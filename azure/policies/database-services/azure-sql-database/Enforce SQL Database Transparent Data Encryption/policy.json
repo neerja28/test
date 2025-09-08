@@ -1,0 +1,49 @@
+{
+    "properties": {
+        "displayName": "Enforce SQL database Transparent Database Encryption",
+        "policyType": "Custom",
+        "mode": "All",
+        "description": "Transparent data encryption should be enabled to protect data-at-rest and meet compliance requirements. Please ignore compliance findings which includes master DB, this policy is in place to DENY existing DB TDE disable.",
+        "metadata": {
+            "category": "AA SCCF benchmark"
+        },
+        "parameters": {            
+            "effect": {
+            "type": "String",
+            "defaultValue": "Deny",
+            "metadata": {
+                "displayName": "Effect",
+                "description": "Enable or disable the execution of the policy"
+            },
+            "allowedValues": [
+                "Audit",
+                "Deny",
+                "Disabled"
+            ]
+        }},
+        "policyRule": {
+           "if": {
+              "allOf": [
+                 {
+                    "field": "type",
+                    "equals": "Microsoft.SQL/servers/databases/transparentDataEncryption"
+                 },
+                 {
+                    "field": "Microsoft.Sql/transparentDataEncryption.status",
+                    "notEquals": "enabled"
+                 },
+                 {
+                    "field": "Microsoft.Sql/servers/databases/transparentDataEncryption/state",
+                    "notEquals": "enabled"
+                 }
+              ]
+           },
+           "then": {
+              "effect": "[parameters('effect')]"
+           }
+        }
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "AB11EB57-FBCC-4BC5-BD44-F4F035F67F9F"
+}

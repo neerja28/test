@@ -1,0 +1,30 @@
+{
+  "properties": {
+    "displayName": "Restrict creation of Database Watcher",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6c112d4e-5bc7-47ae-a041-ea2d9dccd749",
+    "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+    "notScopes": [
+      "/subscriptions/292368fe-4287-4eb0-bea9-709569d9aa24/resourceGroups/ct-p-zeaus-mcdm-rg",
+      "/subscriptions/292368fe-4287-4eb0-bea9-709569d9aa24/resourceGroups/ct-p-zweus-mcdm-rg"
+    ],
+    "parameters": {
+      "listOfResourceTypesNotAllowed": {
+        "value": [
+          "microsoft.databasewatcher/watchers"
+        ]
+      },
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Restricting Database Watcher that fall into either the 'Not the droids' category or do not have a Tech Radar disposition. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code."
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "ZpKmRuExdnHYVoCsWltBGAjm"
+}

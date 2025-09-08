@@ -1,0 +1,22 @@
+{
+  "identity": {
+    "type": "SystemAssigned",
+    "roleAssignments": []
+  },
+  "properties": {
+    "displayName": "Microsoft Defender Configuration Enablement",
+    "policyDefinitionId": "",
+    "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+    "notScopes": [],
+    "parameters": {},
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Your resource/resource group is not compliant with the Governance policy 'Microsoft Defender Configuration Enablement'. Please enable Azure Defender on this resource. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicyCP4I07BPPTpb3P",
+  "location": "eastus"
+}

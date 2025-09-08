@@ -1,0 +1,18 @@
+{
+    "properties": {
+      "displayName": "Key Vault keys should have an expiration date",
+      "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+      "notScopes": [],
+      "parameters": {
+        "effect": {
+          "value": "Audit"
+        }
+      },
+      "description": "",
+      "metadata": {},
+      "enforcementMode": "DoNotEnforce"
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "DYoLKCEOeFm5yV3pMMGkCWl0"
+  }

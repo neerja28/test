@@ -1,0 +1,21 @@
+{
+    "properties": {
+        "displayName": "Enforce VM and NSG HTTP access is restricted from the internet ",
+        "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+        "notScopes": [],
+        "parameters": {
+            "effect": {
+                "value": "Deny"
+            }
+        },
+        "description": "Network security groups should be periodically evaluated for port misconfigurations. Where certain ports and protocols may be exposed to the Internet, they should be evaluated for necessity and restricted wherever they are not explicitly required.",
+        "metadata": {},
+        "enforcementMode": "Default",
+        "nonComplianceMessages": [
+            "Network Security Group doesn't meet AA SCCF benchmark: Ensure that HTTP access from the internet is evaluated and restricted for Network Security Groups. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+        ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "DGJVXm50jxuFzdiDWeUPDMAq"
+}

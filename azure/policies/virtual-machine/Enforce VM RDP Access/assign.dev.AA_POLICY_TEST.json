@@ -1,0 +1,21 @@
+{
+  "properties": {
+    "displayName": "Enforce VMs RDP access is restricted from the internet",
+    "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "true",
+    "nonComplianceMessages": [
+      "VMs RDP access from Internet does not meet AA SCCF Benchmark control: Enforce VMs RDP access is restricted from the internet. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code."
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "UnQsbKiniVwd7eoOLtCymNL2"
+}

@@ -1,0 +1,34 @@
+{
+  "properties": {
+    "displayName": "Restrict creation of Azure Native ISV Datadog",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6c112d4e-5bc7-47ae-a041-ea2d9dccd749",
+    "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+    "notScopes": [
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/corp-n-zeaus-ym-hercules-rg",
+      "/subscriptions/ae0b13d9-e09c-4e54-b1e6-8e777d8fbe14/resourceGroups/ba-n-zeaus-orion-adbde-rg",
+      "/subscriptions/ae0b13d9-e09c-4e54-b1e6-8e777d8fbe14/resourceGroups/ba-n-zeaus-orion-adbde-mgmt-rg",
+      "/subscriptions/ae0b13d9-e09c-4e54-b1e6-8e777d8fbe14/resourceGroups/ba-n-zeaus-orion-adbde-mgmt02-rg",
+      "/subscriptions/ae0b13d9-e09c-4e54-b1e6-8e777d8fbe14/resourceGroups/ba-n-zeaus-orion-adbde-mgmt03-rg"
+    ],
+    "parameters": {
+      "listOfResourceTypesNotAllowed": {
+        "value": [
+          "Microsoft.Datadog/monitors"
+        ]
+      },
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Restricting Azure Native ISV Datadog Service that fall into either the 'Not the droids' category or do not have a Tech Radar disposition. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code."
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "Ht5PHd8TB3JuOYrN84uIMhRy"
+}
+

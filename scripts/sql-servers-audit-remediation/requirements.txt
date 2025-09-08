@@ -1,0 +1,5 @@
+azure-identity
+azure-mgmt-sql
+azure-mgmt-managementgroups
+azure-mgmt-policyinsights
+azure-mgmt-resource

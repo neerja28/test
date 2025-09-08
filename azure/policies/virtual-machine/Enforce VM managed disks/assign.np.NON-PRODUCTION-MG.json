@@ -1,0 +1,21 @@
+{
+  "properties": {
+    "displayName": "Enforce Virtual Machines Managed Disks",
+    "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "This policy restricts VMs that do not use managed disks",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Virtul Machines must use managed disks to meet AA SCCF benchmark control: Enforce Virtual Machines Managed Disks. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code."
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "VtDPljxEnYtpwxe0beCm7xF6"
+}

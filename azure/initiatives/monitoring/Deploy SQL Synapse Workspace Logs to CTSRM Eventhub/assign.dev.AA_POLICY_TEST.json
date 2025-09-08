@@ -1,0 +1,27 @@
+{
+  "properties": {
+    "displayName": "Enable logging by category group for Azure Synapse Workspace (Analytics) to Event Hub",
+    "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+    "notScopes": [],
+    "parameters": {},
+    "description": "This policy deploys a diagnostic setting using category groups to route logs to an Event Hub for Azure Synapse Workspaces (Analytics).",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "The Azure Synapse Workspace diagnostic settings configuration doesn't meet AA SCCF Benchmark control: Azure Synapse Workspaces must have diagnostic settings enabled and logs must be forwarded to the approved CSTRM Event Hub. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "identity": {
+    "type": "SystemAssigned",
+    "roleAssignments": [
+      "SQL Security Manager",
+      "Log Analytics Contributor",
+      "Azure Event Hubs Data Owner:/subscriptions/55f702f9-17ee-4d42-8da3-3f0bc97c4158",
+      "Azure Event Hubs Data Owner"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicypg1uVvBPLNaw5N",
+  "location": "eastus"
+}

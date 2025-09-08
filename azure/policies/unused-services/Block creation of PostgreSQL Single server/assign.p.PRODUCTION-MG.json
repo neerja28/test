@@ -1,0 +1,71 @@
+{
+    "properties": {
+        "displayName": "Block creation of PostgreSQL Single server",
+        "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+        "notScopes": [
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-sales-eaus-vgc-rg/providers/Microsoft.DBforPostgreSQL/servers/aa-sales-vgc-prod-pgdb-eastus",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-sales-eaus-vgc-rg/providers/Microsoft.DBforPostgreSQL/servers/aa-sales-vgc-prod-pgdb-westus",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-zeaus-ecm-rg/providers/Microsoft.DBForPostgreSQL/servers/cor-p-zeaus-ecm-dctm-ps",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-zeaus-ecm-rg/providers/Microsoft.DBforPostgreSQL/servers/cor-p-zweus-ecm-dctm-ps",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-zeaus-fininthub-rg/providers/Microsoft.DBforPostgreSQL/servers/corp-p-fininthub-itfs-pgsqldb",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-zeaus-gnd-project42-prod-rg/providers/Microsoft.DBforPostgreSQL/servers/cor-p-zeaus-gnd-project42-psql",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-zeaus-gnd-project42-prod-rg/providers/Microsoft.DBforPostgreSQL/servers/cor-p-zweus-gnd-project42-psql",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-zeaus-np-npportal-rg/providers/Microsoft.DBforPostgreSQL/servers/cor-p-zeaus-np-npportal-ps",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-zeaus-np-raven-rg/providers/Microsoft.DBforPostgreSQL/servers/cor-p-zeaus-np-raven2-ps",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-zeaus-sales-businessextra-prod-rg/providers/Microsoft.DBforPostgreSQL/servers/aa-sales-bx-pgdb-prod",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-zweus-np-npportal-dr-rg/providers/Microsoft.DBforPostgreSQL/servers/cor-p-zweus-np-npportal-dr-ps",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-zweus-np-raven-dr-rg/providers/Microsoft.DBforPostgreSQL/servers/cor-p-zweus-np-raven2-dr-ps",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-zweus-sales-businessextra-pdr-rg/providers/Microsoft.DBforPostgreSQL/servers/aa-sales-zweus-bx-pgdb-prod",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/corp-p-FinanceAccountingDataHubProd-rg/providers/Microsoft.DBforPostgreSQL/servers/cor-p-findatahub-itfs-staging-prd-c-pgsqldb",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/corp-p-FinanceAccountingDataHubProd-rg/providers/Microsoft.DBforPostgreSQL/servers/cor-p-findatahub-itfs-staging-prd-p-pgsqldb",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/corp-p-FinanceAccountingDataHubProd-rg/providers/Microsoft.DBforPostgreSQL/servers/corp-p-findatahub-itfs-pgsqldb",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/corp-p-zweus-findatahub-rg/providers/Microsoft.DBforPostgreSQL/servers/cor-p-zweus-findatahub-itfs-staging-prd-c-pgsqldb-replica-dr",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/corp-p-zweus-findatahub-rg/providers/Microsoft.DBforPostgreSQL/servers/cor-p-zweus-findatahub-itfs-staging-prd-p-pgsqldb-replica-dr",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/corp-p-zweus-findatahub-rg/providers/Microsoft.DBforPostgreSQL/servers/corp-p-zweus-findatahub-itfs-pgsqldb-replica-dr",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/corp-p-zeaus-aaira-rg/providers/Microsoft.DBforPostgreSQL/servers/corp-p-zeaus-aaira-pgsqldb",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/corp-p-zeaus-aaira-rg/providers/Microsoft.DBforPostgreSQL/servers/corp-p-zeaus-aaira-pgsqldb-replica-rpt",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/corp-p-zweus-aaira-rg/providers/Microsoft.DBforPostgreSQL/servers/corp-p-zweus-aaira-pgsqldb-replica",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/corp-p-zweus-aaira-rg/providers/Microsoft.DBforPostgreSQL/servers/corp-p-zweus-aaira-pgsqldb-replica-rpt",
+            "/subscriptions/292368fe-4287-4eb0-bea9-709569d9aa24/resourceGroups/ct-p-zeaus-hmt-rg/providers/Microsoft.DBforPostgreSQL/servers/phmt",
+            "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-amps-prod-eastus-rg",            
+            "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-cers-prod-eastus-rg/providers/Microsoft.DBforPostgreSQL/servers/aot-cers-prod-eastus-pg-db",
+            "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-cers-prod-westus-rg/providers/Microsoft.DBforPostgreSQL/servers/aot-cers-prod-westus-pg-db",
+            "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-dlv-enablement-prod-eastus-rg/providers/Microsoft.DBForPostgreSQL/servers/aa-aot-p-techops-dlv-enablement",
+            "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-prml-prod-eastus-rg/providers/Microsoft.DBforPostgreSQL/servers/prml-prod",
+            "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-prml-prod-westus-rg/providers/Microsoft.DBforPostgreSQL/servers/prml-prod-replica",
+            "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aot-p-eaus-sec-setool-rg/providers/Microsoft.DBforPostgreSQL/servers/aot-setool-prod-eastus-pg-db",
+            "/subscriptions/8e5e91ba-9fca-4b3d-9858-4f6fcba19ee1/resourceGroups/ets-p-zeaus-TFE-rg/providers/Microsoft.DBforPostgreSQL/servers/eszeausdbp00001",
+            "/subscriptions/a5c4b39a-95c8-47ba-8798-b4f54bdf37cc/resourceGroups/cor-p-zeaus-ccfraudsys-pci-rg/providers/Microsoft.DBforPostgreSQL/servers/cor-p-zeaus-ccfraudsys-db",
+            "/subscriptions/a5c4b39a-95c8-47ba-8798-b4f54bdf37cc/resourceGroups/cor-p-zeaus-ccfraudsys-pci-rg/providers/Microsoft.DBforPostgreSQL/servers/cor-p-zweus-ccfraudsys-db-replica-dr",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-sales-eaus-vgc-rg/providers/Microsoft.DBforPostgreSQL/servers/aa-sales-vgc-prod-pgdb-eastus",
+            "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-sales-weus-vgc-rg/providers/Microsoft.DBforPostgreSQL/servers/aa-sales-vgc-prod-pgdb-westus",
+            "/subscriptions/a5c4b39a-95c8-47ba-8798-b4f54bdf37cc/resourceGroups/cor-p-zeaus-payments-paymntsvcs-pci-rg/providers/Microsoft.DBforPostgreSQL/servers/cor-p-zeaus-payments-paymntsvcs-db",
+            "/subscriptions/a5c4b39a-95c8-47ba-8798-b4f54bdf37cc/resourceGroups/cor-p-zeaus-payments-paymntsvcs-pci-rg/providers/Microsoft.DBforPostgreSQL/servers/cor-p-zeaus-payments-paymntsvcs-db-replica",
+            "/subscriptions/a5c4b39a-95c8-47ba-8798-b4f54bdf37cc/resourceGroups/cor-p-zeaus-payments-paymntsvcs-pci-rg/providers/Microsoft.DBforPostgreSQL/servers/cor-p-zeaus-payments-paymntsvcs-db-replica-dr",
+            "/subscriptions/a5c4b39a-95c8-47ba-8798-b4f54bdf37cc/resourceGroups/cor-p-zweus-ccfraudsys-pci-rg/providers/Microsoft.DBforPostgreSQL/servers/cor-p-zweus-ccfraudsys-db-replica-dr",
+            "/subscriptions/a5c4b39a-95c8-47ba-8798-b4f54bdf37cc/resourceGroups/cor-p-zweus-payments-paymntsvcs-pci-rg/providers/Microsoft.DBforPostgreSQL/servers/cor-p-zweus-payments-paymntsvcs-db",
+            "/subscriptions/a5c4b39a-95c8-47ba-8798-b4f54bdf37cc/resourceGroups/cor-p-zweus-payments-paymntsvcs-pci-rg/providers/Microsoft.DBforPostgreSQL/servers/cor-p-zweus-payments-paymntsvcs-db-replica",
+            "/subscriptions/a5c4b39a-95c8-47ba-8798-b4f54bdf37cc/resourceGroups/cor-p-zweus-payments-paymntsvcs-pci-rg/providers/Microsoft.DBforPostgreSQL/servers/cor-p-zweus-payments-paymntsvcs-db-replica-dr",
+            "/subscriptions/bf5d63b1-2c02-4d9e-a096-f91d4ed04b4a/resourceGroups/dt-p-zeaus-inrsrc-marketplace-rg/providers/Microsoft.DBforPostgreSQL/servers/innersource-marketplace-130",
+            "/subscriptions/bf5d63b1-2c02-4d9e-a096-f91d4ed04b4a/resourceGroups/dt-p-zeaus-okrtool-rg/providers/Microsoft.DBforPostgreSQL/servers/okrtool-psqlserver-production",
+            "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-airflow-rg/providers/Microsoft.DBforPostgreSQL/servers/baporionairflowdb",
+            "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-dtaprvprtl-rg/providers/Microsoft.DBforPostgreSQL/servers/ba-p-zeaus-dpp-postgres-db",
+            "/subscriptions/d468b5ca-4400-4521-8115-2bba3467f651/resourceGroups/ct-p-zweus-cbncln-rg",
+            "/subscriptions/d468b5ca-4400-4521-8115-2bba3467f651/resourceGroups/ct-p-zeaus-cbncln-rg"
+        ],
+        "parameters": {
+            "effect": {
+                "value": "Deny"
+            }
+        },
+        "description": "Net new creation of Azure PostgreSQL Single Servers will be blocked.",
+        "metadata": {},
+        "enforcementMode": "Default",
+        "nonComplianceMessages": [
+            "PostgreSQL Single server doesn't meet AA SCCF benchmark: Block creation of PostgreSQL Single server. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+        ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "4KxcJk8mxEGKTYfy12DpuuKm"
+}

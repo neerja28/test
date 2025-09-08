@@ -1,0 +1,118 @@
+{
+  "properties": {
+    "displayName": "Enforce Storage Account Public Access and Deploy Allowed IPs",
+    "policyType": "Custom",
+    "mode": "Indexed",
+    "description": "Anonymous public read access to containers and blobs in Azure Storage is a convenient way to share data but might present security risks. To prevent data breaches caused by undesired anonymous access, Microsoft recommends preventing public access to a storage account unless your scenario requires it.",
+    "metadata": {
+      "version": "1.0.0",
+      "category": "AA SCCF benchmark"
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": ["Audit", "Modify"],
+        "defaultValue": "Audit"
+      },
+      "allowedIps": {
+        "type": "Array",
+        "metadata": {
+          "description": "Possible IP alues",
+          "displayName": "tagValue"
+        },
+        "defaultValue": ["144.9.0.0/16", "162.92.0.0/16"]
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Storage/storageAccounts"
+          },
+          {
+            "anyOf": [
+              {
+                "field": "Microsoft.Storage/storageAccounts/networkAcls.defaultAction",
+                "notEquals": "Deny"
+              },
+              {
+                "field": "Microsoft.Storage/storageAccounts/networkAcls.ipRules[*]",
+                "notIn": "[parameters('allowedIps')]"
+              },
+              {
+                "allOf": [
+                  {
+                    "not": {
+                      "allOf": [
+                        {
+                          "field": "id",
+                          "contains": "/resourceGroups/aro-"
+                        },
+                        {
+                          "anyOf": [
+                            {
+                              "field": "name",
+                              "like": "cluster*"
+                            },
+                            {
+                              "field": "name",
+                              "like": "imageregistry*"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "not": {
+                      "field": "Microsoft.Storage/storageAccounts/allowBlobPublicAccess",
+                      "equals": "false"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]",
+        "details": {
+          "roleDefinitionIds": [
+            "/providers/microsoft.authorization/roleDefinitions/17d1049b-9a84-46fb-8f53-869881c3d3ab"
+          ],
+          "conflictEffect": "Deny",
+          "operations": [
+            {
+              "operation": "addOrReplace",
+              "field": "Microsoft.Storage/storageAccounts/networkAcls.defaultAction",
+              "value": "Deny"
+            },
+            {
+              "operation": "addOrReplace",
+              "field": "Microsoft.Storage/storageAccounts/networkAcls.ipRules",
+              "value": [
+                {
+                  "value": "144.9.0.0/16",
+                  "action": "Allow"
+                },
+                {
+                  "value": "162.92.0.0/16",
+                  "action": "Allow"
+                }
+            ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "dd01823c-7b83-45d7-8c96-45ea050e7d20"
+}

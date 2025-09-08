@@ -1,0 +1,75 @@
+{
+  "properties": {
+    "displayName": "Restrict AI Foundry Open AI Models",
+    "policyType": "Custom",
+    "description": "This policy restricts the deployment of certain AI models within the AA environment.",
+    "mode": "All",
+    "metadata": {},
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": ["Audit", "Deny", "Disabled"],
+        "defaultValue": "Deny"
+      },
+      "allowedModels": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "Allowed AI Models",
+          "description": "List of AI models that are allowed for deployment at AA"
+        },
+        "defaultValue": [
+          "dall-e-3",
+          "gpt-4",
+          "gpt-4.1",
+          "gpt-4.1-mini",
+          "gpt-4.1-nano",
+          "gpt-4o",
+          "gpt-4o-audio-preview",
+          "gpt-4o-mini",
+          "gpt-4o-mini-audio-preview",
+          "gpt-4o-mini-realtime-preview",
+          "gpt-4o-mini-transcribe",
+          "gpt-4o-mini-tts",
+          "gpt-4o-realtime-preview",
+          "gpt-4o-transcribe",
+          "gpt-4o-tts",
+          "gpt-5",
+          "gpt-5-chat",
+          "gpt-5-mini",
+          "gpt-5-nano",
+          "text-embedding-3-large",
+          "text-embedding-3-small",
+          "tts",
+          "tts-hd",
+          "whisper"
+        ]
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.CognitiveServices/accounts/deployments"
+          },
+          {
+            "not": {
+              "field": "Microsoft.CognitiveServices/accounts/deployments/model.name",
+              "in": "[parameters('allowedModels')]"
+            }
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]"
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "66485401-92cf-4c1c-89bc-7da850f741ee"
+}

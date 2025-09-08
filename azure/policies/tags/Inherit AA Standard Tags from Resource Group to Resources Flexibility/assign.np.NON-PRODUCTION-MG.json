@@ -1,0 +1,29 @@
+{
+    "identity": {
+        "type": "SystemAssigned",
+        "roleAssignments": [
+            "Tag Contributor"
+        ]
+    },
+    "properties": {
+        "displayName": "Inherit AA Standard Tags from parent RG to new Resources unless already set - flexibility - NP for NetworkRG",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/7766db18-f9a1-4ad4-b603-57e4649a6d9c",
+        "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+        "notScopes": [],
+        "parameters": {
+            "tagName": {
+                "value": "aa-sdlc-environment"
+            }
+        },
+        "description": "Inherit AA Standard Tags from parent Resource Group to new Resources unless already set to allow flexibility",
+        "metadata": {},
+        "enforcementMode": "Default",
+        "nonComplianceMessages": [
+            "Resource group is missing required aa-app-shortname tag or has invalid value"
+        ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "GaaSPolicys3KgnawwNDp5j6",
+    "location": "eastus"
+}

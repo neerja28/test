@@ -1,0 +1,26 @@
+{
+    "identity": {
+      "type": "SystemAssigned",
+      "roleAssignments": [
+        "Tag Contributor"
+      ]
+    },
+    "properties": {
+      "displayName": "Inherit AA Standard Tags from parent Resource Group to new Resources unless already set.",
+      "policyDefinitionId": "",
+      "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+      "notScopes": [
+        "/subscriptions/16e932f5-8a58-4441-9219-2b4a673b7415/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkWatchers/NetworkWatcher_southcentralus/flowLogs/Microsoft.Networkaa-ets-networksecurity-rgaa-ets-external-inbound-nsg",
+        "/subscriptions/d468b5ca-4400-4521-8115-2bba3467f651/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkWatchers/NetworkWatcher_eastus/flowLogs/Microsoft.Networkct-p-eaus-dss-rgct-p-dsspublic-nsg"
+      ],
+      "parameters": {},
+      "metadata": {},
+      "enforcementMode": "DoNotEnforce",
+      "nonComplianceMessages": []
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "GaaSPolicy0QWoseHskll3Rf",
+    "location": "eastus"
+  }
+  

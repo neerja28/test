@@ -1,0 +1,21 @@
+{
+  "properties": {
+    "displayName": "Enforce Web App only use TLS version >=1.2",
+    "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "The WebApp's TLS version does not meet AA SCCF Benchmark control: Enforce Web App only use TLS version >=1.2. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "JYKwpEu9ivOcDFWC4JZCvANC"
+}

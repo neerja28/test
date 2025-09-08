@@ -1,0 +1,37 @@
+{
+    "properties": {
+      "displayName": "Audit - Block adding firewall rules and Allow access from my IP on Azure cosmos DB",
+      "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+      "notScopes": [
+        "/subscriptions/b84e18af-0b2a-4c08-9a3b-272d7552b405/resourceGroups/aa-aot-faapltrcrd-dev-eastus-rg",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-faapltrcrd-prod-eastus-rg",
+        "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-flightkeys-test-eastus-rg",
+        "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-flightkeys-test-westus-rg",
+        "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-fsa-dev-eastus-rg",
+        "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-fsa-test-westus-rg",
+        "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-opshub-dev-rg",
+        "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-pltdashbrd-dev-eastus-rg",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-pltdashbrd-prod-eastus-rg",
+        "/subscriptions/b84e18af-0b2a-4c08-9a3b-272d7552b405/resourceGroups/aa-aot-PltDOTCUI-dev-eastus-rg",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-pltdotcui-prod-eastus-rg",
+        "/subscriptions/b84e18af-0b2a-4c08-9a3b-272d7552b405/resourceGroups/aa-aot-pltdotcui-stage-eastus-rg",
+        "/subscriptions/b84e18af-0b2a-4c08-9a3b-272d7552b405/resourceGroups/aa-aot-pltdotcui-test-eastus-rg",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aot-p-zeaus-FSA-rg"
+      ],
+      "parameters": {
+        "effect": {
+          "value": "Deny"
+        }
+      },
+      "description": "Deny if Cosmos DB is configured using Allow access from my IP and block adding firewall rules on on Azure cosmos DB .",
+      "metadata": {},
+      "enforcementMode": "DoNotEnforce",
+      "nonComplianceMessages": [
+        "Azure Cosmos DB network configuration does not meet AA SCCF Benchmark control: Configuring Cosmos DB with Allow access from my IP and adding firewall rules is not permissible; only allowing access from the Azure portal is compliant with the requirements. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "VfbzgPekpQLlXuhRRNZUmwvS",
+    "location": "eastus"
+  }

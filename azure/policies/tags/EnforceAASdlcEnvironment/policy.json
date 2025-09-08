@@ -1,0 +1,69 @@
+{
+  "properties": {
+    "displayName": "Enforce aa-sdlc-environment is prod, nonprod, dev, test, or stage",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "AA SDLC Environment must be prod, nonprod, dev, test, or stage only. May have 1-4 digits after the name: dev001 or test1234 for example.",
+    "metadata": {
+      "category": "AA Standards",
+      "createdBy": "3f1d2da4-2185-4ea5-93b3-fed9e7f81310",
+      "createdOn": "2020-01-16T16:18:12.0659733Z",
+      "updatedBy": "26d99300-ed20-430f-9899-8c1d657001b8",
+      "updatedOn": "2021-06-04T17:25:43.7949064Z"
+    },
+    "parameters": {},
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "equals": "Microsoft.Resources/subscriptions/resourceGroups",
+            "field": "type"
+          },
+          {
+            "not": {
+              "field": "tags.aa-sdlc-environment",
+              "in": [
+                "prod",
+                "nonprod",
+                "dev",
+                "test",
+                "stage",
+                "poc",
+                "prod#",
+                "nonprod#",
+                "dev#",
+                "test#",
+                "stage#",
+                "poc#",
+                "prod##",
+                "nonprod##",
+                "dev##",
+                "test##",
+                "stage##",
+                "poc##",
+                "prod###",
+                "nonprod###",
+                "dev###",
+                "test###",
+                "stage###",
+                "poc###",
+                "prod####",
+                "nonprod####",
+                "dev####",
+                "test####",
+                "stage####",
+                "poc####"
+              ]
+            }
+          }
+        ]
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "0c8c6b4f-33b5-4d06-845e-aab3436cbe36"
+}

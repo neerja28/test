@@ -1,0 +1,141 @@
+{
+  "properties": {
+    "displayName": "Enable Agentless Vulnerability Scanning for Containers and Kubernetes",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Enables the Agentless Vulnerability Scanning for Containers and Kubernetes in Defender for Cloud.",
+    "metadata": {
+        "version": "1.0.0",
+        "category": "Security Center"
+    },
+    "version": "1.0.0",
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+            "displayName": "Effect",
+            "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "defaultValue": "DeployIfNotExists"
+    },
+    "isAgentlessDiscoveryForKubernetesEnabled": {
+        "type": "String",
+        "metadata": {
+            "displayName": "Agentless Discovery for Kubernetes Enabled",
+            "description": "Enable or disable the Agentless Discovery for Kubernetes add-on feature"
+        },
+        "allowedValues": [
+            "true",
+            "false"
+        ],
+        "defaultValue": "true"
+    }
+    },
+    "policyRule": {
+      "if": {
+        "field": "type",
+        "equals": "Microsoft.Resources/subscriptions"
+    },
+    "then": {
+        "effect": "[parameters('effect')]",
+        "details": {
+            "type": "Microsoft.Security/pricings",
+            "name": "CloudPosture",
+            "deploymentScope": "subscription",
+            "existenceScope": "subscription",
+            "roleDefinitionIds": [
+                "/providers/Microsoft.Authorization/roleDefinitions/18d7d88d-d35e-4fb5-a5c3-7773c20a72d9",
+                "/providers/Microsoft.Authorization/roleDefinitions/fb1c8493-542b-48eb-b624-b4c8fea62acd"
+            ],
+            "existenceCondition": {
+                "allOf": [
+                    {
+                        "field": "Microsoft.Security/pricings/pricingTier",
+                        "equals": "Standard"
+                    },
+                    {
+                        "count": {
+                            "field": "Microsoft.Security/pricings/extensions[*]",
+                            "where": {
+                                "allOf": [
+                                    {
+                                        "field": "Microsoft.Security/pricings/extensions[*].name",
+                                        "equals": "AgentlessDiscoveryForKubernetes"
+                                    },
+                                    {
+                                        "field": "Microsoft.Security/pricings/extensions[*].isEnabled",
+                                        "equals": "[parameters('isAgentlessDiscoveryForKubernetesEnabled')]"
+                                    }
+                                ]
+                            }
+                        },
+                        "equals": 1
+                    },
+                    {
+                        "count": {
+                            "field": "Microsoft.Security/pricings/extensions[*]",
+                            "where": {
+                                "allOf": [
+                                    {
+                                        "field": "Microsoft.Security/pricings/extensions[*].name",
+                                        "equals": "AgentlessDiscoveryForKubernetes"
+                                    },
+                                    {
+                                        "field": "Microsoft.Security/pricings/extensions[*].isEnabled",
+                                        "equals": "[parameters('isAgentlessDiscoveryForKubernetesEnabled')]"
+                                    }
+                                ]
+                            }
+                        },
+                        "equals": 1
+                    }
+                ]
+            },
+            "deployment": {
+                "location": "eastus",
+                "properties": {
+                    "mode": "incremental",
+                    "parameters": {
+                        "isAgentlessDiscoveryForKubernetesEnabled": {
+                            "value": "[parameters('isAgentlessDiscoveryForKubernetesEnabled')]"
+                        }
+                    },
+                    "template": {
+                        "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                        "contentVersion": "1.0.0.0",
+                        "parameters": {
+                            "isAgentlessDiscoveryForKubernetesEnabled": {
+                                "type": "String"
+                            }
+                        },
+                        "resources": [
+                            {
+                                "type": "Microsoft.Security/pricings",
+                                "apiVersion": "2023-01-01",
+                                "name": "CloudPosture",
+                                "properties": {
+                                    "pricingTier": "Standard",
+                                    "extensions": [
+                                        {
+                                            "name": "AgentlessDiscoveryForKubernetes",
+                                            "isEnabled": "[parameters('isAgentlessDiscoveryForKubernetesEnabled')]"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "483a7c3a-68b5-4035-99f4-f5c480a6d8e2"
+}

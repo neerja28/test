@@ -1,0 +1,56 @@
+{
+    "properties": {
+      "displayName": "Enforce tag associated with the Resource's parent Resource Group as defined during assignment.",
+      "policyType": "Custom",
+      "mode": "Indexed",
+      "description": "When assigned, give a tag name as parameter. Every Resource will be appended with the value of that tag from its parent Resource Group. If the tag is already present, it will be left alone.",
+      "metadata": {
+        "category": "AA Standards",
+        "createdBy": "3f1d2da4-2185-4ea5-93b3-fed9e7f81310",
+        "createdOn": "2020-01-16T16:14:42.7573409Z",
+        "updatedBy": "3f1d2da4-2185-4ea5-93b3-fed9e7f81310",
+        "updatedOn": "2020-01-23T20:15:53.9547452Z"
+      },
+      "parameters": {
+        "tagName": {
+          "type": "String",
+          "metadata": {
+            "displayName": "Tag Name",
+            "description": "Name of the tag, such as 'aa-costcenter'"
+          }
+        }
+      },
+      "policyRule": {
+        "if": {
+          "allOf": [
+            {
+              "field": "[concat('tags[', parameters('tagName'), ']')]",
+              "exists": "false"
+            },
+            {
+              "value": "[resourceGroup().tags[parameters('tagName')]]",
+              "notEquals": ""
+            }
+          ]
+        },
+        "then": {
+          "effect": "modify",
+          "details": {
+            "roleDefinitionIds": [
+              "/providers/microsoft.authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+            ],
+            "operations": [
+              {
+                "operation": "add",
+                "field": "[concat('tags[', parameters('tagName'), ']')]",
+                "value": "[resourceGroup().tags[parameters('tagName')]]"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "0c8c6b4f-33b5-4d06-845e-aab3436cb08f"
+  }

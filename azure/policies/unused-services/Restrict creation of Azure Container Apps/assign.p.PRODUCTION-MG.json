@@ -1,0 +1,30 @@
+{
+  "properties": {
+    "displayName": "Restrict creation of Azure Container Apps",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6c112d4e-5bc7-47ae-a041-ea2d9dccd749",
+    "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+    "notScopes": [
+      "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/corp-p-zeaus-paxyldopt-rg",
+      "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/corp-p-zweus-paxyldopt-rg"
+    ],
+    "parameters": {
+      "listOfResourceTypesNotAllowed": {
+        "value": [
+          "microsoft.app/containerapps"
+        ]
+      },
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Restricting Azure Container Apps that fall under 'Innovate' category. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code."
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicyQ0w47M1TOoQJgq"
+}

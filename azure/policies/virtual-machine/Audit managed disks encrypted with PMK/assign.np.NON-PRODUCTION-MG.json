@@ -1,0 +1,21 @@
+{
+    "properties": {
+        "displayName": "Audit managed disks encrypted with a platform-managed key",
+        "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+        "notScopes": [],
+        "parameters": {
+            "effect": {
+                "value": "Audit"
+            }
+        },
+        "description": "Ensure Managed disks are encrypted with PMK (Platform Managed Keys). PMK encryption is enabled by default.",
+        "metadata": {},
+        "enforcementMode": "Default",
+        "nonComplianceMessages": [
+            "Managed disks configuration do not meet AA SCCF Benchmark control: Audit managed disks are encrypted with a platform-managed key. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code."
+        ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "LOnqOYKdSmUaFFX8zDJMNee"
+}

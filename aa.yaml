@@ -1,0 +1,5 @@
+apiVersion: "0.2.3"
+cmdbAppShortName:
+  - "CldGovAuto"
+squads:
+  - 1302951

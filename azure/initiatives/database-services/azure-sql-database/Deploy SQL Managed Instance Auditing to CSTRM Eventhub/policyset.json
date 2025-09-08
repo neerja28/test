@@ -1,0 +1,29 @@
+{
+  "properties": {
+    "displayName": "Deploy SQL Managed Instance Auditing to CSTRM Eventhub",
+    "policyType": "Custom",
+    "description": "The SQL Managed Instance log settings configuration doesn't meet AA SCCF Benchmark control: SQL Managed must have diagnostic settings enabled and logs must be forwarded to the approved CSTRM Event Hub"    ,
+    "metadata": {},
+    "parameters": {},
+    "policyDefinitions": [
+      {
+        "policyDefinitionReferenceId": "",
+        "policyDefinitionId": "",
+        "parameters": {
+          "resourceLocation": {
+            "value": "eastus"
+          },
+          "eventHubAuthorizationRuleId": {
+            "value": "/subscriptions/55f702f9-17ee-4d42-8da3-3f0bc97c4158/resourceGroups/Zab-policies-test/providers/Microsoft.EventHub/namespaces/testingMILogs/authorizationrules/forSendingLogs"          
+          },
+          "eventHubName": {
+            "value": "mi-logs"          
+          }
+        }
+      }
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policySetDefinitions",
+  "name": "be70bf0b-1a61-451d-97c6-2226b3b00745"
+}

@@ -1,0 +1,21 @@
+{
+    "properties": {
+        "displayName": "Block the creation of 'FREE F1' SKU for App Service Plan",
+        "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+        "notScopes": [],
+        "parameters": {
+            "effect": {
+                "value": "Deny"
+            }
+        },
+        "description": "Azure App Service Plan should use the Basic or Premium SKU.",
+        "metadata": {},
+        "enforcementMode": "Default",
+        "nonComplianceMessages": [
+            "Azure App Service Plan SKU configuration does not meet AA SCCF Benchmark control: Azure App Service Plan should use the Basic or Premium SKU. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+        ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "RKxXi0u16q3Cz7wgJJ4D9Kz8"
+}

@@ -1,0 +1,6 @@
+display_name_prefix = ""
+environment         = "Prod"
+fileset_filter      = "assign.p.*.json"
+ex_fileset_filter   = "exemption.p.*.json"
+management_group_id = "PRODUCTION-MG"
+name_suffix         = ""

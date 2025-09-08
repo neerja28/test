@@ -1,0 +1,28 @@
+{
+  "properties": {
+    "displayName": "Deploy MySQL flexible server parameter audit_log_events to CONNECTION",
+    "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "DeployIfNotExists"
+      }
+    },
+    "description": "Set audit_log_events to include CONNECTION on MySQL flexible Servers",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "MySQL database flexible server configuration does not meet AA SCCF Benchmark control: MySQL parameter audit_log_events must include CONNECTION. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "identity": {
+    "type": "SystemAssigned",
+    "roleAssignments": [
+      "Contributor"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicybQC3TGPaDhZ4Qk",
+  "location": "eastus"
+}

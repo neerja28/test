@@ -1,0 +1,6 @@
+display_name_prefix = "AA_POLICY_TEST: "
+environment         = "Dev"
+fileset_filter      = "assign.dev.*.json"
+ex_fileset_filter   = "exemption.dev.*.json"
+management_group_id = "AA_POLICY_TEST"
+name_suffix         = "_D"

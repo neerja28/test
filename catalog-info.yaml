@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: GaaS-Policy_as_Code
+  description: "This repository contains the Policy as Code implementation of policies for our cloud environments."
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: 'AAInternal/GaaS-Policy_as_Code'
+  tags:
+    - terraform
+    - azure
+spec:
+  type: documentation
+  owner: "tnt-squad-007"
+  lifecycle: experimental

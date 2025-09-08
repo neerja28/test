@@ -1,0 +1,29 @@
+{
+    "properties": {
+      "displayName": "ACR Creation not allowed",
+      "policyDefinitionId": "",
+      "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+      "notScopes": [
+        "/subscriptions/34dbcf6f-a9a0-4dd5-af52-1c9b23c30e3a/resourcegroups/gaas-policy-test/providers/Microsoft.ContainerRegistry/registries/badovinacacrdemo"
+      ],
+      "parameters": {
+        "listOfResourceTypesNotAllowed": {
+          "value": [
+            "microsoft.containerregistry/registries"          
+          ]
+        },
+        "effect":{
+          "value": "Deny"
+        }
+      },
+      "description": "",
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        "Creation of new container registries is not allowed. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "5tKS8doSDvjufAxDwUQRtAxS"
+}

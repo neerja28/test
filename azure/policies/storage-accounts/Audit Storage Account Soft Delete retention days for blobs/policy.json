@@ -1,0 +1,60 @@
+{
+    "properties": {
+      "displayName": "Audit Storage Account Soft Delete retention days for blobs",
+      "policyType": "Custom",
+      "description": "Data that is erroneously modified or deleted by an application or other storage account user will cause data loss or unavailability. Soft delete allows this data to be recovered for a specified period of time.",
+      "mode": "Indexed",
+      "metadata": {
+        "category": "Storage"
+      },
+      "parameters": {
+        "effect": {
+          "type": "String",
+          "metadata": {
+            "displayName": "Effect",
+            "description": "Enable or disable the execution of the policy"
+          },
+          "allowedValues": [
+            "AuditIfNotExists",
+            "Disabled"
+          ],
+          "defaultValue": "AuditIfNotExists"
+        },
+        "retentionInDays": {
+          "type": "Integer",
+          "metadata": {
+            "displayName": "Retention in Days",
+            "description": "How long should deleted resources be retained for."
+          },
+          "defaultValue": 3
+        }
+      },
+      "policyRule": {
+        "if": {
+          "field": "type",
+          "equals": "Microsoft.Storage/storageAccounts"
+        },
+        "then": {
+          "effect": "[parameters('effect')]",
+          "details": {
+            "type": "Microsoft.Storage/storageAccounts/blobServices",
+            "existenceCondition": {
+              "allOf": [
+                {
+                  "field": "Microsoft.Storage/storageAccounts/blobServices/deleteRetentionPolicy.enabled",
+                  "equals": true
+                },
+                {
+                  "field": "Microsoft.Storage/storageAccounts/blobServices/deleteRetentionPolicy.days",
+                  "greaterOrEquals": "[parameters('retentionInDays')]"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "ab5afe4d-d6b1-4400-aea6-88b69a60205d"
+  }

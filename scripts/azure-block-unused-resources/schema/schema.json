@@ -1,0 +1,54 @@
+{
+    "Providers": [
+        {
+            "Namespace": "microsoft.abcdef",
+            "Core": "Yes/No",
+            "RegisteredSubscriptions": [
+                "SubscriptionID-xxxxxx",
+                "SubscriptionID-yyyyyy"
+            ],
+            "ResourceTypes": [
+                {
+                    "ResourceType": "aaaaaa",
+                    "IsResourceTypeOrAction": "ResourceType/Action",
+                    "Classification": "Allowed/Restricted/Exception"
+                },
+                {
+                    "ResourceType": "bbbbbb",
+                    "IsResourceTypeOrAction": "ResourceType/Action",
+                    "Classification": "Allowed/Restricted/Exception"
+                },
+                {
+                    "ResourceType": "cccccc",
+                    "IsResourceTypeOrAction": "ResourceType/Action",
+                    "Classification": "Allowed/Restricted/Exception"
+                }
+            ]
+        },
+        {
+            "Namespace": "microsoft.ghijkl",
+            "Core": "Yes/No",
+            "RegisteredSubscriptions": [
+                "SubscriptionID-xxxxxx",
+                "SubscriptionID-yyyyyy"
+            ],
+            "ResourceTypes": [
+                {
+                    "ResourceType": "aaaaaa",
+                    "IsResourceTypeOrAction": "ResourceType/Action",
+                    "Classification": "Allowed/Restricted/Exception"
+                },
+                {
+                    "ResourceType": "bbbbbb",
+                    "IsResourceTypeOrAction": "ResourceType/Action",
+                    "Classification": "Allowed/Restricted/Exception"
+                },
+                {
+                    "ResourceType": "cccccc",
+                    "IsResourceTypeOrAction": "ResourceType/Action",
+                    "Classification": "Allowed/Restricted/Exception"
+                }
+            ]
+        }
+    ]
+}

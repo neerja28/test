@@ -1,0 +1,52 @@
+{
+  "properties": {
+    "displayName": "Audit Azure Active Directory Admin configured on Azure SQL",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "This policy audits Azure SQL Servers that do not have Azure Active Directory Admin configured",
+    "metadata": {
+      "version": "1.0.0",
+      "category": "AA SCCF benchmark"
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "AuditIfNotExists",
+          "Disabled"
+        ],
+        "defaultValue": "AuditIfNotExists"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "field": "type",
+        "equals": "Microsoft.Sql/servers"
+      },
+      "then": {
+        "effect": "[parameters('effect')]",
+        "details": {
+          "type": "Microsoft.Sql/servers/administrators",
+          "existenceCondition": {
+            "anyOf": [{
+                "field": "Microsoft.Sql/servers/administrators/sid",
+                "exists": "true"
+              },
+              {
+                "field": "Microsoft.Sql/servers/administrators/login",
+                "exists": "true"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "02ef580a-ab74-4f60-9739-7bf644c79df8"
+}

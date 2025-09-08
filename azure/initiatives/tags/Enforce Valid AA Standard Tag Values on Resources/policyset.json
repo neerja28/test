@@ -1,0 +1,32 @@
+{
+    "properties": {
+      "displayName": "Enforce Valid AA Standard Tag Values on Resources",
+      "policyType": "Custom",
+      "description": "When creating a new Resource Group, the AA Standard Tags must be assigned and have valid values. For resources, valid tag values are enforced.",
+      "metadata": {},
+      "parameters": {},
+      "policyDefinitions": [
+        {
+          "policyDefinitionReferenceId": "",
+          "policyDefinitionId": "",
+          "parameters": {
+            "tagName": {
+              "value": "aa-app-shortname"
+            }
+          }
+        },
+        {
+          "policyDefinitionReferenceId": "",
+          "policyDefinitionId": "",
+          "parameters": {
+            "tagName": {
+              "value": "aa-sdlc-environment"
+            }
+          } 
+        }
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policySetDefinitions",
+    "name": "50F4070F-44FA-43CB-9135-A79A5B44C150"
+  }

@@ -1,0 +1,1420 @@
+{
+  "Service": [
+    {
+      "Namespace": "astronomer.astro",
+      "ResourceType": [
+        "organizations"
+      ]
+    },
+    {
+      "Namespace": "dynatrace.observability",
+      "ResourceType": [
+        "monitors"
+      ]
+    },
+    {
+      "Namespace": "microsoft.agfoodplatform",
+      "ResourceType": [
+        "farmbeats"
+      ]
+    },
+    {
+      "Namespace": "microsoft.akshybrid",
+      "ResourceType": [
+        "agentpools",
+        "availableagentpoolversions",
+        "provisionedclusters",
+        "upgradeprofiles"
+      ]
+    },
+    {
+      "Namespace": "microsoft.anybuild",
+      "ResourceType": [
+        "clusters"
+      ]
+    },
+    {
+      "Namespace": "microsoft.apicenter",
+      "ResourceType": [
+        "services"
+      ]
+    },
+    {
+      "Namespace": "microsoft.apisecurity",
+      "ResourceType": [
+        "defendersettings"
+      ]
+    },
+    {
+      "Namespace": "microsoft.app",
+      "ResourceType": [
+        "containerapps"
+      ]
+    },
+    {
+      "Namespace": "microsoft.appassessment",
+      "ResourceType": [
+        "migrateprojects"
+      ]
+    },
+    {
+      "Namespace": "microsoft.appcomplianceautomation",
+      "ResourceType": [
+        "checknameavailability",
+        "getcollectioncount",
+        "getoverviewstatus",
+        "listinusestorageaccounts",
+        "locations",
+        "onboard",
+        "operations",
+        "reports",
+        "triggerevaluation"
+      ]
+    },
+    {
+      "Namespace": "microsoft.appplatform",
+      "ResourceType": [
+        "spring"
+      ]
+    },
+    {
+      "Namespace": "microsoft.appsecurity",
+      "ResourceType": [
+        "policies"
+      ]
+    },
+    {
+      "Namespace": "microsoft.arcnetworking",
+      "ResourceType": [
+        "arcnwloadbalancers"
+      ]
+    },
+    {
+      "Namespace": "microsoft.attestation",
+      "ResourceType": [
+        "attestationproviders"
+      ]
+    },
+    {
+      "Namespace": "microsoft.automanage",
+      "ResourceType": [
+        "configurationprofileassignments",
+        "configurationprofiles",
+        "patchjobconfigurations",
+        "patchschedules",
+        "patchtiers"
+      ]
+    },
+    {
+      "Namespace": "microsoft.autonomousdevelopmentplatform",
+      "ResourceType": [
+        "accounts",
+        "workspaces"
+      ]
+    },
+    {
+      "Namespace": "microsoft.awsconnector",
+      "ResourceType": [
+        "ec2instances",
+        "functionconfigurations",
+        "lambdafunctionconfigurations",
+        "s3buckets"
+      ]
+    },
+    {
+      "Namespace": "microsoft.azurearcdata",
+      "ResourceType": [
+        "datacontrollers",
+        "postgresinstances",
+        "sqlmanagedinstances",
+        "sqlserverlicenses"
+      ]
+    },
+    {
+      "Namespace": "microsoft.azuredatatransfer",
+      "ResourceType": [
+        "connections",
+        "pipelines"
+      ]
+    },
+    {
+      "Namespace": "microsoft.azurelargeinstance",
+      "ResourceType": [
+        "azurelargeinstances",
+        "azurelargestorageinstances"
+      ]
+    },
+    {
+      "Namespace": "microsoft.azurepercept",
+      "ResourceType": [
+        "accounts"
+      ]
+    },
+    {
+      "Namespace": "microsoft.azureplaywrightservice",
+      "ResourceType": [
+        "accounts"
+      ]
+    },
+    {
+      "Namespace": "microsoft.azurescan",
+      "ResourceType": [
+        "scanningaccounts"
+      ]
+    },
+    {
+      "Namespace": "microsoft.azuresphere",
+      "ResourceType": [
+        "catalogs"
+      ]
+    },
+    {
+      "Namespace": "microsoft.azurestack",
+      "ResourceType": [
+        "linkedsubscriptions",
+        "registrations"
+      ]
+    },
+    {
+      "Namespace": "microsoft.azurestackhci",
+      "ResourceType": [
+        "clusters",
+        "edgedevices",
+        "galleryimages",
+        "logicalnetworks",
+        "marketplacegalleryimages",
+        "networkinterfaces",
+        "storagecontainers",
+        "virtualharddisks",
+        "virtualmachineinstances",
+        "virtualmachines",
+        "virtualnetworks"
+      ]
+    },
+    {
+      "Namespace": "microsoft.backupsolutions",
+      "ResourceType": [
+        "vmwareapplications"
+      ]
+    },
+    {
+      "Namespace": "microsoft.baremetalinfrastructure",
+      "ResourceType": [
+        "baremetalinstances",
+        "baremetalstorageinstances"
+      ]
+    },
+    {
+      "Namespace": "microsoft.bing",
+      "ResourceType": [
+        "accounts"
+      ]
+    },
+    {
+      "Namespace": "microsoft.blockchaintokens",
+      "ResourceType": [
+        "tokenservices"
+      ]
+    },
+    {
+      "Namespace": "microsoft.bluefin",
+      "ResourceType": [
+        "instances"
+      ]
+    },
+    {
+      "Namespace": "microsoft.blueprint",
+      "ResourceType": [
+        "blueprintassignments",
+        "blueprints"
+      ]
+    },
+    {
+      "Namespace": "microsoft.classiccompute",
+      "ResourceType": [
+        "domainnames"
+      ]
+    },
+    {
+      "Namespace": "microsoft.classicinfrastructuremigrate",
+      "ResourceType": [
+        "classicinfrastructureresources"
+      ]
+    },
+    {
+      "Namespace": "microsoft.classicnetwork",
+      "ResourceType": [
+        "networksecuritygroups",
+        "reservedips",
+        "virtualnetworks"
+      ]
+    },
+    {
+      "Namespace": "microsoft.classicstorage",
+      "ResourceType": [
+        "storageaccounts"
+      ]
+    },
+    {
+      "Namespace": "microsoft.classicsubscription",
+      "ResourceType": [
+        "operations"
+      ]
+    },
+    {
+      "Namespace": "microsoft.cleanroom",
+      "ResourceType": [
+        "cleanrooms",
+        "microservices"
+      ]
+    },
+    {
+      "Namespace": "microsoft.cloudes",
+      "ResourceType": [
+        "accounts"
+      ]
+    },
+    {
+      "Namespace": "microsoft.cloudhealth",
+      "ResourceType": [
+        "healthmodels"
+      ]
+    },
+    {
+      "Namespace": "microsoft.cloudtest",
+      "ResourceType": [
+        "accounts",
+        "hostedpools",
+        "images",
+        "pools"
+      ]
+    },
+    {
+      "Namespace": "microsoft.cognitiveservices",
+      "ResourceType": [
+        "commitmentplans"
+      ]
+    },
+    {
+      "Namespace": "microsoft.commerce",
+      "ResourceType": [
+        "operations",
+        "ratecard",
+        "usageaggregates"
+      ]
+    },
+    {
+      "Namespace": "microsoft.community",
+      "ResourceType": [
+        "communitytrainings"
+      ]
+    },
+    {
+      "Namespace": "microsoft.confidentialledger",
+      "ResourceType": [
+        "ledgers",
+        "managedccfs"
+      ]
+    },
+    {
+      "Namespace": "microsoft.confluent",
+      "ResourceType": [
+        "organizations"
+      ]
+    },
+    {
+      "Namespace": "microsoft.connectedcache",
+      "ResourceType": [
+        "cachenodes",
+        "enterprisecustomers",
+        "enterprisemcccustomers",
+        "ispcustomers"
+      ]
+    },
+    {
+      "Namespace": "microsoft.connectedcredentials",
+      "ResourceType": [
+        "credentials"
+      ]
+    },
+    {
+      "Namespace": "microsoft.connectedopenstack",
+      "ResourceType": [
+        "flavors",
+        "heatstacks",
+        "heatstacktemplates",
+        "images",
+        "keypairs",
+        "networkports",
+        "networks",
+        "openstackidentities",
+        "securitygrouprules",
+        "securitygroups",
+        "subnets",
+        "virtualmachines",
+        "volumes",
+        "volumesnapshots",
+        "volumetypes"
+      ]
+    },
+    {
+      "Namespace": "microsoft.connectedvehicle",
+      "ResourceType": [
+        "platformaccounts"
+      ]
+    },
+    {
+      "Namespace": "microsoft.connectedvmwarevsphere",
+      "ResourceType": [
+        "clusters",
+        "datastores",
+        "hosts",
+        "resourcepools",
+        "vcenters",
+        "virtualmachineinstances",
+        "virtualmachines",
+        "virtualmachinetemplates",
+        "virtualnetworks"
+      ]
+    },
+    {
+      "Namespace": "microsoft.customerlockbox",
+      "ResourceType": [
+        "disablelockbox",
+        "enablelockbox",
+        "operations",
+        "requests",
+        "tenantoptedin"
+      ]
+    },
+    {
+      "Namespace": "microsoft.d365customerinsights",
+      "ResourceType": [
+        "instances"
+      ]
+    },
+    {
+      "Namespace": "microsoft.dataaccelerator",
+      "ResourceType": [
+        "indexclusters"
+      ]
+    },
+    {
+      "Namespace": "microsoft.databasefleetmanager",
+      "ResourceType": [
+        "fleets"
+      ]
+    },
+    {
+      "Namespace": "microsoft.databasewatcher",
+      "ResourceType": [
+        "watchers"
+      ]
+    },
+    {
+      "Namespace": "microsoft.databox",
+      "ResourceType": [
+        "jobs"
+      ]
+    },
+    {
+      "Namespace": "microsoft.datacatalog",
+      "ResourceType": [
+        "catalogs"
+      ]
+    },
+    {
+      "Namespace": "microsoft.datareplication",
+      "ResourceType": [
+        "replicationfabrics",
+        "replicationvaults"
+      ]
+    },
+    {
+      "Namespace": "microsoft.datashare",
+      "ResourceType": [
+        "accounts"
+      ]
+    },
+    {
+      "Namespace": "microsoft.dbformariadb",
+      "ResourceType": [
+        "servers"
+      ]
+    },
+    {
+      "Namespace": "microsoft.deploymentmanager",
+      "ResourceType": [
+        "artifactsources",
+        "rollouts",
+        "servicetopologies",
+        "steps"
+      ]
+    },
+    {
+      "Namespace": "microsoft.devai",
+      "ResourceType": [
+        "instances"
+      ]
+    },
+    {
+      "Namespace": "microsoft.devcenter",
+      "ResourceType": [
+        "devcenters",
+        "networkconnections",
+        "projects"
+      ]
+    },
+    {
+      "Namespace": "microsoft.devhub",
+      "ResourceType": [
+        "workflows"
+      ]
+    },
+    {
+      "Namespace": "microsoft.deviceregistry",
+      "ResourceType": [
+        "assetendpointprofiles",
+        "assets",
+        "devices"
+      ]
+    },
+    {
+      "Namespace": "microsoft.deviceupdate",
+      "ResourceType": [
+        "accounts",
+        "updateaccounts"
+      ]
+    },
+    {
+      "Namespace": "microsoft.devops",
+      "ResourceType": [
+        "pipelines"
+      ]
+    },
+    {
+      "Namespace": "microsoft.devopsinfrastructure",
+      "ResourceType": [
+        "pools"
+      ]
+    },
+    {
+      "Namespace": "microsoft.easm",
+      "ResourceType": [
+        "workspaces"
+      ]
+    },
+    {
+      "Namespace": "microsoft.edgemarketplace",
+      "ResourceType": [
+        "offers",
+        "publishers"
+      ]
+    },
+    {
+      "Namespace": "microsoft.elastic",
+      "ResourceType": [
+        "monitors"
+      ]
+    },
+    {
+      "Namespace": "microsoft.elasticsan",
+      "ResourceType": [
+        "elasticsans"
+      ]
+    },
+    {
+      "Namespace": "microsoft.enterprisesupport",
+      "ResourceType": [
+        "enterprisesupports"
+      ]
+    },
+    {
+      "Namespace": "microsoft.experimentation",
+      "ResourceType": [
+        "experimentworkspaces"
+      ]
+    },
+    {
+      "Namespace": "microsoft.extendedlocation",
+      "ResourceType": [
+        "customlocations"
+      ]
+    },
+    {
+      "Namespace": "microsoft.fabric",
+      "ResourceType": [
+        "capacities"
+      ]
+    },
+    {
+      "Namespace": "microsoft.fairfieldgardens",
+      "ResourceType": [
+        "deviceprovisioningstates",
+        "provisioningresources"
+      ]
+    },
+    {
+      "Namespace": "microsoft.falcon",
+      "ResourceType": [
+        "namespaces"
+      ]
+    },
+    {
+      "Namespace": "microsoft.fileshares",
+      "ResourceType": [
+        "fileshares"
+      ]
+    },
+    {
+      "Namespace": "microsoft.fluidrelay",
+      "ResourceType": [
+        "fluidrelayservers"
+      ]
+    },
+    {
+      "Namespace": "microsoft.footprintmonitoring",
+      "ResourceType": [
+        "profiles"
+      ]
+    },
+    {
+      "Namespace": "microsoft.hanaonazure",
+      "ResourceType": [
+        "hanainstances",
+        "sapmonitors"
+      ]
+    },
+    {
+      "Namespace": "microsoft.hardwaresecuritymodules",
+      "ResourceType": [
+        "cloudhsmclusters",
+        "dedicatedhsms"
+      ]
+    },
+    {
+      "Namespace": "microsoft.healthbot",
+      "ResourceType": [
+        "healthbots"
+      ]
+    },
+    {
+      "Namespace": "microsoft.healthcareapis",
+      "ResourceType": [
+        "services",
+        "workspaces"
+      ]
+    },
+    {
+      "Namespace": "microsoft.healthdataaiservices",
+      "ResourceType": [
+        "deidservices"
+      ]
+    },
+    {
+      "Namespace": "microsoft.healthmodel",
+      "ResourceType": [
+        "healthmodels"
+      ]
+    },
+    {
+      "Namespace": "microsoft.hybridcloud",
+      "ResourceType": [
+        "cloudconnections",
+        "cloudconnectors"
+      ]
+    },
+    {
+      "Namespace": "microsoft.hybridcompute",
+      "ResourceType": [
+        "networkconfigurations",
+        "privatelinkscopes"
+      ]
+    },
+    {
+      "Namespace": "microsoft.hybridconnectivity",
+      "ResourceType": [
+        "endpoints",
+        "publiccloudconnectors",
+        "solutionconfigurations"
+      ]
+    },
+    {
+      "Namespace": "microsoft.hybridcontainerservice",
+      "ResourceType": [
+        "kubernetesversions",
+        "provisionedclusterinstances",
+        "provisionedclusters",
+        "skus",
+        "storagespaces",
+        "virtualnetworks"
+      ]
+    },
+    {
+      "Namespace": "microsoft.hybridnetwork",
+      "ResourceType": [
+        "configurationgroupvalues",
+        "devices",
+        "networkfunctions",
+        "publishers",
+        "servicemanagementcontainers",
+        "sitenetworkservices",
+        "sites"
+      ]
+    },
+    {
+      "Namespace": "microsoft.impact",
+      "ResourceType": [
+        "impactcategories",
+        "operations",
+        "topologyimpacts",
+        "workloadimpacts"
+      ]
+    },
+    {
+      "Namespace": "microsoft.integrationspaces",
+      "ResourceType": [
+        "spaces"
+      ]
+    },
+    {
+      "Namespace": "microsoft.iotcentral",
+      "ResourceType": [
+        "iotapps"
+      ]
+    },
+    {
+      "Namespace": "microsoft.iotfirmwaredefense",
+      "ResourceType": [
+        "workspaces"
+      ]
+    },
+    {
+      "Namespace": "microsoft.iotoperationsdataprocessor",
+      "ResourceType": [
+        "instances"
+      ]
+    },
+    {
+      "Namespace": "microsoft.iotoperationsmq",
+      "ResourceType": [
+        "mq"
+      ]
+    },
+    {
+      "Namespace": "microsoft.iotoperationsorchestrator",
+      "ResourceType": [
+        "instances",
+        "solutions",
+        "targets"
+      ]
+    },
+    {
+      "Namespace": "microsoft.iotsecurity",
+      "ResourceType": [
+        "sensors",
+        "sites"
+      ]
+    },
+    {
+      "Namespace": "microsoft.kubernetes",
+      "ResourceType": [
+        "connectedclusters"
+      ]
+    },
+    {
+      "Namespace": "microsoft.kubernetesconfiguration",
+      "ResourceType": [
+        "extensions",
+        "extensiontypes",
+        "fluxconfigurations",
+        "namespaces",
+        "sourcecontrolconfigurations"
+      ]
+    },
+    {
+      "Namespace": "microsoft.kubernetesruntime",
+      "ResourceType": [
+        "bgppeers",
+        "loadbalancers",
+        "services",
+        "storageclasses"
+      ]
+    },
+    {
+      "Namespace": "microsoft.labservices",
+      "ResourceType": [
+        "labaccounts",
+        "labplans",
+        "labs"
+      ]
+    },
+    {
+      "Namespace": "microsoft.logz",
+      "ResourceType": [
+        "monitors"
+      ]
+    },
+    {
+      "Namespace": "microsoft.m365consumptionservices",
+      "ResourceType": [
+        "services"
+      ]
+    },
+    {
+      "Namespace": "microsoft.machinelearning",
+      "ResourceType": [
+        "commitmentplans",
+        "webservices",
+        "workspaces"
+      ]
+    },
+    {
+      "Namespace": "microsoft.maintenance",
+      "ResourceType": [
+        "applyupdates",
+        "configurationassignments",
+        "updates"
+      ]
+    },
+    {
+      "Namespace": "microsoft.managednetworkfabric",
+      "ResourceType": [
+        "accesscontrollists",
+        "internetgatewayrules",
+        "internetgateways",
+        "ipcommunities",
+        "ipcommunitylists",
+        "ipextendedcommunities",
+        "ipprefixes",
+        "ipprefixlists",
+        "l2isolationdomains",
+        "l3isolationdomains",
+        "neighborgroups",
+        "networkdevices",
+        "networkfabriccontrollers",
+        "networkfabrics",
+        "networkpacketbrokers",
+        "networkracks",
+        "networktaprules",
+        "networktaps",
+        "routepolicies"
+      ]
+    },
+    {
+      "Namespace": "microsoft.manufacturingplatform",
+      "ResourceType": [
+        "manufacturingdataservices"
+      ]
+    },
+    {
+      "Namespace": "microsoft.media",
+      "ResourceType": [
+        "mediaservices"
+      ]
+    },
+    {
+      "Namespace": "microsoft.metaverse",
+      "ResourceType": [
+        "metaverses"
+      ]
+    },
+    {
+      "Namespace": "microsoft.mission",
+      "ResourceType": [
+        "catalogs",
+        "communities",
+        "enclaveconnections",
+        "externalconnections",
+        "internalconnections",
+        "virtualenclaves"
+      ]
+    },
+    {
+      "Namespace": "microsoft.mixedreality",
+      "ResourceType": [
+        "holographicsbroadcastaccounts",
+        "objectanchorsaccounts",
+        "objectunderstandingaccounts",
+        "remoterenderingaccounts",
+        "spatialanchorsaccounts",
+        "spatialmapsaccounts"
+      ]
+    },
+    {
+      "Namespace": "microsoft.mobilenetwork",
+      "ResourceType": [
+        "mobilenetworks",
+        "packetcorecontrolplanes",
+        "radioaccessnetworks",
+        "simgroups",
+        "sims"
+      ]
+    },
+    {
+      "Namespace": "microsoft.mobilepacketcore",
+      "ResourceType": [
+        "mobilepacketcores",
+        "networkfunctions"
+      ]
+    },
+    {
+      "Namespace": "microsoft.modsimworkbench",
+      "ResourceType": [
+        "instances",
+        "workbenches"
+      ]
+    },
+    {
+      "Namespace": "microsoft.mysqldiscovery",
+      "ResourceType": [
+        "mysqlsites"
+      ]
+    },
+    {
+      "Namespace": "microsoft.networkanalytics",
+      "ResourceType": [
+        "dataconnectors",
+        "datalakehouses",
+        "dataproducts",
+        "metricsingestionendpoints"
+      ]
+    },
+    {
+      "Namespace": "microsoft.networkcloud",
+      "ResourceType": [
+        "baremetalmachines",
+        "cloudservicesnetworks",
+        "clustermanagers",
+        "clusters",
+        "kubernetesclusters",
+        "l2networks",
+        "l3networks",
+        "racks",
+        "storageappliances",
+        "trunkednetworks",
+        "virtualmachines",
+        "volumes"
+      ]
+    },
+    {
+      "Namespace": "microsoft.networkfunction",
+      "ResourceType": [
+        "azuretrafficcollectors",
+        "meshvpns",
+        "vpnbranches"
+      ]
+    },
+    {
+      "Namespace": "microsoft.nutanix",
+      "ResourceType": [
+        "interfaces",
+        "nodes"
+      ]
+    },
+    {
+      "Namespace": "microsoft.objectstore",
+      "ResourceType": [
+        "osnamespaces"
+      ]
+    },
+    {
+      "Namespace": "microsoft.offazure",
+      "ResourceType": [
+        "appliances",
+        "hypervsites",
+        "importsites",
+        "mastersites",
+        "serversites",
+        "vmwaresites"
+      ]
+    },
+    {
+      "Namespace": "microsoft.offazurespringboot",
+      "ResourceType": [
+        "springbootsites"
+      ]
+    },
+    {
+      "Namespace": "microsoft.openenergyplatform",
+      "ResourceType": [
+        "energyservices"
+      ]
+    },
+    {
+      "Namespace": "microsoft.openlogisticsplatform",
+      "ResourceType": [
+        "applicationmanagers",
+        "applicationworkspaces",
+        "workspaces"
+      ]
+    },
+    {
+      "Namespace": "microsoft.operatorvoicemail",
+      "ResourceType": [
+        "operatorvoicemailinstances"
+      ]
+    },
+    {
+      "Namespace": "microsoft.oraclediscovery",
+      "ResourceType": [
+        "oraclesites"
+      ]
+    },
+    {
+      "Namespace": "microsoft.orbital",
+      "ResourceType": [
+        "cloudaccessrouters",
+        "contactprofiles",
+        "edgesites",
+        "geocatalogs",
+        "groundstations",
+        "l2connections",
+        "l3connections",
+        "orbitalgateways",
+        "sdwancontrollers",
+        "spacecrafts",
+        "terminals"
+      ]
+    },
+    {
+      "Namespace": "microsoft.pki",
+      "ResourceType": [
+        "pkis"
+      ]
+    },
+    {
+      "Namespace": "microsoft.playfab",
+      "ResourceType": [
+        "playeraccountpools",
+        "titles"
+      ]
+    },
+    {
+      "Namespace": "microsoft.programmableconnectivity",
+      "ResourceType": [
+        "gateways",
+        "openapigateways",
+        "operatorconnections"
+      ]
+    },
+    {
+      "Namespace": "microsoft.projectarcadia",
+      "ResourceType": [
+        "workspaces"
+      ]
+    },
+    {
+      "Namespace": "microsoft.providerhub",
+      "ResourceType": [
+        "availableaccounts",
+        "operationstatuses",
+        "providerregistrations"
+      ]
+    },
+    {
+      "Namespace": "microsoft.quantum",
+      "ResourceType": [
+        "workspaces"
+      ]
+    },
+    {
+      "Namespace": "microsoft.redhatopenshift",
+      "ResourceType": [
+        "openshiftclusters"
+      ]
+    },
+    {
+      "Namespace": "microsoft.remoteapp",
+      "ResourceType": [
+        "collections"
+      ]
+    },
+    {
+      "Namespace": "microsoft.resourceconnector",
+      "ResourceType": [
+        "appliances"
+      ]
+    },
+    {
+      "Namespace": "microsoft.resourcenotifications",
+      "ResourceType": [
+        "eventgridfilters"
+      ]
+    },
+    {
+      "Namespace": "microsoft.saashub",
+      "ResourceType": [
+        "cloudservices"
+      ]
+    },
+    {
+      "Namespace": "microsoft.scom",
+      "ResourceType": [
+        "managedinstances"
+      ]
+    },
+    {
+      "Namespace": "microsoft.scvmm",
+      "ResourceType": [
+        "availabilitysets",
+        "clouds",
+        "virtualmachineinstances",
+        "virtualmachines",
+        "virtualmachinetemplates",
+        "virtualnetworks",
+        "vmmservers"
+      ]
+    },
+    {
+      "Namespace": "microsoft.secretmanagementsampleprovider",
+      "ResourceType": [
+        "forecasts"
+      ]
+    },
+    {
+      "Namespace": "microsoft.security",
+      "ResourceType": [
+        "adaptivenetworkhardenings",
+        "advancedthreatprotectionsettings",
+        "apicollections",
+        "applications",
+        "assessmentmetadata",
+        "assessments",
+        "assignments",
+        "automations",
+        "complianceresults",
+        "compliances",
+        "customassessmentautomations",
+        "customentitystoreassignments",
+        "customrecommendations",
+        "datacollectionagents",
+        "defenderforstoragesettings",
+        "devicesecuritygroups",
+        "governancerules",
+        "healthreports",
+        "informationprotectionpolicies",
+        "integrations",
+        "jitpolicies",
+        "pricings",
+        "securescorecontrols",
+        "securescores",
+        "securityconnectors",
+        "securitystandards",
+        "servervulnerabilityassessments",
+        "sqlvulnerabilityassessments",
+        "standardassignments",
+        "standards"
+      ]
+    },
+    {
+      "Namespace": "microsoft.securitycopilot",
+      "ResourceType": [
+        "capacities"
+      ]
+    },
+    {
+      "Namespace": "microsoft.securitydetonation",
+      "ResourceType": [
+        "chambers"
+      ]
+    },
+    {
+      "Namespace": "microsoft.securitydevops",
+      "ResourceType": [
+        "azuredevopsconnectors",
+        "githubconnectors",
+        "gitlabconnectors"
+      ]
+    },
+    {
+      "Namespace": "microsoft.securityinsights",
+      "ResourceType": [
+        "aggregations",
+        "alertrules",
+        "alertruletemplates",
+        "automationrules",
+        "billingstatistics",
+        "bookmarks",
+        "cases",
+        "confidentialwatchlists",
+        "contentpackages",
+        "contentproductpackages",
+        "contentproducttemplates",
+        "contenttemplates",
+        "dataconnectordefinitions",
+        "dataconnectors",
+        "dataconnectorscheckrequirements",
+        "dynamicsummaries",
+        "enrichment",
+        "entities",
+        "entityqueries",
+        "entityquerytemplates",
+        "exportconnections",
+        "fileimports",
+        "hunts",
+        "huntsessions",
+        "incidents",
+        "listrepositories",
+        "metadata",
+        "mitrecoveragerecords",
+        "officeconsents",
+        "onboardingstates",
+        "overview",
+        "recommendations",
+        "securitymlanalyticssettings",
+        "settings",
+        "sourcecontrols",
+        "threatintelligence",
+        "triggeredanalyticsruleruns",
+        "watchlists",
+        "workspacemanagerassignments",
+        "workspacemanagerconfigurations",
+        "workspacemanagergroups",
+        "workspacemanagermembers"
+      ]
+    },
+    {
+      "Namespace": "microsoft.servicefabric",
+      "ResourceType": [
+        "clusters",
+        "managedclusters"
+      ]
+    },
+    {
+      "Namespace": "microsoft.servicefabricmesh",
+      "ResourceType": [
+        "applications",
+        "containergroups",
+        "gateways",
+        "networks",
+        "secrets",
+        "volumes"
+      ]
+    },
+    {
+      "Namespace": "microsoft.servicelinker",
+      "ResourceType": [
+        "daprconfigurations",
+        "dryruns",
+        "linkers"
+      ]
+    },
+    {
+      "Namespace": "microsoft.servicenetworking",
+      "ResourceType": [
+        "trafficcontrollers"
+      ]
+    },
+    {
+      "Namespace": "microsoft.serviceshub",
+      "ResourceType": [
+        "connectors"
+      ]
+    },
+    {
+      "Namespace": "microsoft.singularity",
+      "ResourceType": [
+        "accounts"
+      ]
+    },
+    {
+      "Namespace": "microsoft.softwareplan",
+      "ResourceType": [
+        "hybridusebenefits"
+      ]
+    },
+    {
+      "Namespace": "microsoft.solutions",
+      "ResourceType": [
+        "applicationdefinitions",
+        "applications",
+        "jitrequests"
+      ]
+    },
+    {
+      "Namespace": "microsoft.standbypool",
+      "ResourceType": [
+        "standbycontainergrouppools",
+        "standbyvirtualmachinepools"
+      ]
+    },
+    {
+      "Namespace": "microsoft.storageactions",
+      "ResourceType": [
+        "storagetasks"
+      ]
+    },
+    {
+      "Namespace": "microsoft.storagecache",
+      "ResourceType": [
+        "amlfilesystems",
+        "caches"
+      ]
+    },
+    {
+      "Namespace": "microsoft.storagemover",
+      "ResourceType": [
+        "storagemovers"
+      ]
+    },
+    {
+      "Namespace": "microsoft.storagetasks",
+      "ResourceType": [
+        "storagetasks"
+      ]
+    },
+    {
+      "Namespace": "microsoft.symphony",
+      "ResourceType": [
+        "instances",
+        "solutions",
+        "targets"
+      ]
+    },
+    {
+      "Namespace": "microsoft.syntex",
+      "ResourceType": [
+        "accounts",
+        "documentprocessors"
+      ]
+    },
+    {
+      "Namespace": "microsoft.testbase",
+      "ResourceType": [
+        "testbaseaccounts"
+      ]
+    },
+    {
+      "Namespace": "microsoft.timeseriesinsights",
+      "ResourceType": [
+        "environments"
+      ]
+    },
+    {
+      "Namespace": "microsoft.videoindexer",
+      "ResourceType": [
+        "accounts"
+      ]
+    },
+    {
+      "Namespace": "microsoft.virtualmachineimages",
+      "ResourceType": [
+        "imagetemplates"
+      ]
+    },
+    {
+      "Namespace": "microsoft.vmware",
+      "ResourceType": [
+        "arczones",
+        "resourcepools",
+        "vcenters",
+        "virtualmachines",
+        "virtualmachinetemplates",
+        "virtualnetworks"
+      ]
+    },
+    {
+      "Namespace": "microsoft.voiceservices",
+      "ResourceType": [
+        "communicationsgateways",
+        "operatorvoicemailinstances"
+      ]
+    },
+    {
+      "Namespace": "microsoft.vsonline",
+      "ResourceType": [
+        "accounts",
+        "plans"
+      ]
+    },
+    {
+      "Namespace": "microsoft.windows365",
+      "ResourceType": [
+        "cloudpcdelegatedmsis"
+      ]
+    },
+    {
+      "Namespace": "microsoft.windowsesu",
+      "ResourceType": [
+        "multipleactivationkeys"
+      ]
+    },
+    {
+      "Namespace": "microsoft.windowsiot",
+      "ResourceType": [
+        "deviceservices"
+      ]
+    },
+    {
+      "Namespace": "microsoft.windowspushnotificationservices",
+      "ResourceType": [
+        "registrations"
+      ]
+    },
+    {
+      "Namespace": "microsoft.workloadbuilder",
+      "ResourceType": [
+        "migrationagents",
+        "workloads"
+      ]
+    },
+    {
+      "Namespace": "microsoft.workloads",
+      "ResourceType": [
+        "connectors",
+        "insights",
+        "monitors",
+        "oraclevirtualinstances",
+        "phpworkloads",
+        "sapdiscoverysites",
+        "sapvirtualinstances"
+      ]
+    },
+    {
+      "Namespace": "newrelic.observability",
+      "ResourceType": [
+        "monitors"
+      ]
+    },
+    {
+      "Namespace": "nginx.nginxplus",
+      "ResourceType": [
+        "nginxdeployments"
+      ]
+    },
+    {
+      "Namespace": "oracle.database",
+      "ResourceType": [
+        "cloudexadatainfrastructures",
+        "cloudvmclusters"
+      ]
+    },
+    {
+      "Namespace": "paloaltonetworks.cloudngfw",
+      "ResourceType": [
+        "firewalls",
+        "localrulestacks"
+      ]
+    },
+    {
+      "Namespace": "qumulo.storage",
+      "ResourceType": [
+        "filesystems",
+        "storages"
+      ]
+    },
+    {
+      "Namespace": "solarwinds.observability",
+      "ResourceType": [
+        "organizations"
+      ]
+    },
+    {
+      "Namespace": "wandisco.fusion",
+      "ResourceType": [
+        "migrators"
+      ]
+    }
+  ]
+}

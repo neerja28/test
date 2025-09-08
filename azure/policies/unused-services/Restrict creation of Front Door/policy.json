@@ -1,0 +1,56 @@
+{
+    "properties": {
+      "displayName": "Enforce Function App should only be accessible over HTTPS",
+      "policyType": "Custom",
+      "mode": "Indexed",
+      "description": "Use of HTTPS ensures server/service authentication and protects data in transit from network layer eavesdropping attacks.",
+      "metadata": { },
+      "parameters": {
+        "listOfResourceTypesNotAllowed": {
+          "type": "Array",
+          "metadata": {
+            "displayName": "Not allowed resource types",
+            "description": "The list of resource types that cannot be deployed.",
+            "strongType": "resourceTypes"
+          },
+          "defaultValue": [
+            "Standard_AzureFrontdoor",
+            "Premium_AzureFrontdoor"
+          ]
+        },
+        "effect": {
+          "type": "String",
+          "metadata": {
+            "displayName": "Effect",
+            "description": "Enable or disable the execution of the policy"
+          },
+          "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+          ],
+          "defaultValue": "Deny"
+        }
+      },
+      "policyRule": {
+        "if": {
+          "anyOf": [
+            {
+              "field": "type",
+              "equals": "microsoft.network/frontdoors"
+            },
+            {
+              "field": "Microsoft.CDN/profiles/sku.name",
+              "in": "[parameters('listOfResourceTypesNotAllowed')]"
+            }
+          ]
+        },
+        "then": {
+          "effect": "[parameters('effect')]"
+        }
+      }
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "f4123c5e-2a54-4d1b-b9c0-0b1b1a31a5bd"
+  }

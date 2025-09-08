@@ -1,0 +1,9 @@
+azure-identity
+azure-mgmt-resource
+azure-mgmt-authorization
+azure-graphrbac
+msgraph-core
+psutil
+requests
+pandas
+openpyxl

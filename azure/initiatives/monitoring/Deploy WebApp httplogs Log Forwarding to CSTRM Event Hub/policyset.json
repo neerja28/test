@@ -1,0 +1,104 @@
+{
+    "properties": {
+      "displayName": "Deploy App Service (Web App) HTTPLogs diagnostic settings to CSTRM Eventhub",
+      "policyType": "Custom",
+      "description": "Enables HTTP logs forwarding to CSTRM Event Hub for Azure App Service (WebApps)",
+      "metadata": {},
+      "parameters": {},
+      "policyDefinitions": [
+          {
+            "policyDefinitionReferenceId": "",
+            "policyDefinitionId": "",
+            "parameters":{
+                "eventHubName":{
+                    "value":"appsvc-http-eastus"
+                },
+                "eventHubRuleId":{
+                    "value":"/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourcegroups/cstrm-p-eaus-cir-securityanalytics-rg/providers/Microsoft.EventHub/namespaces/secanalytics-ehub-eastus-ns/authorizationrules/forSendingLogs"
+                },
+                "eventHubLocation":{
+                    "value":"eastus"
+                }
+              }
+          },
+          {
+            "policyDefinitionReferenceId": "",
+            "policyDefinitionId": "",
+            "parameters": {
+                "eventHubName":{
+                    "value":"appsvc-http-eastus2"
+                },
+                "eventHubRuleId":{
+                    "value":"/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourcegroups/cstrm-p-zeau2-cir-secanalytc-rg/providers/Microsoft.EventHub/namespaces/secanalytics-ehub-zeau2-ns/authorizationrules/forSendingLogs"
+                },
+                "eventHubLocation":{
+                    "value":"eastus2"
+                }
+              }
+          },
+          {
+            "policyDefinitionReferenceId": "",
+            "policyDefinitionId": "",
+            "parameters": {
+                "eventHubName":{
+                    "value":"appsvc-http-ceus"
+                },
+                "eventHubRuleId":{
+                    "value":"/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourcegroups/cstrm-p-zceus-cir-secanalytc-rg/providers/Microsoft.EventHub/namespaces/secanalytics-ehub-zceus-ns/authorizationrules/forSendingLogs"
+                },
+                "eventHubLocation":{
+                    "value":"centralus"
+                }
+              }
+          },
+          {
+            "policyDefinitionReferenceId": "",
+            "policyDefinitionId": "",
+            "parameters": {
+                "eventHubName":{
+                    "value":"appsvc-http-ncus"
+                },
+                "eventHubRuleId":{
+                    "value":"/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourcegroups/cstrm-p-zncus-cir-secanalytc-rg/providers/Microsoft.EventHub/namespaces/secanalytics-ehub-zncus-ns/authorizationrules/forSendingLogs"
+                },
+                "eventHubLocation":{
+                    "value":"northcentralus"
+                }
+              }
+          },
+          {
+            "policyDefinitionReferenceId": "",
+            "policyDefinitionId": "",
+            "parameters": {
+                "eventHubName":{
+                    "value":"appsvc-http-sceus"
+                },
+                "eventHubRuleId":{
+                    "value":"/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourcegroups/cstrm-p-zscus-cir-secanalytc-rg/providers/Microsoft.EventHub/namespaces/secanalytics-ehub-zscus-ns/authorizationrules/forSendingLogs"
+                },
+                "eventHubLocation":{
+                    "value":"southcentralus"
+                }
+              }
+          },
+          {
+            "policyDefinitionReferenceId": "",
+            "policyDefinitionId": "",
+            "parameters": {
+                "eventHubName":{
+                    "value":"appsvc-http-westus"
+                },
+                "eventHubRuleId":{
+                    "value":"/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourcegroups/cstrm-p-westus-cir-securityanalytics-rg/providers/Microsoft.EventHub/namespaces/secanalytics-ehub-westus-ns/authorizationrules/forSendingLogs"
+                },
+                "eventHubLocation":{
+                    "value":"westus"
+                }
+              }
+          }
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policySetDefinitions",
+    "name": "29DE8282-FD2B-4044-9DA5-AE75301D25B7"
+  }

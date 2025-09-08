@@ -1,0 +1,141 @@
+{
+  "properties": {
+    "displayName": "Audit Storage Account access keys expiration",
+    "policyType": "Custom",
+    "mode": "Indexed",
+    "description": "Audit storage account access keys expiry based on the key rotation period defined by AA Cybersecurity policies and standards.",
+    "metadata": {
+      "version": "3.0.0",
+      "category": "Storage"
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Audit allows a non-compliant resource to be created, but flags it as non-compliant. Deny blocks the resource creation and update. Disable turns off the policy."
+        },
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Audit"
+      },
+      "keyRotationPeriodInDays": {
+          "type": "Integer",
+          "metadata": {
+            "displayName": "Key rotation period in Days",
+            "description": "Key rotation period"
+          },
+          "defaultValue": 365
+        }
+    },
+   "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "equals": "Microsoft.Storage/storageAccounts",
+            "field": "type"
+          },
+          {
+            "not": {
+              "allOf": [
+                {
+                  "field": "name",
+                  "like": "dbstorage*"
+                },
+                {
+                  "anyOf": [
+                    {
+                      "value": "[resourceGroup().name]",
+                      "like": "databricks-rg*"
+                    },
+                    {
+                      "value": "[resourceGroup().name]",
+                      "in": [
+                        "ba-n-zeaus-orion-adbah-mgmt-rg",
+                        "ba-n-zeaus-orion-adbbi-mgmt-rg",
+                        "ba-n-zeaus-orion-adbcons-mgmt01-rg",
+                        "ba-n-zeaus-orion-adbde-mgmt02-rg",
+                        "ba-n-zeaus-orion-adbde-mgmt03-rg",
+                        "ba-n-zeaus-orion-adbde-mgmt07-rg",
+                        "ba-n-zeaus-orion-adbde-mgmt-rg",
+                        "ba-n-zeaus-orionadbrb-mgmt01-rg",
+                        "ba-n-zeaus-orionadbrm-mgmt01-rg",
+                        "ba-n-zeaus-oriontops-mgmt01-rg",
+                        "ba-n-zweus-orionadbah-mgmt-rg",
+                        "ba-n-zweus-orionadbbi-mgmt01-rg",
+                        "ba-n-zweus-orionadbcons-mgmt01-rg",
+                        "ba-n-zweus-orionadbde-mgmt02-rg",
+                        "ba-n-zweus-orionadbde-mgmt03-rg",
+                        "ba-n-zweus-orion-adbde-mgmt07-rg",
+                        "ba-n-zweus-orionadbde-mgmt-rg",
+                        "ba-n-zweus-orionadbrb-mgmt01-rg",
+                        "ba-n-zweus-orionadbrm-mgmt01-rg",
+                        "ba-n-zweus-oriontops-mgmt01-rg",
+                        "ba-p-zeaus-orion-adbah-mgmt-rg",
+                        "ba-p-zeaus-orion-adbcons-mgmt01-rg",
+                        "ba-p-zeaus-orion-adbde-mgmt02-rg",
+                        "ba-p-zeaus-orion-adbde-mgmt03-rg",
+                        "ba-p-zeaus-orion-adbde-mgmt07-rg",
+                        "ba-p-zeaus-orion-adbde-mgmt-rg",
+                        "ba-p-zeaus-orionadbrb-mgmt01-rg",
+                        "ba-p-zeaus-orionadbrm-mgmt01-rg",
+                        "ba-p-zeaus-oriontops-mgmt01-rg",
+                        "ba-p-zweus-orionadbah-mgmt-rg",
+                        "ba-p-zweus-orion-adbcons-mgmt01-rg",
+                        "ba-p-zweus-orionadbde-mgmt02-rg",
+                        "ba-p-zweus-orionadbde-mgmt03-rg",
+                        "ba-p-zweus-orionadbde-mgmt07-rg",
+                        "ba-p-zweus-orionadbde-mgmt-rg",
+                        "ba-p-zweus-orionadbrb-mgmt01-rg",
+                        "ba-p-zweus-orionadbrm-mgmt01-rg",
+                        "ba-p-zweus-oriontops-mgmt01-rg",
+                        "cor-d-eaus-et-eds-pdx-databricks-mrg",
+                        "cor-dr-weus-et-eds-pdx-databricks-mrg",
+                        "cor-p-eaus-et-eds-pdx-databricks-mrg",
+                        "cor-p-zeaus-hrautotaadb-mgmt-rg",
+                        "cor-s-eaus-et-eds-pdx-databricks-mrg",
+                        "octo-n-zeaus-adbws001-mgmt01-rg"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "anyOf": [
+              {
+                "equals": "true",
+                "field": "Microsoft.Storage/storageAccounts/allowSharedKeyAccess"
+              },
+              {
+                "exists": false,
+                "field": "Microsoft.Storage/storageAccounts/allowSharedKeyAccess"
+              }
+            ]
+          },
+          {
+            "anyOf": [
+              {
+                "greaterOrEquals": "[substring(if(and(not(empty(coalesce(field('Microsoft.Storage/storageAccounts/keyCreationTime.key1'), ''))), not(empty(string(coalesce(field('Microsoft.Storage/storageAccounts/keyPolicy.keyExpirationPeriodInDays'), ''))))), addDays(field('Microsoft.Storage/storageAccounts/keyCreationTime.key1'), parameters('keyRotationPeriodInDays')), utcNow()),0,10)]",
+                "value": "[substring(utcNow(),0,10)]"
+              },
+              {
+                "greaterOrEquals": "[substring(if(and(not(empty(coalesce(field('Microsoft.Storage/storageAccounts/keyCreationTime.key2'), ''))), not(empty(string(coalesce(field('Microsoft.Storage/storageAccounts/keyPolicy.keyExpirationPeriodInDays'), ''))))), addDays(field('Microsoft.Storage/storageAccounts/keyCreationTime.key2'), parameters('keyRotationPeriodInDays')), utcNow()),0,10)]",
+                "value": "[substring(utcNow(),0,10)]"
+              }
+            ]
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]"
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Authorization/policyDefinitions/becc7118-0f76-49b2-8065-82650d0fe111",
+  "name": "becc7118-0f76-49b2-8065-82650d0fe111"
+}

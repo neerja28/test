@@ -1,0 +1,8 @@
+SaltCollectorUUID
+SaltContentFilterList
+SaltFilterAllAttachments
+SaltFilterDirection
+SaltMaxResponseBytes
+SaltSecurityLabels
+SaltSecurityServiceUrl
+SaltSecurityToken

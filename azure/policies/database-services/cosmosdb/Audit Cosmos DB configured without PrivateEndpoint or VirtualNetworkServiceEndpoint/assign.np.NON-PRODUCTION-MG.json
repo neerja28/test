@@ -1,0 +1,22 @@
+{
+    "properties": {
+      "displayName": "Audit - Cosmos DB should use a private link or  virtual network service endpoint",
+      "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+      "notScopes": [],
+      "parameters": {
+        "effect": {
+          "value": "Audit"
+        }
+      },
+      "description": "Cosmos DB should be configured  using a private link or  virtual network service endpoint",
+      "metadata": {},
+      "enforcementMode": "DoNotEnforce",
+      "nonComplianceMessages": [
+        "Cosmos DB is not configured using a private link or virtual network service endpoint"
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "GaaSPolicytqY7jvWUP9JWfw",
+    "location": "eastus"
+  }

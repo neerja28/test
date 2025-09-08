@@ -1,0 +1,68 @@
+{
+  "properties": {
+    "displayName": "App Service apps that use Java should use a supported Java Version",
+    "mode": "All",
+    "description": "Periodically, newer versions are released for Java software either due to security flaws or to include additional functionality. Using the a supported Java version for App Service apps is recommended in order to take advantage of security fixes, if any, and/or new functionalities of the latest version. This policy only applies to Linux apps. This policy requires you to specify a Java version that meets your requirements.",
+    "metadata": {
+      "version": "4.1.0",
+      "category": "App Service"
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "AuditIfNotExists",
+          "Disabled"
+        ],
+        "defaultValue": "AuditIfNotExists"
+      },
+      "JavaVersion": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Java version",
+          "description": "Specify a supported Java version for App Service"
+        }
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Web/sites"
+          },
+          {
+            "field": "kind",
+            "notContains": "functionapp"
+          },
+          {
+            "contains": "JAVA",
+            "field": "Microsoft.Web/sites/siteConfig.linuxFxVersion"
+          },
+          {
+            "field": "kind",
+            "contains": "linux"
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]",
+        "details": {
+          "type": "Microsoft.Web/sites/config",
+          "name": "web",
+          "existenceCondition": {
+            "field": "Microsoft.Web/sites/config/linuxFxVersion",
+            "notContains": "[concat('JAVA|', parameters('JavaVersion'))]"
+          }
+        }
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "1bc20e11-12ff-48e8-adb8-f2e35d1aa74b"
+}

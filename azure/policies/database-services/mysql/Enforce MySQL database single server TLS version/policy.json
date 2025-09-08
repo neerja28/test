@@ -1,0 +1,53 @@
+{
+    "properties": {
+        "displayName": "Enforce MySQL database single server TLS version",
+        "policyType": "Custom",
+        "mode": "All",
+        "description": "Ensure 'TLS Version' is set to >= 1.2 for MySQL Database single Servers",
+        "metadata": {
+            "category": "AA SCCF benchmark"
+        },
+        "parameters": {            
+            "effect": {
+            "type": "String",
+            "defaultValue": "Deny",
+            "metadata": {
+                "displayName": "Effect",
+                "description": "Enable or disable the execution of the policy"
+            },
+            "allowedValues": [
+                "Audit",
+                "Deny",
+                "Disabled"
+            ]
+        }},
+        "policyRule": {
+            "if": {
+              "allOf": [
+                {
+                  "equals": "Microsoft.DBforMySQL/servers",
+                  "field": "type"
+                },
+                {
+                  "exists": "true",
+                  "field": "Microsoft.DBforMySQL/servers/minimalTlsVersion"
+                },
+                {
+                  "field": "Microsoft.DBforMySQL/servers/minimalTlsVersion",
+                  "in": [
+                    "TLS1_0",
+                    "TLS1_1",
+                    "TLSEnforcementDisabled"
+                  ]
+                }
+              ]
+            },
+            "then": {
+              "effect": "[parameters('effect')]"
+            }
+          }
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "660FA871-3CA0-45F4-A70C-6DC29914A4A7"
+}

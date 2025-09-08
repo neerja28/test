@@ -1,0 +1,14 @@
+site_name: 'GaaS Policy As Code'
+site_description: 'Governance as a Service (GaaS) Documentation regarding enforcement policies and requesting an exception'
+ 
+repo_url: https://github.com/AAInternal/https://github.com/AAInternal/GaaS-Policy_as_Code
+edit_uri: tree/master/docs/
+ 
+nav:
+  - Home: index.md
+  - Exceptions:
+    - Policy Exceptions: exceptions/POLICYEXCEPTIONGUIDE.md
+    - Restricted Services: exceptions/RESTRICTEDSERVICES.md
+    
+plugins:
+  - techdocs-core

@@ -1,0 +1,24 @@
+
+{
+    "apiVersion": "2024-12-01-preview",
+    "scope": "/subscriptions/55f702f9-17ee-4d42-8da3-3f0bc97c4158/resourceGroups/zab-policies-test",
+    "properties": {
+      "displayName": "Zab-policies-test - CldGovAuto - Deploy Function App (Linux) Logs to CSTRM Event Hub",
+      "description": "This resources is planned to be deleted by end of quarter and has been granted a waiver to the policy.",
+      "metadata": {
+        "requestedBy": "Zab - GaaS",
+        "PolEx": "Pol-EX 1234",
+        "aa-app-shortname": "CldGovAuto",
+        "approvedBy": "Zab - GaaS",
+        "approvedOn": "2025-08-05T00:00:00Z"
+      },
+      "policyAssignmentId": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST/providers/Microsoft.Authorization/policyAssignments/GaaSPolicyDMYEglXXIlOqdy",
+      "policyDefinitionReferenceId": ["1717293961476471442"],
+      "exemptionCategory": "Waiver",
+      "expiresOn": "2025-08-15T23:59:00Z",
+      "assignmentScopeValidation": "Default"
+    },
+    "id": "",
+    "name": "GaaSExemptionqDwZgWAlbN4",
+    "type": "Microsoft.Authorization/policyExemptions"
+  }

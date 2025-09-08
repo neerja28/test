@@ -1,0 +1,41 @@
+{
+    "properties": {
+        "displayName": "Block the creation of 'FREE F1' SKU for App Service Plans",
+        "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+        "notScopes": [
+            "/subscriptions/bce6cd73-f8cf-415c-a502-900f7c53b881/resourceGroups/MaintenanceDWRGProd/providers/Microsoft.Web/serverfarms/appsvc_windows_centralus",
+            "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-lmo-nonprod-eastus-rg/providers/Microsoft.Web/serverfarms/ASP-aaaotlmononprodeastusrg-9daf",
+            "/subscriptions/d32b12be-735a-4698-aac8-e621890b7218/resourceGroups/aa-sales-soa-nonprod-rg/providers/Microsoft.Web/serverfarms/ASP-aasalessoanonprodrg-8b4a",
+            "/subscriptions/d32b12be-735a-4698-aac8-e621890b7218/resourceGroups/aa-sales-soa-nonprod-rg/providers/Microsoft.Web/serverfarms/ASP-aasalessoanonprodrg-9f15",
+            "/subscriptions/ae0b13d9-e09c-4e54-b1e6-8e777d8fbe14/resourceGroups/ba-n-zeaus-group045-rg/providers/Microsoft.Web/serverfarms/ASP-banzeausgroup045rg-ad21",
+            "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/ct-n-zeaus-cbro-rg/providers/Microsoft.Web/serverfarms/awssraatestPlan",
+            "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/ct-n-zeaus-cbro-rg/providers/Microsoft.Web/serverfarms/awssraatrainPlan",
+            "/subscriptions/033d20ae-901d-4797-b93b-5c6c0c02534b/resourceGroups/rgn-n-zeaus-psa-crewsuite-rg/providers/Microsoft.Web/serverfarms/EAS-DH-TEST-PLAN",
+            "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-crewcmp2-dev-eastus-rg/providers/Microsoft.Web/serverfarms/plan-cc2-capi-linux-dev-wesrus",
+            "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-PNE-dev-eastus-rg/providers/Microsoft.Web/serverfarms/PNE-AACrewPNEUI20230328154556Plan",
+            "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-ATOM-dev-eastus-rg/providers/Microsoft.Web/serverfarms/PrintingPOCPlan",
+            "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-ATOM-dev-eastus-rg/providers/Microsoft.Web/serverfarms/ReactTestPOC",
+            "/subscriptions/033d20ae-901d-4797-b93b-5c6c0c02534b/resourceGroups/rgn-n-zeaus-psa-crewsuite-rg/providers/Microsoft.Web/serverfarms/rgn-n-zeaus-ecx-event-grid-viewer-asp",
+            "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/ct-n-zeaus-getng-rg/providers/Microsoft.Web/serverfarms/ServerFarm1",
+            "/subscriptions/d32b12be-735a-4698-aac8-e621890b7218/resourceGroups/aa-sales-soa-nonprod-rg/providers/Microsoft.Web/serverfarms/ServicePlanb885bcc9-b777-4835",
+            "/subscriptions/d32b12be-735a-4698-aac8-e621890b7218/resourceGroups/aa-sales-soa-nonprod-rg/providers/Microsoft.Web/serverfarms/ServicePlane38ae7a2-1f4e-4e6c",
+            "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/ct-n-zeaus-cbro-rg/providers/Microsoft.Web/serverfarms/srcaseswsaadevPlan",
+            "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/ct-n-zeaus-cbro-rg/providers/Microsoft.Web/serverfarms/srcaseswsaatestPlan",
+            "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/ct-n-zeaus-cbro-rg/providers/Microsoft.Web/serverfarms/srcaseswsaatrainPlan"
+        ],
+        "parameters": {
+            "effect": {
+                "value": "Deny"
+            }
+        },
+        "description": "Azure App Service Plan should use the Basic or Premium SKU.",
+        "metadata": {},
+        "enforcementMode": "Default",
+        "nonComplianceMessages": [
+            "Azure App Service Plan SKU configuration does not meet AA SCCF Benchmark control: Azure App Service Plan should use the Basic or Premium SKU. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+        ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "8DODpPkbbnvKIaeSnEm8MbYR"
+}

@@ -1,0 +1,21 @@
+{
+  "properties": {
+    "displayName": "Enforce existing SQL server Auditing is set to enabled",
+    "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+    "notScopes": [],
+    "parameters": {
+      "effect":{
+        "value": "Deny"
+        }
+    },
+    "description": "Denies the disabling of auditing settings on a SQL Server.",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "SQL Server auditing settings do not meet AA SCCF Benchmark control: Ensure that (SQL Server) Auditing is 'Enabled'. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "XUQgcP30EnWsXHSz6lhZvf89"
+}

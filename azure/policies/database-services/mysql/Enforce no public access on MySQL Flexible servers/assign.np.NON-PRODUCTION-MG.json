@@ -1,0 +1,43 @@
+{
+  "properties": {
+    "displayName": "Enforce no public access on MySQL Flexible servers",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/c9299215-ae47-4f50-9c54-8a392f68a052",
+    "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+    "notScopes": [
+      "/subscriptions/ae0b13d9-e09c-4e54-b1e6-8e777d8fbe14/resourcegroups/ba-n-zeaus-dtops-rg/providers/microsoft.dbformysql/flexibleservers/ba-n-zeaus-dtops-dev-mysql",
+      "/subscriptions/ae0b13d9-e09c-4e54-b1e6-8e777d8fbe14/resourcegroups/ba-n-zeaus-group020-rg/providers/microsoft.dbformysql/flexibleservers/onlinefeaturestoredbznp",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourcegroups/aa-corp-np-regempportals-rg/providers/microsoft.dbformysql/flexibleservers/aa-sc-np-regempportal-mysql",
+      "/subscriptions/151e8825-89f3-4507-ac30-3ea54ea49f78/resourcegroups/dt-n-zeaus-dte-sigstore-rg/providers/microsoft.dbformysql/flexibleservers/dtesigstoredbnp",
+      "/subscriptions/151e8825-89f3-4507-ac30-3ea54ea49f78/resourcegroups/dt-n-zeaus-wiki-rg/providers/microsoft.dbformysql/flexibleservers/enterprise-wiki-dev-flexdatabase",
+      "/subscriptions/8ac743df-669f-43b0-b197-9432f6684c74/resourcegroups/ets-n-zeaus-devops-artifactory-rg/providers/microsoft.dbformysql/flexibleservers/artieastdevdb",
+      "/subscriptions/033d20ae-901d-4797-b93b-5c6c0c02534b/resourcegroups/rgn-n-zeaus-myenvoy-rg/providers/microsoft.dbformysql/flexibleservers/evy-portal-stage-database",
+      "/subscriptions/033d20ae-901d-4797-b93b-5c6c0c02534b/resourcegroups/rgn-n-zeaus-myenvoy-rg/providers/microsoft.dbformysql/flexibleservers/evy-portal-stage-db",
+      "/subscriptions/033d20ae-901d-4797-b93b-5c6c0c02534b/resourcegroups/rgn-n-zeaus-myenvoy-rg/providers/microsoft.dbformysql/flexibleservers/evy-portal-stage-db-wus",
+      "/subscriptions/033d20ae-901d-4797-b93b-5c6c0c02534b/resourcegroups/rgn-n-zeaus-mypdt-rg/providers/microsoft.dbformysql/flexibleservers/pdt-portal-stage-db",
+      "/subscriptions/033d20ae-901d-4797-b93b-5c6c0c02534b/resourcegroups/rgn-n-zeaus-mypsa-rg/providers/microsoft.dbformysql/flexibleservers/psa-portal-stage-db",
+      "/subscriptions/033d20ae-901d-4797-b93b-5c6c0c02534b/resourcegroups/rgn-n-zeaus-regnltrain-rg/providers/microsoft.dbformysql/flexibleservers/regnltrain-portal-stage-db",
+      "/subscriptions/ae0b13d9-e09c-4e54-b1e6-8e777d8fbe14/resourcegroups/ba-n-zeaus-orion-adbde-rg/providers/microsoft.dbformysql/flexibleservers/banzeausmysqldb002"
+    ],
+    "parameters": {
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "In order to reduce the potential attack surface for existing MySQL Flexible servers should have public access disabled unless firewalls are explicitly defined.",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "MySQL database Flexible server does not meet AA SCCF Benchmark control: MySQL Flexible server should not have Public access enabled without any firewall rules set. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "identity": {
+    "type": "SystemAssigned",
+    "roleAssignments": [
+      "Contributor"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicyYgvg7yBZGytWte",
+  "location": "eastus"
+}

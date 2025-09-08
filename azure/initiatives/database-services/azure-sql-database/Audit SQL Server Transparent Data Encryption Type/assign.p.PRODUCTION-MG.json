@@ -1,0 +1,17 @@
+{
+    "properties": {
+      "displayName": "Audit SQL Server Transparent Data Encryption Type",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementgroups/PRODUCTION-MG/providers/Microsoft.Authorization/policySetDefinitions/d238ae96-0d94-4f95-99f3-b43be21ffc6c_N",
+      "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+      "notScopes": [],
+      "parameters": {},
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": ["SQL Server encryption settings do not meet AA SCCF Benchmark control: Audit SQL Servers are encrypted with Platform Managed Key or Customer Managed Key."]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "jnLghiiYv2hcUs28kgnp8fYa",
+    "location": "eastus"
+  }
+  

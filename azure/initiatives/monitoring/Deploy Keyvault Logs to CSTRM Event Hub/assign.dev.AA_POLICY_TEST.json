@@ -1,0 +1,26 @@
+{
+    "properties": {
+      "displayName": "Deploy Diagnostic Settings for Key Vault to CSTRM Event Hub",
+      "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+      "notScopes": [],
+      "parameters": {},
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        "Key Vault Log forwarding configuration doesn't meet AA SCCF Benchmark control: Key Vaults must have auditing enabled and logs must be forwarded to the approved CSTRM Event Hub.  If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+    },
+    "identity": {
+      "type": "SystemAssigned",
+      "roleAssignments": [
+        "Monitoring Contributor",
+        "Log Analytics Contributor",
+        "Azure Event Hubs Data Owner:/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c",
+        "Log Analytics Contributor:/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c"
+      ]
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "GaaSPolicyF3hls5ZIijdikY",
+    "location": "eastus"
+  }
+  

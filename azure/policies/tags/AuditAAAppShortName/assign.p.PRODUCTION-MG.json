@@ -1,0 +1,22 @@
+{
+  "properties": {
+    "displayName": "Audit aa-app-shortname",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e9a93f84-8240-11ee-b962-0242ac120002",
+    "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      }
+    },
+    "description": "Audit AA Standard Tags and Valid Tag Values on Resource Groups and Resources",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Resource group is missing required aa-app-shortname tag or has invalid value"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "rQQOqPmhrRHBL9OD2EHaGEE5"
+}

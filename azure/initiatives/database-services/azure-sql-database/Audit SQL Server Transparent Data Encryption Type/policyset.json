@@ -1,0 +1,32 @@
+{
+    "properties": {
+      "displayName": "Audit SQL Server Transparent Data Encryption Type",
+      "policyType": "Custom",
+      "description": "Audit the Transparent Data Encryption (TDE) type of SQL Servers for Platform Managed Keys and Cutsomer Managed keys.",
+      "metadata": {},
+      "parameters": {},
+      "policyDefinitions": [
+        {
+          "policyDefinitionReferenceId": "",
+          "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/AA_GLOBAL-MG/providers/Microsoft.Authorization/policyDefinitions/1c542add-fb76-415e-8a42-7c1eb5d08234",
+          "parameters": {
+            "encryptionType": {
+              "value": "ServiceManaged"
+            }
+          }
+        },
+        {
+            "policyDefinitionReferenceId": "",
+            "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/AA_GLOBAL-MG/providers/Microsoft.Authorization/policyDefinitions/1c542add-fb76-415e-8a42-7c1eb5d08234",
+            "parameters": {
+              "encryptionType": {
+                "value": "AzureKeyVault"
+              }
+            }
+          }
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policySetDefinitions",
+    "name": "d238ae96-0d94-4f95-99f3-b43be21ffc6c"
+  }

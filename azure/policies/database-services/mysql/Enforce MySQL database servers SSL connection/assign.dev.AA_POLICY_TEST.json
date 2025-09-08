@@ -1,0 +1,22 @@
+{
+    "properties": {
+      "displayName": "Enforce SSL connection should be enabled for MySQL database servers",
+      "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+      "notScopes": [],
+      "parameters": {
+        "effect": {
+          "value": "Append"
+        }
+      },
+      "description": "Azure Database for MySQL supports connecting your Azure Database for MySQL server to client applications using Secure Sockets Layer (SSL). Enforcing SSL connections between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server.",
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        "MySQL database servers SSL connection configuration does not meet AA SCCF Benchmark control: SSL connection must be enabled. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "VJuSmvgU6673PHz3ZxWDXpNJ",
+    "location": "eastus"
+  }

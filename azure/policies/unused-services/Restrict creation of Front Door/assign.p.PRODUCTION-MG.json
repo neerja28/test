@@ -1,0 +1,26 @@
+{
+  "properties": {
+    "displayName": "Restrict creation of Front Door",
+    "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+    "notScopes": [
+      "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-eaus-et-eds-epays-rg",
+      "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-weus-et-eds-epays-rg",
+      "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-eManuals-prod-eastus-rg",
+      "/subscriptions/d468b5ca-4400-4521-8115-2bba3467f651/resourceGroups/ct-p-zeaus-cbro-rg",
+      "/subscriptions/d468b5ca-4400-4521-8115-2bba3467f651/resourceGroups/ct-p-zeaus-getng-rg"
+    ],
+    "parameters": {
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Restricting Azure Services that fall into either the 'Not the droids' category or do not have a Tech Radar disposition. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]  
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "t5mqTpMtMuT3vcubQmGzzYow",
+  "location": "eastus"
+}

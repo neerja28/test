@@ -1,0 +1,80 @@
+{
+    "subscription-id-1": {
+        "subscription_name": "aa-xxxxxxxxxxx",
+        "details": {
+            "Owner": [
+                {
+                    "principal_type": "Group",
+                    "principal_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                    "display_name": "aa-yyyyyyyyyyy",
+                    "members": [
+                        {
+                            "id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                            "display_name": "aaaaa, bbbbbb"
+                        },
+                        {
+                            "id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                            "display_name": "aaaaa, bbbbbb"
+                        },
+                        {
+                            "id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                            "display_name": "aaaaa, bbbbbb"
+                        },
+                        {
+                            "id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                            "display_name": "aaaaa, bbbbbb"
+                        }
+                    ]
+                },
+                {
+                    "principal_type": "ServicePrincipal",
+                    "principal_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                    "display_name": "aa-yyyyyyyyyyy"
+                },
+                {
+                    "principal_type": "User",
+                    "principal_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                    "display_name": "aaaaa, bbbbbb"
+                }
+            ],
+            "Contributor": [
+                {
+                    "principal_type": "Group",
+                    "principal_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                    "display_name": "aa-yyyyyyyyyyy",
+                    "members": [
+                        {
+                            "id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                            "display_name": "aaaaa, bbbbbb"
+                        },
+                        {
+                            "id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                            "display_name": "aaaaa, bbbbbb"
+                        },
+                        {
+                            "id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                            "display_name": "aaaaa, bbbbbb"
+                        },
+                        {
+                            "id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                            "display_name": "aaaaa, bbbbbb"
+                        }
+                    ]
+                },
+                {
+                    "principal_type": "ServicePrincipal",
+                    "principal_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                    "display_name": "aa-yyyyyyyyyyy"
+                },
+                {
+                    "principal_type": "User",
+                    "principal_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                    "display_name": "aaaaa, bbbbbb"
+                }
+            ]
+        }
+    },
+    "subscription-id-2": {
+        "Roles and assignments": "another subscription"
+    }
+}

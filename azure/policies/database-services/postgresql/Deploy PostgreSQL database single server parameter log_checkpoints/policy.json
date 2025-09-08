@@ -1,0 +1,76 @@
+{
+  "properties": {
+    "displayName": "Deploy PostgreSQL database single server parameter log_checkpoints ON",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Enabling log_checkpoints helps the PostgreSQL Database to Log each checkpoint in turn generates query and error logs. However, access to transaction logs is not supported. Query and error logs can be used to identify, troubleshoot, and repair configuration errors and sub-optimal performance.",
+    "metadata": {},
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "AuditIfNotExists",
+          "DeployIfNotExists",
+          "Disabled"
+        ],
+        "defaultValue": "DeployIfNotExists"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "field": "type",
+        "equals": "Microsoft.DBforPostgreSQL/servers"
+      },
+      "then": {
+        "effect": "[parameters('effect')]",
+        "details": {
+          "type": "Microsoft.DBforPostgreSQL/servers/configurations",
+          "name": "[concat(field('name'), '/log_checkpoints')]",
+          "evaluationDelay": "AfterProvisioning",
+          "roleDefinitionIds": [
+            "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+          ],
+          "existenceCondition": {
+            "field": "Microsoft.DBforPostgreSQL/servers/configurations/value",
+            "equals": "ON"
+          },
+          "deployment": {
+            "properties": {
+              "mode": "incremental",
+              "template": {
+                "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                "contentVersion": "1.0.0.0",
+                "parameters": {
+                  "serverName": {
+                    "type": "string"
+                  }
+                },
+                "resources": [{
+                  "name": "[concat(parameters('serverName'), '/log_checkpoints')]",
+                  "type": "Microsoft.DBforPostgreSQL/servers/configurations",
+                  "apiVersion": "2017-12-01",
+                  "properties": {
+                    "value": "ON",
+                    "source": "user-override"
+                  }
+                }]
+              },
+              "parameters": {
+                "serverName": {
+                  "value": "[field('name')]"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "81AAD471-7D7E-4336-8773-32BA9EB560F0"
+}

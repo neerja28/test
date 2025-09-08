@@ -1,0 +1,67 @@
+{
+  "properties": {
+    "displayName": "Audit WebApp slots Python Version EOL",
+    "mode": "All",
+    "description": "Periodically, newer versions are released for python software either due to security flaws or to include additional functionality. Using a supported python version for App Service apps is recommended in order to take advantage of security fixes, if any, and/or new functionalities of the latest version. This policy only applies to Linux apps. This policy requires you to specify a python version that meets your requirements.",
+    "metadata": {
+      "category": "App Service"
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "AuditIfNotExists",
+          "Disabled"
+        ],
+        "defaultValue": "AuditIfNotExists"
+      },
+      "LinuxPythonEolVersions": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "Linux unsupported Python versions",
+          "description": "Unsupported Python versions for App Services"
+        }
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Web/sites/slots"
+          },
+          {
+            "field": "kind",
+            "notContains": "functionapp"
+          },
+          {
+            "field": "kind",
+            "contains": "linux"
+          },
+          {
+            "field": "Microsoft.Web/sites/slots/siteConfig.linuxFxVersion",
+            "contains": "PYTHON"
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]",
+        "details": {
+          "type": "Microsoft.Web/sites/slots/config",
+          "name": "web",
+          "existenceCondition": {
+            "field": "Microsoft.Web/sites/slots/config/web.linuxFxVersion",
+            "notIn": "[parameters('LinuxPythonEolVersions')]"
+          }
+        }
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "1067f934-4822-11ee-be56-0242ac120002"
+}

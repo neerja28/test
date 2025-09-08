@@ -1,0 +1,19 @@
+{
+    "properties": {
+      "displayName": "Audit Storage Account Encryption Type",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementgroups/NON-PRODUCTION-MG/providers/Microsoft.Authorization/policySetDefinitions/2b901d09-4135-4064-b4db-d0feca78ef89_N",
+      "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+      "notScopes": [],
+      "parameters": {},
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        "Storage account encryption settings do not meet AA SCCF Benchmark control: Audit the storage account containing the container with activity logs is encrypted with Platform Managed Key or Customer Managed Key. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+        ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "jqh7LtXHMwRbD7OH1xlq5qFW",
+    "location": "eastus"
+  }
+  

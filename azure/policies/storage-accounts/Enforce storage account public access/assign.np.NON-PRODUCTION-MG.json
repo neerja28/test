@@ -1,0 +1,38 @@
+{
+    "properties": {
+      "displayName": "Enforce storage account public access should be disallowed",
+      "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+      "notScopes": [
+        "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/ct-n-zeaus-aavaca-rg",
+        "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/MC_dp-XkfHXoIxphffgOb2-eastus-1_eastus",
+        "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/mgmt-rg-upm-eastus-prj_XkfHXoIxphffgOb2",
+        "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/dp-XkfHXoIxphffgOb2-rg-eastus-1",
+        "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/XkfHXoIxphffgOb2-rg-eastus-management-ynei0wr8",
+        "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/MC_dp-XkfHXoIxphffgOb2-southcentralus-1_southcentralus",
+        "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/mgmt-rg-upm-southcentralus-prj_XkfHXoIxphffgOb2",
+        "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/dp-XkfHXoIxphffgOb2-rg-southcentralus-1",
+        "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/XkfHXoIxphffgOb2-rg-southcentralus-management-n06h4qa8",
+        "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/MC_dp-XkfHXoIxphffgOb2-westus2-1_westus2",
+        "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/mgmt-rg-upm-westus2-prj_XkfHXoIxphffgOb2",
+        "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/dp-XkfHXoIxphffgOb2-rg-westus2-1",
+        "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/XkfHXoIxphffgOb2-rg-westus2-management-1k0x78d3"
+      ],
+      "parameters": {
+        "effect": {
+          "value": "Deny"
+        }
+      },
+      "description": "",
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        "Storage account's public access configuration do not meet AA SCCF Benchmark control: Blob public access should be disabled. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "1nmcILNbn8TWHQixaljNbtG6"
+  }
+
+
+

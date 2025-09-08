@@ -1,0 +1,57 @@
+{
+  "properties": {
+    "displayName": "Enforce Resource Group parameter Tag value",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Apply tag and its default value from the parameter to Resource Group. Applies a required tag and its assigned default value as set during Assignment to a Resource Group if it is not specified by the user during creation time.",
+    "metadata": {
+      "category": "AA Standards",
+      "createdBy": "3f1d2da4-2185-4ea5-93b3-fed9e7f81310",
+      "createdOn": "2020-01-16T16:13:02.9306396Z",
+      "updatedBy": null,
+      "updatedOn": null
+    },
+    "parameters": {
+      "tagName": {
+        "type": "String",
+        "metadata": {
+          "displayName": "tagName",
+          "description": "Name of the tag"
+        }
+      },
+      "tagValue": {
+        "type": "String",
+        "metadata": {
+          "displayName": "tagValue",
+          "description": "Default value of the tag when not explicitly set"
+        }
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Resources/subscriptions/resourceGroups"
+          },
+          {
+            "field": "[concat('tags[',parameters('tagName'), ']')]",
+            "exists": false
+          }
+        ]
+      },
+      "then": {
+        "effect": "append",
+        "details": [
+          {
+            "field": "[concat('tags[', parameters('tagName'), ']')]",
+            "value": "[parameters('tagValue')]"
+          }
+        ]
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/AA_GLOBAL-MG/providers/Microsoft.Authorization/policyDefinitions/c796fd97-499f-4213-8318-58ae9e26d9a9",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "c796fd97-499f-4213-8318-58ae9e26d9a9"
+}

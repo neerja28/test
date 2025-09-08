@@ -1,0 +1,79 @@
+{
+  "properties": {
+    "displayName": "Deploy MySQL flexible server parameter audit_log_events to CONNECTION",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Ensure audit_log_events parameter is set to include CONNECTION on Azure database for MySQL flexible Servers",
+    "metadata": {
+      "version": "1.0.0",
+      "category": "AA SCCF benchmark"
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "AuditIfNotExists",
+          "DeployIfNotExists",
+          "Disabled"
+        ],
+        "defaultValue": "DeployIfNotExists"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "equals": "Microsoft.DBforMySQL/flexibleServers",
+        "field": "type"
+      },
+      "then": {
+        "details": {
+          "deployment": {
+            "properties": {
+              "mode": "incremental",
+              "parameters": {
+                "serverName": {
+                  "value": "[field('name')]"
+                }
+              },
+              "template": {
+                "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+                "contentVersion": "1.0.0.0",
+                "parameters": {
+                  "serverName": {
+                    "type": "string"
+                  }
+                },
+                "resources": [{
+                  "apiVersion": "2021-12-01-preview",
+                  "name": "[concat(parameters('serverName'), '/audit_log_events')]",
+                  "properties": {
+                    "source": "user-override",
+                    "value": "CONNECTION"
+                  },
+                  "type": "Microsoft.DBforMySQL/flexibleServers/configurations"
+                }]
+              }
+            }
+          },
+          "evaluationDelay": "AfterProvisioning",
+          "existenceCondition": {
+            "contains": "CONNECTION",
+            "field": "Microsoft.DBforMySQL/flexibleServers/configurations/value"
+          },
+          "name": "[concat(field('name'), '/audit_log_events')]",
+          "roleDefinitionIds": [
+            "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+          ],
+          "type": "Microsoft.DBforMySQL/flexibleServers/configurations"
+        },
+        "effect": "[parameters('effect')]"
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "a1b225c9-ef04-4751-bfca-56ba4953d838"
+}

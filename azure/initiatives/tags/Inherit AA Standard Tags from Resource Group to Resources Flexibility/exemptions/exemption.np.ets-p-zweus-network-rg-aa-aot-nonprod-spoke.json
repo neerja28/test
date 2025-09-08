@@ -1,0 +1,24 @@
+{
+  "apiVersion": "2024-12-01-preview",
+  "scope": "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/ets-p-zweus-network-rg",
+  "properties": {
+    "displayName": "ets-p-zweus-network-rg-aa-aot-nonprod-spoke - Exemption for aa-sdlc-environment Tag",
+    "description": "This resources is being exempted for aa-sdlc-environment tag to be flexible.",
+    "metadata": {
+      "requestedBy": "Sara Van Dusen - Network",
+      "PolEx": "Pol-EX 1234",
+      "aa-app-shortname": "WANLAN",
+      "approvedBy": "Manas - GaaS",
+      "approvedOn": "2025-08-19T00:00:00Z"
+    },
+    "policyAssignmentId": "/providers/microsoft.management/managementgroups/non-production-mg/providers/microsoft.authorization/policyassignments/gaaspolicypkkll7k6athcpg",
+    "policyDefinitionReferenceId": [
+      "1093875219693043596"
+    ],
+    "exemptionCategory": "Waiver",
+    "assignmentScopeValidation": "Default"
+  },
+  "id": "",
+  "name": "GaaSExemptionRBSjIE38X7s",
+  "type": "Microsoft.Authorization/policyExemptions"
+}

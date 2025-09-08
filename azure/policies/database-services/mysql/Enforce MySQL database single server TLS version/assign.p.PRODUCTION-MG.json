@@ -1,0 +1,20 @@
+{
+    "properties": {
+      "displayName": "Enforce MySQL database single server TLS version",
+      "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+      "notScopes": [],
+      "parameters": {
+        "effect": {
+          "value": "Deny"
+        }
+      },
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        "This MySQL database server configuration does not meet AA SCCF Benchmark control: MySQL database server TLS version should be set to >= 1.2. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "WI7L8Rx8e1YXQGzskLZKZ9FI",
+    "location": "eastus"
+  }

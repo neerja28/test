@@ -1,0 +1,42 @@
+{
+  "properties": {
+    "displayName": "Audit WebApp PHP Version EOL",
+    "policyType": "Custom",
+    "description": "Web apps should use a supported version of Php",
+    "metadata": {},
+    "parameters": {},
+    "policyDefinitions": [
+      {
+        "policyDefinitionReferenceId": "",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/AA_GLOBAL-MG/providers/Microsoft.Authorization/policyDefinitions/78824901-ea8e-4123-b84c-21f5d1885751",
+        "parameters": {
+          "LinuxPhpEolVersions": {
+            "value": [
+              "PHP|8.0",
+              "PHP|7.4",
+              "PHP|7.3",
+              "PHP|7.2"
+            ]
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/AA_GLOBAL-MG/providers/Microsoft.Authorization/policyDefinitions/9ec0b864-0d5b-4950-8cdf-a64ce18a9811",
+        "parameters": {
+          "LinuxPhpEolVersions": {
+            "value": [
+              "PHP|8.0",
+              "PHP|7.4",
+              "PHP|7.3",
+              "PHP|7.2"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policySetDefinitions",
+  "name": "277d5a88-c075-4724-849e-e797310879e3"
+}

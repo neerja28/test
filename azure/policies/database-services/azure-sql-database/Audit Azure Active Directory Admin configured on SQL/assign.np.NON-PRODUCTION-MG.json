@@ -1,0 +1,21 @@
+{
+  "properties": {
+    "displayName": "Audit Azure Active Directory Admin configured on Azure SQL",
+    "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "AuditIfNotExists"
+      }
+    },
+    "description": "This policy audit the Azure SQL database servers that do not have Azure Active Directory Admin configured",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Azure SQL database server configuration does not meet AA SCCF Benchmark control: Audit Azure Active Directory Admin be configured on Azure SQL Server"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "kFVtG84aypHEd3FbpH6vnuR3"
+}

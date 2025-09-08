@@ -1,0 +1,103 @@
+# Contributor
+# Network Contributor
+# Key Vault Administrator
+# Key Vault Contributor
+# Storage Table Data Contributor
+# Azure Event Hubs Data Owner
+# Storage Blob Data Contributor
+# Storage File Data SMB Share Contributor
+# Storage File Data SMB Share Elevated Contributor
+# Support Request Contributor
+# Monitoring Contributor
+# Storage Account Contributor
+# Resource Policy Contributor
+# DocumentDB Account Contributor
+# Virtual Machine Contributor
+# Storage File Data Privileged Contributor
+# Key Vault Administrator
+# Key Vault Secrets Officer
+# Data Factory Contributor
+# SQL DB Contributor
+# AA-Reader+
+# Owner
+# Azure Service Bus Data Receiver
+# Azure Service Bus Data Sender
+# Monitoring Metrics Publisher
+# Storage Blob Data Owner
+# Reader
+# Azure Kubernetes Service RBAC Reader
+# Azure Kubernetes Service RBAC Admin
+# Azure Kubernetes Service Cluster User Role
+# AzureML Compute Operator
+# SignalR REST API Owner
+# Managed Identity Operator
+# Create Resource Group
+# AcrPush
+# Network Subnet Join Custom
+# AcrPull
+# Key Vault Secrets User
+# Key Vault Data Access Administrator
+# Azure Event Hubs Data Receiver
+# Azure Event Hubs Data Sender
+# Stream Analytics Query Tester
+# Storage Blob Data Reader
+Network Contributor
+Unknown
+Contributor
+Owner
+Monitoring Reader
+Managed Application Operator Role
+Reader
+Key Vault Administrator
+Key Vault Secrets Officer
+Cognitive Services Contributor
+Log Analytics Contributor
+Monitoring Contributor
+Resource Policy Contributor
+Azure Event Hubs Data Owner
+Automation Contributor
+Azure Connected Machine Resource Administrator
+Virtual Machine Contributor
+User Access Administrator
+AA-UserAccess-ReadDelete_Dev
+Role Based Access Control Administrator
+Azure Kubernetes Service RBAC Reader
+Azure Kubernetes Service Cluster User Role
+AA-Spot-Custom-role_Dev
+Storage Account Contributor
+Storage Blob Data Owner
+Support Request Contributor
+VM Scanner Operator
+Defender CSPM Storage Scanner Operator
+Kubernetes Agentless Operator
+Storage Blob Data Reader
+Kubernetes Agent Operator
+Azure Arc Kubernetes Admin
+Storage File Data Privileged Reader
+AA-Service-Health-Notification-Reader_Dev
+Storage Table Data Contributor
+Azure Functions App Settings Reader TESTING ONLY
+Website Contributor
+Web Plan Contributor
+AA-TenableCSDiskAnalyzerRole_Dev
+Key Vault Reader
+AA-Lucidity-Audit-Custom-Role_Dev
+AA-Lucidity-AutoScaler-Custom-Role_Dev
+Backup Contributor
+Key Vault Secrets User
+AA KeyVault Soft Delete
+Storage Blob Data Contributor
+AA-Reader+_Dev
+Azure AI Administrator
+Storage File Data Privileged Contributor
+Key Vault Contributor
+SQL Server Contributor
+Storage Account Key Operator Service Role
+Storage Queue Data Contributor
+Storage Queue Data Message Processor
+Storage Queue Data Message Sender
+Storage Queue Data Reader
+Key Vault Crypto User
+Key Vault Certificates Officer
+Key Vault Crypto Service Encryption User
+dev-exp-core-role

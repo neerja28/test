@@ -1,0 +1,37 @@
+{
+  "properties": {
+    "displayName": "Enforce no public access on MySQL Flexible servers",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/c9299215-ae47-4f50-9c54-8a392f68a052",
+    "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+    "notScopes": [
+      "/subscriptions/bf5d63b1-2c02-4d9e-a096-f91d4ed04b4a/resourcegroups/dt-p-zeaus-dte-sigstore-rg/providers/microsoft.dbformysql/flexibleservers/dtesigstoredbp",
+      "/subscriptions/bf5d63b1-2c02-4d9e-a096-f91d4ed04b4a/resourcegroups/dt-p-zeaus-wiki-rg/providers/microsoft.dbformysql/flexibleservers/enterprise-wiki-flexdatabase",
+      "/subscriptions/fbda44e8-40e1-4887-bb25-d234e1e44505/resourcegroups/rgn-p-zeaus-evy-empprtls-rg/providers/microsoft.dbformysql/flexibleservers/evy-portal-prod-database",
+      "/subscriptions/fbda44e8-40e1-4887-bb25-d234e1e44505/resourcegroups/rgn-p-zeaus-evy-empprtls-rg/providers/microsoft.dbformysql/flexibleservers/evy-portal-prod-database-wus",
+      "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-zeaus-rmde-rg/providers/Microsoft.DBforMySQL/flexibleServers/corp-p-zeaus-rmde-adb-mysql-flex",
+      "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/corp-p-zeaus-rmdeprod-rg/providers/Microsoft.DBforMySQL/flexibleServers/corp-p-zeaus-rmdeprod-adb-mysql-flex",
+      "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-orion-adbde-rg/providers/Microsoft.DBforMySQL/flexibleServers/bapzeausmysqldb002"
+    ],
+    "parameters": {
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "In order to reduce the potential attack surface for existing MySQL Flexible servers should have public access disabled unless firewalls are explicitly defined.",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "MySQL database Flexible server does not meet AA SCCF Benchmark control: MySQL Flexible server should not have Public access enabled without any firewall rules set. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "identity": {
+    "type": "SystemAssigned",
+    "roleAssignments": [
+      "Contributor"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicyl857C44VNbfD5U",
+  "location": "eastus"
+}

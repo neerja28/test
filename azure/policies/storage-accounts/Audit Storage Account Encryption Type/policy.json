@@ -1,0 +1,57 @@
+{
+  "properties": {
+    "displayName": "Audit Storage Account Encryption Type",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Audit Storage Account Encryption Types to ensure they are set to Platform Managed keys or Customer managed keys.",
+    "metadata": {
+      "version": "1.0.0",
+      "category": "AA SCCF benchmark"
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "Audit",
+          "Disabled"
+        ],
+        "defaultValue": "Audit"
+      },
+      "encryptionType": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Encryption Type",
+          "description": "The type of encryption to use for this storage account."
+        },
+        "allowedValues": [
+          "Microsoft.Keyvault",
+          "Microsoft.Storage"
+        ]
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allof": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Storage/storageAccounts"
+          },
+          {
+            "field": "Microsoft.Storage/storageAccounts/encryption.keySource",
+            "notEquals": "[parameters('encryptionType')]"
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]"
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/AA_GLOBAL-MG/providers/Microsoft.Authorization/policyDefinitions/36b06ef3-97c8-46f3-9dab-99c69a1af50e",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "36b06ef3-97c8-46f3-9dab-99c69a1af50e"
+}

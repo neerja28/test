@@ -1,0 +1,35 @@
+{
+  "properties": {
+    "displayName": "Restrict creation of Azure NAT gateways",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6c112d4e-5bc7-47ae-a041-ea2d9dccd749",
+    "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+    "notScopes": [
+      "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-cmecore-dev-eastus-rg/providers/Microsoft.Network/natGateways/aa-cme-nat-dev-eastus",
+      "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-cmecore-dev-westus-rg/providers/Microsoft.Network/natGateways/aa-cme-nat-dev-westus",
+      "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-cmecore-stage-eastus-rg/providers/Microsoft.Network/natGateways/aa-cme-nat-stage-eastus",
+      "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-cmecore-stage-westus-rg/providers/Microsoft.Network/natGateways/aa-cme-nat-stage-westus",
+      "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-cmecore-stage-westus-rg/providers/Microsoft.Network/natGateways/aa-cme-nat-stage-westus",
+      "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/ct-n-zeaus-rovr-rg/providers/Microsoft.Network/natGateways/rovr-nat-gateway"
+    ],
+    "parameters": {
+      "listOfResourceTypesNotAllowed": {
+        "value": [
+          "Microsoft.network/natgateways"
+        ]
+      },
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Azure NAT gateway is restricted to ensure product teams are following AA security best practices. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code."
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "gZBn8fOWzzoXO3gp2N5WWNee"
+}
+

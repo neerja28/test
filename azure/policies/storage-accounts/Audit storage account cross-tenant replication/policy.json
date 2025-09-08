@@ -1,0 +1,78 @@
+{
+    "properties": {
+        "displayName": "Audit storage account cross-tenant replication",
+        "policyType": "Custom",
+        "mode": "Indexed",
+        "description": "Ensure cross-tenant replication for storage accounts is disabled.",
+        "metadata": {
+            "category": "storage"
+        },
+        "parameters": {
+            "effect": {
+                "type": "String",
+                "metadata": {
+                    "displayName": "Effect",
+                    "description": "Enable or disable the execution of the policy"
+                },
+                "allowedValues": [
+                    "Audit",
+                    "Deny",
+                    "Disabled",
+                    "AuditIfNotExists"
+                ],
+                "defaultValue": "Audit"
+            },
+            "unsupportedKinds": {
+                "type": "Array",
+                "metadata": {
+                    "displayName": "Unsupported Kinds",
+                    "description": "Unsupported storage account types"
+                },
+                "defaultValue": [
+                    "Storage",
+                    "FileStorage",
+                    "BlockBlobStorage"
+                ]
+            }
+        },
+        "policyRule": {
+            "if": {
+                "allof": [
+                    {
+                        "field": "type",
+                        "equals": "Microsoft.Storage/storageAccounts"
+                    },
+                    {
+                        "field": "kind",
+                        "notIn": "[parameters('unsupportedKinds')]"
+                    },
+                    {
+                        "field": "Microsoft.Storage/storageAccounts/sku.name",
+                        "notContains": "Premium"
+                    },
+                    {
+                        "field": "name",
+                        "notLike": "dbstorage*"
+                    }
+                ]
+            },
+            "then": {
+                "effect": "[parameters('effect')]",
+                "details": {
+                    "type": "Microsoft.Storage/storageAccounts",
+                    "existenceCondition": {
+                        "anyof": [
+                            {
+                                "field": "Microsoft.Storage/storageAccounts/allowCrossTenantReplication",
+                                "equals": "false"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "8854cc94-6566-4c9b-a856-ae5332548ff3"
+}

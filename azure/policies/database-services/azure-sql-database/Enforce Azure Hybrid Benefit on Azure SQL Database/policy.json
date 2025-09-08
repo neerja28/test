@@ -1,0 +1,112 @@
+{
+  "properties": {
+    "displayName": "Enforce Azure Hybrid Benefit on Azure SQL Database",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Azure Hybrid Benefit is a licensing benefit that helps you to significantly reduce the costs of running your workloads in the cloud. It works by letting you use your on-premises Software Assurance-enabled Windows Server and SQL Server licenses on Azure",
+    "metadata": {
+      "category": "SQL",
+      "version": "1.0.0",
+      "createdBy": "",
+      "createdOn": "",
+      "updatedBy": null,
+      "updatedOn": null
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "Modify",
+          "Disabled"
+        ],
+        "defaultValue": "Modify"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [{
+            "field": "type",
+            "equals": "Microsoft.Sql/servers/databases"
+          },
+          {
+            "field": "name",
+            "notEquals": "master"
+          },
+          {
+            "anyOf": [{
+                "field": "Microsoft.Sql/servers/databases/sku.tier",
+                "equals": "GeneralPurpose"
+              },
+              {
+                "field": "Microsoft.Sql/servers/databases/sku.tier",
+                "equals": "Hyperscale"
+              },
+              {
+                "field": "Microsoft.Sql/servers/databases/sku.tier",
+                "equals": "BusinessCritical"
+              },
+              {
+                "field": "Microsoft.Sql/servers/databases/sku.name",
+                "contains": "GP_"
+              },
+              {
+                "field": "Microsoft.Sql/servers/databases/sku.name",
+                "contains": "BC_"
+              },
+              {
+                "field": "Microsoft.Sql/servers/databases/sku.name",
+                "contains": "HS_"
+              }
+            ]
+          },
+          {
+            "field": "Microsoft.Sql/servers/databases/licenseType",
+            "notEquals": "BasePrice"
+          },
+          {
+            "not": {
+              "anyOf": [{
+                  "field": "Microsoft.Sql/servers/databases/sku.name",
+                  "equals": "ElasticPool"
+                },
+                {
+                  "field": "Microsoft.Sql/servers/databases/sku.name",
+                  "contains": "GP_S_"
+                },
+                {
+                  "field": "kind",
+                  "contains": "pool"
+                },
+                {
+                  "field": "kind",
+                  "contains": "serverless"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]",
+        "details": {
+          "roleDefinitionIds": [
+            "/providers/microsoft.authorization/roleDefinitions/6d8ee4ec-f05a-4a1d-8b00-a9b17e38b437"
+          ],
+          "conflictEffect": "deny",
+          "operations": [{
+            "operation": "addOrReplace",
+            "field": "Microsoft.Sql/servers/databases/licenseType",
+            "value": "BasePrice"
+          }]
+        }
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "f262bab7-2d20-4733-ae31-b5eae3621213"
+}

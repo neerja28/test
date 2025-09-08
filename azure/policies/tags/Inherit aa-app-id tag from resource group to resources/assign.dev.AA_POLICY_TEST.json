@@ -1,0 +1,30 @@
+{
+  "properties": {
+    "displayName": "Inherit aa-app-id tag from resource group to resources if missing",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ea3f2387-9b95-492a-a190-fcdc54f7b070",
+    "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+    "notScopes": [
+    ],
+    "parameters": {
+      "tagName":{
+        "value": "aa-app-id"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Inherit aa-app-id tag from resource group to resources if missing"
+    ]
+  },
+  "identity": {
+    "type": "SystemAssigned",
+    "roleAssignments": [
+      "Tag Contributor"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicyg0Wq3rW4CUNdLx",
+  "location": "eastus"
+}

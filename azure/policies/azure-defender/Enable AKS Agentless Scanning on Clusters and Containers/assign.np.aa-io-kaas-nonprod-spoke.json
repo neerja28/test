@@ -1,0 +1,29 @@
+{
+  "properties": {
+    "displayName": "Enable Agentless Vulnerability Scanning for Containers and Kubernetes",
+    "scope": "/subscriptions/2fe97b8d-f7b5-4964-85b0-48740441865e",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "DeployIfNotExists"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "AKS Cluster configuration doesn't meet AA SCCF Benchmark control: Enable Agentless Vulnerability Scanning for Containers and Kubernetes. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "identity": {
+    "type": "SystemAssigned",
+    "roleAssignments": [
+      "Security Admin",
+      "User Access Administrator"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicykshTyo5JqTf4Jt",
+  "location": "eastus"
+}

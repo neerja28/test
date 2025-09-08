@@ -1,0 +1,24 @@
+{
+    "properties": {
+      "displayName": "Audit Storage Account access keys expiration",
+      "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+      "notScopes": [],
+      "parameters": {
+        "effect": {
+          "value": "Audit"
+        },
+        "keyRotationPeriodInDays": {
+            "value": 365
+        }
+      },
+      "description": "",
+      "metadata": {},
+      "enforcementMode": "DoNotEnforce",
+      "nonComplianceMessages": [
+        "Storage account access keys haven't been rotated within the last 1 year. Please rotate your storage account access keys. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "GaaSPolicyIUakxkyvhy53rn"
+  }

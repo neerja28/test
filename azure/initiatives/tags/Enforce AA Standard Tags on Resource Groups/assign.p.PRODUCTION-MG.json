@@ -1,0 +1,24 @@
+{
+  "identity": {
+    "principalId": "f5b0a9d7-e72d-4cbb-aca4-264edfa63968",
+    "tenantId": "49793faf-eb3f-4d99-a0cf-aef7cce79dc1",
+    "type": "SystemAssigned"
+  },
+  "properties": {
+    "displayName": "Enforce AA Standard Tags on Resource Groups",
+    "policyDefinitionId": "",
+    "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+    "notScopes": [
+      "/subscriptions/16e932f5-8a58-4441-9219-2b4a673b7415/resourceGroups/aa-ets-networksecurity-westus-rg",
+      "/subscriptions/16e932f5-8a58-4441-9219-2b4a673b7415/resourceGroups/aa-ets-networksecurity-azea-rg"
+    ],
+    "parameters": {},
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": ["This aa-app-shortname or aa-sdlc-environment tag value is not valid. If the aa-app-shortname value is a valid Archer shortname, it may not be onboarded in Azure. Please complete the 'Onboard New App to Azure' form on https://developer.aa.com/create/templates/default/gaas-app-onboard"]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "fuvs36x68rf2037aoiivcg7o",
+  "location": "eastus"
+}

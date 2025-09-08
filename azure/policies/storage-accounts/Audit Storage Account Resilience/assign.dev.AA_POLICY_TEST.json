@@ -1,0 +1,18 @@
+{
+  "properties": {
+    "displayName": "Audit Storage Account Resilience for Geo-redundancy and Zone-Redundancy",
+    "policyDefinitionId": "",
+    "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+    "notScopes": [],
+    "parameters": {},
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Geo-redundancy and Zone-Redundancy must be enabled on Storage accounts for Vital and Critical Apps to meet the  requirements for SCCF Control: Audit Storage Account Resilience for Geo-redundancy and Zone-Redundancy. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicy77bce24a6e9937",
+  "location": "eastus"
+}

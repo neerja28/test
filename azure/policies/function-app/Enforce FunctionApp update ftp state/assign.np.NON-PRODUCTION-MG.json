@@ -1,0 +1,21 @@
+{
+  "properties": {
+    "displayName": "Enforce Function App Update ftp state to use ftps_only or disabled",
+    "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+    "notScopes": [],
+    "parameters": {
+      "effect":{
+        "value": "Deny"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "The Function App's ftp state Does not meet AA SCCF Benchmark control: Enforce Function App Update ftp state to use ftps_only or disabled. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "9qwHyoNV5xBTUFD98tRtKhaX"
+}

@@ -1,0 +1,28 @@
+{
+  "properties": {
+    "displayName": "Allowed locations for AOT Non Prod OpsHub Network RG",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c",
+    "scope": "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/ets-p-zceus-network-rg",
+    "notScopes": [],
+    "parameters": {
+      "listOfAllowedLocations": {
+        "value": [
+          "eastus",
+          "westus",
+          "centralus",
+          "northcentralus",
+          "southcentralus"
+        ]
+      }
+    },
+    "description": "Allowed locations for AOT nonprod subscription to support Confluent efforts",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "The Azure region/location chosen is not part of the Allowed AA Locations. If you would like to seek an exception for this policy or add a new location, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicyUZlrJpKB1b49Z8"
+}

@@ -1,0 +1,48 @@
+{
+  "properties": {
+    "displayName": "Restrict creation of Azure MySQL Single Server",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6c112d4e-5bc7-47ae-a041-ea2d9dccd749",
+    "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+    "notScopes": [ 
+      "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-zeaus-rmde-rg/providers/Microsoft.DBforMySQL/servers/corp-p-zeaus-rmde-adb-mysql",
+      "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-zeaus-rmde-rg/providers/Microsoft.DBforMySQL/servers/corp-p-zweus-rmde-adb-mysql",
+      "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/corp-p-zeaus-rmdeprod-rg/providers/Microsoft.DBforMySQL/servers/corp-p-zeaus-rmde-prod-mysql",
+      "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/corp-p-zeaus-rmdeprod-rg/providers/Microsoft.DBforMySQL/servers/corp-p-zweus-rmde-prod-mysql",     
+      "/subscriptions/8e5e91ba-9fca-4b3d-9858-4f6fcba19ee1/resourceGroups/ets-p-zeaus-devops-artifactory-rg/providers/Microsoft.DBforMySQL/servers/artiproddb",
+      "/subscriptions/8e5e91ba-9fca-4b3d-9858-4f6fcba19ee1/resourceGroups/ets-p-zweus-devops-artifactory-rg/providers/Microsoft.DBforMySQL/servers/artiwestproddb",
+      "/subscriptions/bf5d63b1-2c02-4d9e-a096-f91d4ed04b4a/resourceGroups/dt-p-zeaus-wiki-rg/providers/Microsoft.DBforMySQL/servers/prod-wiki-backup",
+      "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-etldb-rg/providers/Microsoft.DBforMySQL/servers/baporionetlabcdb",
+      "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-etldb-rg",
+      "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zweus-etldb-rg",
+      "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-grafana-rg/providers/Microsoft.DBforMySQL/servers/bagdbazrp001",
+      "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-group020-rg/providers/Microsoft.DBforMySQL/servers/onlinefeaturestoredbzp",
+      "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-orion-adbde-rg/providers/Microsoft.DBforMySQL/servers/bametadbzp001"
+    ],
+    "parameters": {
+      "listOfResourceTypesNotAllowed": {
+        "value": [
+          "microsoft.dbformysql/servers"
+        ]
+      },
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "Azure Database for MySQL - Single Server is on the retirement path and Azure Database for MySQL - Single Server is scheduled for retirement by September 16, 2024.",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "MySQL database Single server does not meet AA SCCF Benchmark control: MySQL Single server creation is blocked. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code."
+    ]
+  },
+  "identity": {
+    "type": "SystemAssigned",
+    "roleAssignments": [
+      "Contributor"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicyySJFErs2jRBB4s",
+  "location": "eastus"
+}

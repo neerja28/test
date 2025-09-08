@@ -1,0 +1,41 @@
+{
+  "properties": {
+    "displayName": "Restrict creation of Azure Arc-enabled Kubernetes",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6c112d4e-5bc7-47ae-a041-ea2d9dccd749",
+    "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+    "notScopes": [
+      "/subscriptions/36ae79ae-e3b0-409e-874c-aaecfc5d5cd3/resourceGroups/cstrm-n-zeaus-vulnscan-ibm-prod-rg",
+      "/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourceGroups/cstrm-p-zeaus-vulnscan-oci-prod-rg",
+      "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zweus-aks01-rg",
+      "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-aks01-rg"
+    ],
+    "parameters": {
+      "listOfResourceTypesNotAllowed": {
+        "value": [
+          "microsoft.kubernetes/connectedclusters",
+          "microsoft.kubernetesconfiguration/extensions",
+          "microsoft.kubernetesconfiguration/extensiontypes",
+          "microsoft.kubernetesconfiguration/fluxconfigurations",
+          "microsoft.kubernetesconfiguration/namespaces",
+          "microsoft.kubernetesconfiguration/sourcecontrolconfigurations",
+          "microsoft.kubernetesruntime/bgppeers",
+          "microsoft.kubernetesruntime/loadbalancers",
+          "microsoft.kubernetesruntime/services",
+          "microsoft.kubernetesruntime/storageclasses"
+        ]
+      },
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "DoNotEnforce",
+    "nonComplianceMessages": [
+      "Restricting Azure Arc-enabled Kubernetes that fall into either the 'Not the droids' category or do not have a Tech Radar disposition. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code."
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicykZoGfjEUujKdvo"
+}

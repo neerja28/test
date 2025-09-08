@@ -1,0 +1,80 @@
+{
+  "properties": {
+    "displayName": "Audit - Block adding firewall rules and Allow access from my IP on Azure cosmos DB",
+    "policyType": "Custom",
+    "mode": "Indexed",
+    "description": "Deny if Cosmos DB is configured using Allow access from my IP and block adding firewall rules on Azure cosmos DB .",
+    "metadata": {},
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Deny"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.DocumentDB/databaseAccounts"
+          },
+          {
+            "count": {
+              "field": "Microsoft.DocumentDB/databaseAccounts/ipRules[*]"
+            },
+            "notEquals": 0
+          },
+          {
+            "count": {
+              "field": "Microsoft.DocumentDB/databaseAccounts/ipRules[*]",
+              "where": {
+                "allOf": [
+                  {
+                    "field": "Microsoft.DocumentDB/databaseAccounts/ipRules[*].ipAddressOrRange",
+                    "notIn": [
+                      "104.42.195.92",
+                      "40.76.54.131",
+                      "52.176.6.30",
+                      "52.169.50.45",
+                      "52.187.184.26",
+                      "13.91.105.215",
+                      "4.210.172.107",
+                      "13.88.56.148",
+                      "40.91.218.243",
+                      "20.245.81.54",
+                      "40.118.23.126",
+                      "40.80.152.199",
+                      "13.95.130.121",
+                      "40.113.96.14",
+                      "104.42.11.145",
+                      "137.117.230.240",
+                      "168.61.72.237",
+                      "144.9.0.0/16",
+                      "162.92.0.0/16"
+                    ]
+                  }
+                ]
+              }
+            },
+            "greater": 0
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]"
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "8833f24a-19ba-4cf6-9304-9114bd9cce8b"
+}

@@ -1,0 +1,24 @@
+{
+    "properties": {
+      "displayName": "Audit Storage Account access key rotation reminder",
+      "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+      "notScopes": [],
+      "parameters": {
+        "effect": {
+          "value": "Audit"
+        },
+        "keyRotationPeriodInDays": {
+            "value": 365
+        }
+      },
+      "description": "",
+      "metadata": {},
+      "enforcementMode": "DoNotEnforce",
+      "nonComplianceMessages": [
+        "Please set an access key rotation reminder to <=365 days. Storage account does not have a key rotation reminder set or the key rotation reminder period set is more than 365 days. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "GaaSPolicyV3e0I0dHFnX6YO"
+  }

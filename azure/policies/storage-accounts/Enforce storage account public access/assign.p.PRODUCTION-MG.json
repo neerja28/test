@@ -1,0 +1,24 @@
+{
+    "properties": {
+      "displayName": "Enforce storage account public access should be disallowed",
+      "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+      "notScopes": [
+        "/subscriptions/bf5d63b1-2c02-4d9e-a096-f91d4ed04b4a/resourceGroups/dt-p-TechBlog-rg",
+        "/subscriptions/d468b5ca-4400-4521-8115-2bba3467f651/resourceGroups/ct-p-zeaus-aavaca-rg"        
+      ],
+      "parameters": {
+        "effect": {
+          "value": "Deny"
+        }
+      },
+      "description": "",
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        "Storage account's public access configuration do not meet AA SCCF Benchmark control: Blob public access should be disabled. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "9CAMx2X8dCJY75mkVFhEMQGZ"
+  }

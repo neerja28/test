@@ -1,0 +1,22 @@
+{
+    "properties": {
+      "displayName": "Ensure That 'Firewalls & Networks' Is Limited to Use Selected Networks Instead of All Networks for Cosmos DB",
+      "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+      "notScopes": [],
+      "parameters": {
+        "effect": {
+          "value": "Deny"
+        }
+      },
+      "description": "Blocks the creation of Cosmos DB that only have 'Public Network access enabled' with no Vnets or Firewall rules set.",
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        "Azure CosmoDB network configuration does not meet AA SCCF Benchmark control: Firewall rules should be defined on your Azure Cosmos DB accounts to prevent traffic from unauthorized sources. Accounts that have at least one IP rule defined with the virtual network filter enabled are deemed compliant. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+    },
+    "id": "/providers/Microsoft.Authorization/policyDefinitions/862e97cf-49fc-4a5c-9de4-40d4e2e7c8eb",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "eyYyZvhSJCCSEyuprtXqyCoj",
+    "location": "eastus"
+  }

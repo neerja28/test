@@ -1,0 +1,63 @@
+{
+    "properties": {
+      "displayName": "Audit SQL Server Transparent Data Encryption Type",
+      "policyType": "Custom",
+      "mode": "All",
+      "description": "SQL Server Transparent Data Encryption Protector should be configured to use Platform Managed Keys or Customer Managed keys.",
+      "metadata": {
+        "version": "1.0.0",
+        "category": "AA SCCF benchmark"
+      },
+      "version": "2.0.1",
+      "parameters": {
+        "effect": {
+          "type": "String",
+          "metadata": {
+            "displayName": "Effect",
+            "description": "Enable or disable the execution of the policy"
+          },
+          "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+          ],
+          "defaultValue": "Audit"
+        },
+        "encryptionType": {
+          "type": "String",
+          "metadata": {
+            "displayName": "Encryption Type",
+            "description": "The type of encryption used for the server. Options are ServiceManaged or AzureKeyVault."
+          },
+          "allowedValues": [
+            "ServiceManaged",
+            "AzureKeyVault"
+          ]
+        }
+      },
+      "policyRule": {
+        "if": {
+            "allOf": [
+              {
+                "field": "type",
+                "equals": "Microsoft.Sql/servers/encryptionProtector"
+              },
+              {
+                "value": "[resourcegroup().managedBy]",
+                "notContains": "/providers/Microsoft.Synapse/"
+              },
+              {
+                "field": "Microsoft.Sql/servers/encryptionProtector/serverKeyType",
+                "notequals": "[parameters('encryptionType')]"
+              }
+            ]
+        },
+        "then": {
+          "effect": "[parameters('effect')]"
+        }
+      }
+    },
+    "id": "/providers/Microsoft.Management/managementGroups/AA_GLOBAL-MG/providers/Microsoft.Authorization/policyDefinitions/1c542add-fb76-415e-8a42-7c1eb5d08234",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "1c542add-fb76-415e-8a42-7c1eb5d08234"
+  }

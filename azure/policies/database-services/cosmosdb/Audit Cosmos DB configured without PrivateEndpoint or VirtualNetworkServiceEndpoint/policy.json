@@ -1,0 +1,54 @@
+{
+    "properties": {
+      "displayName": "Audit - Cosmos DB should use a private link or  virtual network service endpoint",
+      "policyType": "Custom",
+      "mode": "Indexed",
+      "description": "Audit if Cosmos DB is configured using private link or virtual network service endpoint.",
+      "metadata": {},
+      "parameters": {
+        "effect": {
+          "type": "String",
+          "metadata": {
+            "displayName": "Effect",
+            "description": "Enable or disable the execution of the policy"
+          },
+          "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+          ],
+          "defaultValue": "Audit"
+        }
+      },
+      "policyRule": {
+        "if": {
+          "allOf": [
+            {
+              "field": "type",
+              "equals": "Microsoft.DocumentDB/databaseAccounts"
+            },
+            {
+              "field": "Microsoft.DocumentDB/databaseAccounts/virtualNetworkRules[*].id",
+              "exists": "false"
+            },
+            {
+              "count": {
+                "field": "Microsoft.DocumentDB/databaseAccounts/privateEndpointConnections[*]",
+                "where": {
+                  "field": "Microsoft.DocumentDB/databaseAccounts/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+                  "equals": "Approved"
+                }
+              },
+              "less": 1
+            }
+          ]
+        },
+        "then": {
+          "effect": "[parameters('effect')]"
+        }
+      }
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "9874d02a-803f-4924-aa1b-db0c217a771d"
+  }

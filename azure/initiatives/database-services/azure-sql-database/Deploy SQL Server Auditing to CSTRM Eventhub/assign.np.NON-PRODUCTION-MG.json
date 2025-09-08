@@ -1,0 +1,28 @@
+{
+    "properties": {
+      "displayName": "Deploy SQL Server Auditing to CSTRM Event Hub",
+      "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+      "notScopes": [],
+      "parameters": {},
+      "description": "Enables the Audit Logs at the SQL server level to stream resource logs to a CSTRM Event Hub",
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        "SQL Server Auditing configuration doesn't meet AA SCCF Benchmark control: SQL Server must have auditing enabled and logs must be forwarded to the approved CSTRM Event Hub.  If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+    },
+    "identity": {
+      "type": "SystemAssigned",
+      "roleAssignments": [
+        "SQL Security Manager",
+        "Log Analytics Contributor",
+        "Azure Event Hubs Data Owner:/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c",
+        "Azure Event Hubs Data Owner"
+      ]
+    },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicyvkw5nE49jae540",
+  "location": "eastus"
+  }
+  

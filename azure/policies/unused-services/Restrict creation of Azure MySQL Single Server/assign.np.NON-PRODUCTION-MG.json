@@ -1,0 +1,53 @@
+{
+  "properties": {
+    "displayName": "Restrict creation of Azure MySQL Single Server",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6c112d4e-5bc7-47ae-a041-ea2d9dccd749",
+    "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+    "notScopes": [
+      "/subscriptions/033d20ae-901d-4797-b93b-5c6c0c02534b/resourceGroups/rglns-n-eaus-evy-ei-rg/providers/Microsoft.DBforMySQL/servers/pilottrainingmysqldb",
+      "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/aa-ct-udpi-rg/providers/Microsoft.DBforMySQL/servers/cip-server",
+      "/subscriptions/8ac743df-669f-43b0-b197-9432f6684c74/resourceGroups/ets-n-zeaus-devops-artifactory-rg/providers/Microsoft.DBforMySQL/servers/artiazuredb",
+      "/subscriptions/8ac743df-669f-43b0-b197-9432f6684c74/resourceGroups/ets-n-zeaus-devops-artifactory-rg/providers/Microsoft.DBforMySQL/servers/artieastdevdb03232023",
+      "/subscriptions/8ac743df-669f-43b0-b197-9432f6684c74/resourceGroups/ets-n-zeaus-devops-artifactory-rg/providers/Microsoft.DBforMySQL/servers/artiwestdevdb",
+      "/subscriptions/ae0b13d9-e09c-4e54-b1e6-8e777d8fbe14/resourceGroups/ba-n-zeaus-etldb-rg/providers/Microsoft.DBforMySQL/servers/banorionetlabcdb",
+      "/subscriptions/ae0b13d9-e09c-4e54-b1e6-8e777d8fbe14/resourceGroups/ba-n-zeaus-etldb-rg",
+      "/subscriptions/ae0b13d9-e09c-4e54-b1e6-8e777d8fbe14/resourceGroups/ba-n-zweus-etldb-rg",
+      "/subscriptions/ae0b13d9-e09c-4e54-b1e6-8e777d8fbe14/resourceGroups/ba-n-zeaus-grafana-rg/providers/Microsoft.DBforMySQL/servers/bagdbazrn001",
+      "/subscriptions/ae0b13d9-e09c-4e54-b1e6-8e777d8fbe14/resourceGroups/ba-n-zeaus-orion-adbde-rg/providers/Microsoft.DBforMySQL/servers/bametadbzd001",
+      "/subscriptions/ae0b13d9-e09c-4e54-b1e6-8e777d8fbe14/resourceGroups/ba-n-zeaus-orion-adbde-rg/providers/Microsoft.DBforMySQL/servers/bametadbzd001r",
+      "/subscriptions/ae0b13d9-e09c-4e54-b1e6-8e777d8fbe14/resourceGroups/ba-n-zeaus-orion-adbde-rg/providers/Microsoft.DBforMySQL/servers/bametadbzn001",
+      "/subscriptions/ae0b13d9-e09c-4e54-b1e6-8e777d8fbe14/resourceGroups/ba-n-zeaus-orion-adbde-rg/providers/Microsoft.DBforMySQL/servers/bametadbzn001r",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/cor-n-zeaus-rmde-rg/providers/Microsoft.DBforMySQL/servers/corp-n-zeaus-rmde-adb-mysql",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/cor-n-zeaus-rmde-rg/providers/Microsoft.DBforMySQL/servers/corp-n-zweus-rmde-adb-mysql",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/cor-n-zeaus-rmde-rg/providers/Microsoft.DBforMySQL/servers/new-test-primary-rmde-east",
+      "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/corp-n-zeaus-rmde-sandbox-rg/providers/Microsoft.DBforMySQL/servers/corp-n-zeaus-rmde-sandbox-mysql",
+      "/subscriptions/fbda44e8-40e1-4887-bb25-d234e1e44505/resourceGroups/rgn-p-zeaus-evy-ei-rg/providers/Microsoft.DBforMySQL/servers/pilottrainingmysql"
+    ],
+    "parameters": {
+      "listOfResourceTypesNotAllowed": {
+        "value": [
+          "microsoft.dbformysql/servers"
+        ]
+      },
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "Azure Database for MySQL - Single Server is on the retirement path and Azure Database for MySQL - Single Server is scheduled for retirement by September 16, 2024.",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "MySQL database Single server does not meet AA SCCF Benchmark control: MySQL Single server creation is blocked. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code."
+    ]
+  },
+  "identity": {
+    "type": "SystemAssigned",
+    "roleAssignments": [
+      "Contributor"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicyiapaImNBoCsKpA",
+  "location": "eastus"
+}

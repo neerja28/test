@@ -1,0 +1,24 @@
+{
+  "properties": {
+    "displayName": "Auto Tag Resource Group with aa-criticality Tag",
+    "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+    "notScopes": [],
+    "parameters": {},
+    "description": "The policy auto tags Resource Groups with aa-criticality tag derived from Archer",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Resource Groups not tagged with aa-criticality tag and does not meet AA tagging standards"
+    ]
+  },
+  "identity": {
+    "type": "SystemAssigned",
+    "roleAssignments": [
+      "Tag Contributor"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicyUFnfLlb6In0AGT",
+  "location": "eastus"
+}

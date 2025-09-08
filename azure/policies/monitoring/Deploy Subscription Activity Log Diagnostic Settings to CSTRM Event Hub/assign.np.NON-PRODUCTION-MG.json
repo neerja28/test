@@ -1,0 +1,26 @@
+{
+  "properties": {
+    "displayName": "Deploy Subscription Activity Log Diagnostic Settings to Forward Logs to CSTRM EventHub",
+    "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+    "notScopes": [],
+    "parameters": {},
+    "description": "Deploys required diagnostic settings to forward subscription activity logs to the CSTRM Event Hub.",
+    "metadata": {},
+    "enforcementMode": "DoNotEnforce",
+    "nonComplianceMessages": [
+      "Subscription diagnostic settings must be configured to send subscription activity logs to CSTRM log analytics workspace. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "identity": {
+    "type": "SystemAssigned",
+    "roleAssignments": [
+      "Log Analytics Contributor",
+      "Azure Event Hubs Data Owner:/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c",
+      "Log Analytics Contributor:/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicyEBHDSnGaI6Z9cS",
+  "location": "eastus"
+}

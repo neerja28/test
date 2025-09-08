@@ -1,0 +1,21 @@
+{
+  "properties": {
+      "displayName": "Enforce PostgreSQL Single Server 'Allow access to Azure services' is disabled",
+      "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+      "notScopes": [],
+      "parameters": {
+          "effect": {
+              "value": "Deny"
+          }
+      },
+      "description": "Ensure 'Allow access to Azure services' is disabled for Azure PostgreSQL Single Server Access",
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+          "PostgreSQL single server connection security settings do not meet AA SCCF Benchmark control: 'Allow access to Azure services' must be disabled for PostgreSQL single servers. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "9l9dhEcRiZScxivcng7vEjoH"
+}

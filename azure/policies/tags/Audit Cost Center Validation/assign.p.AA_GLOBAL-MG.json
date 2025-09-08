@@ -1,0 +1,27 @@
+{
+  "identity": {
+    "principalId": "7c460123-d4b9-400c-9a7e-7b89be268d80",
+    "tenantId": "49793faf-eb3f-4d99-a0cf-aef7cce79dc1",
+    "type": "SystemAssigned"
+  },
+  "properties": {
+    "displayName": "Audit Cost Center Validation",
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/AA_GLOBAL-MG/providers/Microsoft.Authorization/policyDefinitions/31f91bd8-c66e-4be1-bf83-ee2f82d2a7f9",
+    "scope": "/providers/Microsoft.Management/managementGroups/AA_GLOBAL-MG",
+    "notScopes": [],
+    "parameters": {},
+    "metadata": {
+      "assignedBy": "Tom Williams",
+      "parameterScopes": {},
+      "createdBy": "3f1d2da4-2185-4ea5-93b3-fed9e7f81310",
+      "createdOn": "2020-02-25T16:25:58.2277191Z",
+      "updatedBy": null,
+      "updatedOn": null
+    },
+    "enforcementMode": "Default"
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/AA_GLOBAL-MG/providers/Microsoft.Authorization/policyAssignments/38ab4ff39216414393252ab5",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "38ab4ff39216414393252ab5",
+  "location": "eastus"
+}

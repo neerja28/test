@@ -1,0 +1,65 @@
+{
+    "properties": {
+        "displayName": "Enforce VM and NSG UDP access is restricted from the internet",
+        "policyType": "Custom",
+        "mode": "All",
+        "description": "Network security groups should be periodically evaluated for port misconfigurations. Where certain ports and protocols may be exposed to the Internet, they should be evaluated for necessity and restricted wherever they are not explicitly required.",
+        "metadata": {
+            "category": "Network"
+        },
+        "parameters": {
+            "effect": {
+                "type": "String",
+                "metadata": {
+                    "displayName": "Effect",
+                    "description": "Enable or disable the execution of the policy"
+                },
+                "allowedValues": [
+                    "Audit",
+                    "Deny",
+                    "Disabled"
+                ],
+                "defaultValue": "Deny"
+            },
+            "listOfBlockedSources": {
+                "type": "Array",
+                "metadata": {
+                    "displayName": "Blocked sources",
+                    "description": "List of sources that are not allowed"
+                },
+                "defaultValue": [
+                    "*",
+                    "Internet"
+                ]
+            }
+        },
+        "policyRule": {
+            "if": {
+                "allOf": [
+                    {
+                        "field": "type",
+                        "equals": "Microsoft.Network/networkSecurityGroups/securityRules"
+                    },
+                    {
+                        "field": "Microsoft.Network/networkSecurityGroups/securityRules/direction",
+                        "equals": "Inbound"
+                    },
+                    {
+                        "field": "Microsoft.Network/networkSecurityGroups/securityRules/protocol",
+                        "equals": "UDP"
+                    },
+                    {
+                        "field": "Microsoft.Network/networkSecurityGroups/securityRules/sourceAddressPrefix",
+                        "in": "[parameters('listOfBlockedSources')]"
+                    }
+                ]
+            },
+            "then": {
+                "effect": "[parameters('effect')]"
+            }
+        }
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "96d77b50-a054-4cb3-b3a5-7add62faead3"
+}

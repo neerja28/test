@@ -1,0 +1,74 @@
+{
+  "properties": {
+    "displayName": "Enforce no SQL Databases allow ingress 0.0.0.0/0",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "In order to reduce the potential attack surface for a SQL server, firewall rules should be defined with more granular IP addresses by referencing the range of addresses available from specific data centers. Enforce no SQL ingress with StartIp of 0.0.0.0 and EndIP of 255.255.255.255 i.e.denying access from ANY IP over the Internet ",
+    "metadata": {
+      "category": "SQL",
+      "version": "1.0.0",
+      "createdBy": "",
+      "createdOn": "",
+      "updatedBy": null,
+      "updatedOn": null
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Deny"
+      },
+      "startIpAddress": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "Start IP Address",
+          "description": "The beginning of the IP address range."
+        },
+        "defaultValue": [
+          "0.0.0.0"
+        ]
+      },
+      "endIpAddress": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "End IP Address",
+          "description": "The end of the IP address range."
+        },
+        "defaultValue": [
+          "255.255.255.255"
+        ]
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [{
+            "field": "type",
+            "equals": "Microsoft.Sql/servers/firewallRules"
+          },
+          {
+            "field": "Microsoft.Sql/servers/firewallRules/startIpAddress",
+            "in": "[parameters('startIpAddress')]"
+          },
+          {
+            "field": "Microsoft.Sql/servers/firewallRules/endIpAddress",
+            "in": "[parameters('endIpAddress')]"
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]"
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "c1831fb2-59ac-4b6f-92e1-ashf8db31dfw"
+}

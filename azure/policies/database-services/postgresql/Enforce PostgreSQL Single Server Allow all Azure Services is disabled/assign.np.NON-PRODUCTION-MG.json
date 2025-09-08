@@ -1,0 +1,33 @@
+{
+  "properties": {
+      "displayName": "Enforce PostgreSQL Single Server 'Allow access to Azure services' is disabled",
+      "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+      "notScopes": [
+        "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-cers-dev-eastus-rg",
+        "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-cers-nonprod-eastus-rg",
+        "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-cers-test-eastus-rg",
+        "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-cers-test-westus-rg",
+        "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-setool-dev-eastus-rg",
+        "/subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-setool-test-eastus-rg",
+        "/subscriptions/151e8825-89f3-4507-ac30-3ea54ea49f78/resourceGroups/dt-n-okrtracker-rg",
+        "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/corp-n-zeaus-rptinfraportal-rg",
+        "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/corp-d-zeaus-aa-sales-vgc-dev-rg/providers/Microsoft.DBforPostgreSQL/servers/aa-sales-vgc-dev-pgdb-useast",
+        "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/cor-n-sales-eaus-vgc-rg/providers/Microsoft.DBforPostgreSQL/servers/aa-sales-vgc-stage-pgdb-eastus",
+        "/subscriptions/e39ceb7a-6195-4eee-b1d5-235f2d68dd87/resourceGroups/cor-n-sales-eaus-vgc-rg/providers/Microsoft.DBforPostgreSQL/servers/aa-sales-vgc-stage-pgdb-westus"
+      ],
+      "parameters": {
+          "effect": {
+              "value": "Deny"
+          }
+      },
+      "description": "Ensure 'Allow access to Azure services' is disabled for Azure PostgreSQL Single Server Access",
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+          "PostgreSQL single server connection security settings do not meet AA SCCF Benchmark control: 'Allow access to Azure services' must be disabled for PostgreSQL single servers. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "0zxxpoH24bGS3APJ2dcOK5ej"
+}

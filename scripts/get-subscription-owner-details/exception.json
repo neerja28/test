@@ -1,0 +1,14 @@
+{
+    "exceptions": [
+        {
+            "subscription_id": "e39ceb7a-6195-4eee-b1d5-235f2d68dd87",
+            "subscription_name": "aa-corp-nonprod-spoke",
+            "expiration_date": "2025-06-30"
+        },
+        {
+            "subscription_id": "1912897a-7482-4a27-aa97-18da028f05eb",
+            "subscription_name": "aa-corp-prod-spoke",
+            "expiration_date": "2025-06-30"
+        }
+    ]
+}

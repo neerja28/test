@@ -1,0 +1,54 @@
+{
+  "properties": {
+    "displayName": "Audit WebApp Python Version EOL",
+    "policyType": "Custom",
+    "description": "Web apps should use a supported version of Python",
+    "metadata": {},
+    "parameters": {},
+    "policyDefinitions": [
+      {
+        "policyDefinitionReferenceId": "",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/AA_GLOBAL-MG/providers/Microsoft.Authorization/policyDefinitions/0af21c00-4822-11ee-be56-0242ac120002",
+        "parameters": {
+          "LinuxPythonEolVersions": {
+            "value": [
+              "PYTHON|3.7",
+              "PYTHON|3.6",
+              "PYTHON|3.5",
+              "PYTHON|3.4",
+              "PYTHON|3.3",
+              "PYTHON|3.2",
+              "PYTHON|3.1",
+              "PYTHON|3.0",
+              "PYTHON|2.7",
+              "PYTHON|2.6"
+            ]
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/AA_GLOBAL-MG/providers/Microsoft.Authorization/policyDefinitions/1067f934-4822-11ee-be56-0242ac120002",
+        "parameters": {
+          "LinuxPythonEolVersions": {
+            "value": [
+              "PYTHON|3.7",
+              "PYTHON|3.6",
+              "PYTHON|3.5",
+              "PYTHON|3.4",
+              "PYTHON|3.3",
+              "PYTHON|3.2",
+              "PYTHON|3.1",
+              "PYTHON|3.0",
+              "PYTHON|2.7",
+              "PYTHON|2.6"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policySetDefinitions",
+  "name": "30425c76-4823-11ee-be56-0242ac120002"
+}

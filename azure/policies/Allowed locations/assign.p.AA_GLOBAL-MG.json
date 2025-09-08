@@ -1,0 +1,30 @@
+{
+    "properties": {
+        "displayName": "Allowed locations for Global MG",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c",
+        "scope": "/providers/Microsoft.Management/managementGroups/AA_GLOBAL-MG",
+        "notScopes": [],
+        "parameters": {
+            "listOfAllowedLocations": {
+                "value": [
+                    "eastus",
+                    "westus",
+                    "eastus2",
+                    "northcentralus",
+                    "southcentralus",
+                    "westcentralus",
+                    "westus2"
+                ]
+            }
+        },
+        "description": "",
+        "metadata": {},
+        "enforcementMode": "Default",
+        "nonComplianceMessages": [
+          "The Azure region/location chosen is not part of the Allowed AA Locations. If you would like to seek an exception for this policy or add a new location, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+        ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "GaaSPolicyF3B0ktFfmNqwFj"
+}

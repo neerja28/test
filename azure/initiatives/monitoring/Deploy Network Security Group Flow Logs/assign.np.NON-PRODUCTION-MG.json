@@ -1,0 +1,31 @@
+{
+  "properties": {
+    "displayName": "Deploy Network Security Group Flow Logs to CSTRM Storage Account",
+    "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+    "notScopes": [
+      "/subscriptions/0e699f7a-75b6-412a-a88e-14128fb44cca",
+      "/subscriptions/92e03da3-b0d4-43e1-bc06-38c0c1ccefd5"
+    ],
+    "parameters": {},
+    "description": "Deploys the flow log resource for Network Watchers to a CSTRM approved storage account",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "NSG Flow Logs configuration doesn't meet AA SCCF Benchmark control: NSG Flow Logs must be forwarded to the approved CSTRM Event Hub. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "identity": {
+    "type": "SystemAssigned",
+    "roleAssignments": [
+      "Network Contributor",
+      "Reader and Data Access:/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c",
+      "Storage Account Contributor:/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c",
+      "Reader and Data Access",
+      "Storage Account Contributor"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicyC47j6L0g5BfKfa",
+  "location": "eastus"
+}

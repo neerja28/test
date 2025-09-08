@@ -1,0 +1,28 @@
+{
+  "identity": {
+    "type": "SystemAssigned",
+    "roleAssignments": [
+      "Monitoring Contributor",
+      "Azure Event Hubs Data Owner",
+      "Azure Event Hubs Data Owner:/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c",
+      "Log Analytics Contributor"
+    ]
+  },
+    "properties": {
+      "displayName": "Enable storage account service logging to Eventhub",
+      "policyDefinitionId": "",
+      "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+      "notScopes": [],
+      "parameters": {},
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        "Diagnostic settings for Blob, Table and Queue services configuration doesn't meet AA SCCF Benchmark control: Storage Accounts must have diagnostic settings logs enabled for Blob, Queue and Table services and forwarded to the approved CSTRM Event Hub. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "GaaSPolicyw6d0gpdla4sifx",
+    "location": "eastus"
+  }
+  

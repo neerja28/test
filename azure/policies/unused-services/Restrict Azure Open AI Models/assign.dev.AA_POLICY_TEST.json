@@ -1,0 +1,17 @@
+{
+  "properties": {
+    "displayName": "Restrict Azure Open AI Models",
+    "description": "This policy restricts the deployment of certain AI models within the AA environment.",
+    "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+    "notScopes": [],
+    "parameters": {},
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "This Azure OpenAI model is not allowed within the AA environment. To add a model to the allowed list, please reach out to your EA. Allowed models are dall-e-3, gpt-4, gpt-4.1, gpt-4.1-mini, gpt-4.1-nano, gpt-4o, gpt-4o-audio-preview, gpt-4o-mini, gpt-4o-mini-audio-preview, gpt-4o-mini-realtime-preview, gpt-4o-mini-transcribe, gpt-4o-mini-tts, gpt-4o-realtime-preview, gpt-4o-transcribe, gpt-4o-tts, gpt-5, gpt-5-chat, gpt-5-mini, gpt-5-nano, text-embedding-3-large, text-embedding-3-small, tts, tts-hd, whisper"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicyrdxV15kHUbm7s7"
+}

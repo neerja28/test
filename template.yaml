@@ -1,0 +1,177 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: gaas-app-onboard
+  title: Onboard New App to Azure
+  description: Request approval to onboard app to Azure. Ensure you have confirmation from your financial analyst that you have cloud budget for this app, and provide the URLs to your architecture artifacts.
+spec:
+  owner: TnT-Squad-007
+  type: service
+
+  parameters:
+    - title: Application Information
+      required:
+        - cmdbAppShortName
+        - vertical
+      properties:
+        cmdbAppShortName:
+          title: App Shortname
+          description: Archer Application Shortname
+          ui:field: AppShortnamePickerFieldExtension
+        
+        vertical:
+          title: Vertical (VP)
+          description: Who is the VP for this Application?
+          type: array
+          minItems: 1
+          maxItems: 1
+          ui:options:
+            addable: true
+            orderable: false
+            removable: false
+          items:
+            title: Vertical VP Name
+            type: string
+            enum:
+              - AOT - Arnaud Mathieu
+              - CT - Misty Shafer Sterne
+              - CorpTech - Pilar Geist
+              - CSTRM - Shawn Irving
+              - CTO/Data - Anchal Gupta
+              - I&O - Om Maniyar
+              - TnT - Kevin Macfarland
+            uniqueItems: true
+            ui:widget: select
+
+    - title: Budget Estimate
+      required:
+        - budgetApproved
+        - budgetEstimate
+      properties:
+        budgetApproved:
+          title: Do you have budget for onboarding this app to Azure?
+          type: string
+          ui:widget: radio
+          enum:
+            - Yes
+            - No
+        budgetEstimate:
+          title: Annual Budget Approved
+          description: The expected annual spend once migrated to the cloud
+          type: number
+
+    - title: Architecture Review
+      required:
+        - architectureArtifactsLink
+      properties:
+        architectureArtifactsLink:
+          title: Link To Your Architecture Artifacts
+          description: Provide link to your Architecture Artifacts.
+          type: string
+
+
+    - title: Business Value
+      required:
+        - justification
+      properties:
+        justification:
+          title: What's the value of hosting this app in Azure?
+          type: string
+
+  steps:
+    - id: fetch-base
+      name: Fetch Base
+      action: fetch:template
+      input:
+        url: ./azure/policies/tags/EnforceAAAppShortName
+        targetPath: ./azure/policies/tags/EnforceAAAppShortName
+    
+    - id: checkAppshortname
+      name: Check for appshortnmame already onboarded
+      action: generic:search-string-in-file
+      input:
+        owner: AAInternal
+        repo: GaaS-Policy_as_Code
+        path: azure/policies/tags/EnforceAAAppShortName/policy.json
+        searchString: ${{ parameters.cmdbAppShortName.shortName }}
+
+    - id: append
+      name: Append Short Name to Policy Json
+      action: json:append
+      input:
+        value: ${{ parameters.cmdbAppShortName.shortName }}
+        keyPath: properties.parameters.tagValue.defaultValue
+        filePath: ./azure/policies/tags/EnforceAAAppShortName/policy.json
+        sort: true
+
+    - id: fetch-base-resources
+      name: Fetch Base Resources
+      action: fetch:template
+      input:
+        url: ./azure/policies/tags/Enforce Valid aa-app-shortname Tag Values on Resources
+        targetPath: ./azure/policies/tags/Enforce Valid aa-app-shortname Tag Values on Resources
+
+    - id: append-resources
+      name: Append Short Name to Policy Json for Resources
+      action: json:append
+      input:
+        value: ${{ parameters.cmdbAppShortName.shortName }}
+        keyPath: properties.parameters.tagValue.defaultValue
+        filePath: ./azure/policies/tags/Enforce Valid aa-app-shortname Tag Values on Resources/policy.json
+        sort: true
+
+    - id: getTimestamp
+      name: Get Timestamp
+      action: generic:getTimestamp
+
+    - id: log-onboarding-message
+      name: onboarding-message
+      action: debug:log
+      input:
+        message: |
+          Application ${{ parameters.cmdbAppShortName.shortName }} is already onboarded (true or false): ${{ steps.checkAppshortname.output.found }}!!
+          Appshortname in the content: ${{ steps.checkAppshortname.output.content }}
+
+    - id: publish
+      name: Publish
+      action: publish:github:pull-request
+      if: ${{ steps.checkAppshortname.output.found == 'false' }}
+      input:
+        repoUrl: github.com?repo=GaaS-Policy_as_Code&owner=AAInternal
+        title: "feat: onboard new app to Azure - ${{ parameters.cmdbAppShortName.shortName }}"
+        targetBranchName: 'nonprod'
+        branchName: AzAppOnboard-${{ parameters.cmdbAppShortName.shortName }}-${{ steps.getTimestamp.output.timestamp }}
+        description: >
+          # Onboard New App in Azure Review
+
+          - App Short Name: ${{ parameters.cmdbAppShortName.shortName }}
+
+          - App VP: ${{ parameters.vertical}}
+
+          - Cloud Budget for the App: ${{ parameters.budgetApproved }}
+
+          - Annual Cloud Budget: ${{ parameters.budgetEstimate }}
+
+          - Architecture Artifacts Link: ${{ parameters.architectureArtifactsLink }}
+
+          - Business Justification: ${{ parameters.justification }}
+
+          - Submitted By: @${{ user.entity.metadata.name }}
+
+          - Submitted Date in GMT: ${{ steps.getTimestamp.output.dateUTC }} ${{ steps.getTimestamp.output.timeUTC }}
+
+          - Approver:
+              @AAInternal/cloud-finance-approvers 
+              @AAInternal/cloud-architecture-approvers 
+
+          - Notified:
+              @AAInternal/cloud-finops-onboarding-notification
+
+          _For questions regarding process review [New App Onboard Azure - Approval Process](https://wiki.aa.com/bin/view/TnT%20Technology%20and%20Platform%20Support/TnT%20Technology%20and%20Platform%20Engineering%20%E2%80%93%20Governance%20as%20a%20Service%20%28GaaS%29/Accountability%20of%20application%20cloud%20cost%20and%20architecture/Accountability%20of%20application%20cloud%20cost%20and%20architecture/)_
+
+  output:
+    links:
+      - title: Your Request for Onboard ${{parameters.cmdbAppShortName.shortName}} 
+          can be found in Github.
+        icon: github
+        url: ${{steps.publish.output.remoteUrl}}

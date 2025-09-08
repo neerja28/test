@@ -1,0 +1,23 @@
+{
+    "properties": {
+      "displayName": "Enforce storage accounts secure transfer is enabled",
+      "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+      "notScopes": [
+          "/subscriptions/a350b9a6-536a-464e-a2ec-d38530f95b2d/"
+      ],
+      "parameters": {
+        "effect": {
+          "value": "Deny"
+        }
+      },
+      "description": "",
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        "Storage account's https configuration do not meet AA SCCF Benchmark control: Enforce storage accounts secure transfer is enabled. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "zrzDYigeXmkU2QBkEKRDFEFn"
+  }

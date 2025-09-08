@@ -1,0 +1,39 @@
+// Description: This JSON file represents an exemption for a policy assignment in Azure.
+// Please follow the naming convention used in this file name for creating new exemptions.
+// The file should be named as follows: exemption.<env>.<resource>.json
+// Please use this as a template for creating exemptions for other policy assignments.
+// DO NOT USE JSONC FILES FOR POLICY EXEMPTIONS, USE JSON FILES INSTEAD.
+
+{
+    "apiVersion": "2024-12-01-preview",
+    // This is the scope at which the policy exemption is applied.
+    "scope": "/subscriptions/55f702f9-17ee-4d42-8da3-3f0bc97c4158/resourceGroups/Zab-policies-test",
+    "properties": {
+      // This is the display name of the exemption. We are using the pattern: <resource name> - <app short name> - <policy assignment name>
+      "displayName": "Zab-policies-test - CldGovAuto - Deploy Function App (Linux) Logs to CSTRM Event Hub",
+      "description": "This resources is planned to be deleted by end of quarter and has been granted a waiver to the policy.",
+      "metadata": {
+        "requestedBy": "Zab - GaaS",
+        "PolEx": "Pol-EX 1234",
+        "aa-app-shortname": "CldGovAuto",
+        "approvedBy": "Zab - GaaS",
+      // Use ISO 8601 (UTC) format for the date and time when the exemption was approved
+        "approvedOn": "2025-20-05T00:00:00Z"
+      },
+      // This is the ID of the policy assignment that this exemption applies to.
+      "policyAssignmentId": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST/providers/Microsoft.Authorization/policyAssignments/GaaSPolicyDMYEglXXIlOqdy",
+      // If the policy is part of an initiative, you can specify the policy definition reference IDs
+      // If the policy is not part of an initiative, this can be left empty.
+      "policyDefinitionReferenceId": ["1717293961476471442"],
+      "exemptionCategory": "Waiver",
+      // Use ISO 8601 (UTC) format for the date and time when the exemption will expire
+      "expiresOn": "2026-20-15T23:59:00Z",
+      // This will validate the scope of the exemption is within the policy assignment scope. Possible values are "Default" and "DoNotValidate".
+      // Please keep this value as "Default" unless you have a specific reason to change it.
+      "assignmentScopeValidation": "Default"
+    },
+    "id": "",
+    // This is a unique identifier for the exemption. It should start with "GaaSExemption" and be followed by a random 11 character string.
+    "name": "GaaSExemptionqDwZgWAlbN4",
+    "type": "Microsoft.Authorization/policyExemptions"
+  }

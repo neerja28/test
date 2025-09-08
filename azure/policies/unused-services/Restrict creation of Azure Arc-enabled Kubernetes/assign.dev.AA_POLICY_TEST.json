@@ -1,0 +1,38 @@
+{
+  "properties": {
+    "displayName": "Restrict creation of Azure Arc-enabled Kubernetes",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6c112d4e-5bc7-47ae-a041-ea2d9dccd749",
+    "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+    "notScopes": [
+      "/subscriptions/55f702f9-17ee-4d42-8da3-3f0bc97c4158/resourceGroups/us1567-honeypot-aks-compliance"
+    ],
+    "parameters": {
+      "listOfResourceTypesNotAllowed": {
+        "value": [
+          "microsoft.kubernetes/connectedclusters",
+          "microsoft.kubernetesconfiguration/extensions",
+          "microsoft.kubernetesconfiguration/extensiontypes",
+          "microsoft.kubernetesconfiguration/fluxconfigurations",
+          "microsoft.kubernetesconfiguration/namespaces",
+          "microsoft.kubernetesconfiguration/sourcecontrolconfigurations",
+          "microsoft.kubernetesruntime/bgppeers",
+          "microsoft.kubernetesruntime/loadbalancers",
+          "microsoft.kubernetesruntime/services",
+          "microsoft.kubernetesruntime/storageclasses"
+        ]
+      },
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Restricting Azure Arc-enabled Kubernetes that fall into either the 'Not the droids' category or do not have a Tech Radar disposition. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code."
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicyHCqihsqUNncgmi"
+}

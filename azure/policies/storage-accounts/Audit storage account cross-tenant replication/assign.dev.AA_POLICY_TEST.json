@@ -1,0 +1,21 @@
+{
+    "properties": {
+        "displayName": "Audit storage account cross-tenant replication.",
+        "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+        "notScopes": [],
+        "parameters": {
+            "effect": {
+                "value": "AuditIfNotExists"
+            }
+        },
+        "description": "Ensure that cross-tenant replication is disabled for storage accounts",
+        "metadata": {},
+        "enforcementMode": "Default",
+        "nonComplianceMessages": [
+            "Cross-tenant replication must be disabled for storage accounts. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+        ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "djbNXVIGlKVXTqYXCs0Fo78T"
+}

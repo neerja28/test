@@ -1,0 +1,21 @@
+{
+  "properties": {
+    "displayName": "Audit Soft Delete is Enabled for Storage Account blobs",
+    "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "AuditIfNotExists"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Soft Delete is not enabled for blobs. Please enable soft delete with a retention period of at least 3 days. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "cLFqtpnojG92khHmQyjmPG6V"
+}

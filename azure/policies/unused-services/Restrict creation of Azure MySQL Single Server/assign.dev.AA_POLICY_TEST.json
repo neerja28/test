@@ -1,0 +1,34 @@
+{
+  "properties": {
+    "displayName": "Restrict creation of Azure MySQL Single Server",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6c112d4e-5bc7-47ae-a041-ea2d9dccd749",
+    "scope": "/providers/Microsoft.Management/managementGroups/AA_POLICY_TEST",
+    "notScopes": [],
+    "parameters": {
+      "listOfResourceTypesNotAllowed": {
+        "value": [
+          "microsoft.dbformysql/servers"
+        ]
+      },
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "Azure Database for MySQL - Single Server is on the retirement path and Azure Database for MySQL - Single Server is scheduled for retirement by September 16, 2024.",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "MySQL database Single server does not meet AA SCCF Benchmark control: MySQL Single server creation is blocked. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code."
+    ]
+  },
+  "identity": {
+    "type": "SystemAssigned",
+    "roleAssignments": [
+      "Contributor"
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicypkitVeutUD6IQt",
+  "location": "eastus"
+}

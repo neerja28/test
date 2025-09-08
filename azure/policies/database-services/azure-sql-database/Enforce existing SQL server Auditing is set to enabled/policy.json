@@ -1,0 +1,44 @@
+{
+  "properties": {
+    "displayName": "Enforce existing SQL server Auditing is set to enabled",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Denies the disabling of auditing settings on a SQL Server.",
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Deny"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Sql/servers/auditingSettings"
+          },
+          {
+            "field": "Microsoft.Sql/servers/auditingSettings/state",
+            "equals": "Disabled"
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]"
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "228870c7-ae67-4e94-9a55-6b1cb5eaebf3"
+}
+

@@ -1,0 +1,26 @@
+{
+  "properties": {
+    "displayName": "Enforce Azure Hybrid Benefit on VM for Windows Server",
+    "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Modify"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Azure Virtual Machine does not meet AA SCCF Benchmark control: No VM creation allowed without Azure Hybrid Benefit. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code."
+    ]
+  },
+  "identity": {
+    "type": "SystemAssigned",
+    "roleAssignments": ["Virtual Machine Contributor"]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "GaaSPolicyYqurWa8AZMt5Nc",
+  "location": "eastus"
+}

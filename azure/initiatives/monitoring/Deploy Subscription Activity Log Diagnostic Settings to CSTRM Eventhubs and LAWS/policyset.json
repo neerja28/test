@@ -1,0 +1,35 @@
+{
+  "properties": {
+    "displayName": "Enable storage account service logging to Eventhub",
+    "policyType": "Custom",
+    "description": "Enables read, write and delete logs forwarding to CSTRM Event Hub for queueServices, blobServices, and tableServices on Storage accounts",
+    "metadata": {},
+    "parameters": {},
+    "policyDefinitions": [
+      {
+        "policyDefinitionReferenceId": "",
+        "policyDefinitionId": "",
+        "parameters": {
+          "profileName": {
+            "value": "to_security_loganalytics"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "",
+        "policyDefinitionId": "",
+        "parameters": {
+          "logAnalytics": {
+            "value": "/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourcegroups/soc-p-zeaus-sentinel-rg/providers/microsoft.operationalinsights/workspaces/soc-p-eaus-sentinel-law"
+          },
+          "diagnosticSettingsName": {
+            "value": "CSTRM-Forward-Logs-Sentinel-LAW"
+          }
+        }
+      }
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policySetDefinitions",
+  "name": "ad630e46-0418-4693-b651-6332dc58f7bb"
+}

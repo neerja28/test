@@ -1,0 +1,78 @@
+{
+    "properties": {
+      "displayName": "ACR Creation not allowed",
+      "policyDefinitionId": "",
+      "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+      "notScopes": [
+        "/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourceGroups/cstrm-n-eaus-Flexera-rg/providers/Microsoft.ContainerRegistry/registries/aaflxcstrmnp",
+        "/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourceGroups/cstrm-p-eaus-cstrmutils-rg/providers/Microsoft.ContainerRegistry/registries/aacstrmutilsp",
+        "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-zeaus-np-npportal-rg/providers/Microsoft.ContainerRegistry/registries/npportalprod",
+        "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/corp-p-zeaus-rm-yldmgorapp-pp-rg/providers/Microsoft.ContainerRegistry/registries/corpppyldmgorappcr",
+        "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/corp-p-zeaus-rptinfraportal-rg/providers/Microsoft.ContainerRegistry/registries/corppzeausrptinfraportalreg",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-faportal-prod-eastus-rg/providers/Microsoft.ContainerRegistry/registries/aotpzeausfaportalreg",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-faportal-prod-westus-rg/providers/Microsoft.ContainerRegistry/registries/aotpzweusfaportalreg",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-FSA-prod-westus-rg",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-faubl-prod-eastus-rg/providers/Microsoft.ContainerRegistry/registries/FaCrewschedRegistryProdEast",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-faubl-prod-westus-rg/providers/Microsoft.ContainerRegistry/registries/FaCrewschedRegistryProdWest",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-pilot-cca-prod-eastus-rg/providers/Microsoft.ContainerRegistry/registries/aaaotpltccaprodeastuscr",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-pilot-cca-prod-westus-rg",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-pltdotcui-prod-eastus-rg/providers/Microsoft.ContainerRegistry/registries/aotpeastuspltdotcuireg",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-pltdotcui-prod-westus-rg/providers/Microsoft.ContainerRegistry/registries/aotpwestuspltdotcuireg",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-ptts2-prod-eastus-rg/providers/Microsoft.ContainerRegistry/registries/aapttsprodeastusazureregistry",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-ptts2-prod-westus-rg/providers/Microsoft.ContainerRegistry/registries/aapttsprodwestusazureregistry",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aot-p-zeaus-FSA-rg/providers/Microsoft.ContainerRegistry/registries/aaaotfsaprodcr",
+        "/subscriptions/292368fe-4287-4eb0-bea9-709569d9aa24/resourceGroups/ct-p-zeaus-loy-miles-rg",
+        "/subscriptions/bf5d63b1-2c02-4d9e-a096-f91d4ed04b4a/resourceGroups/dt-p-zeaus-inrsrc-marketplace-rg/providers/Microsoft.ContainerRegistry/registries/innersourcecr",
+        "/subscriptions/bf5d63b1-2c02-4d9e-a096-f91d4ed04b4a/resourceGroups/dt-p-zeaus-wiki-rg/providers/Microsoft.ContainerRegistry/registries/enterprisewiki",
+        "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-bgtml-rg/providers/Microsoft.ContainerRegistry/registries/pzeausbgtmlamlacr001",
+        "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-cgdst-rg/providers/Microsoft.ContainerRegistry/registries/pzeauscgdstamlacr001",
+        "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-digitalpkg-rg/providers/Microsoft.ContainerRegistry/registries/pzeausdgpgamlacr001",
+        "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-group020-rg/providers/Microsoft.ContainerRegistry/registries/2fc96b552715478798f02c0eb2464fbd",
+        "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-group020-rg/providers/Microsoft.ContainerRegistry/registries/pzeausnprvnlamlacr001",
+        "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-group020-rg/providers/Microsoft.ContainerRegistry/registries/pzeaussnpmlamlacr001",
+        "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-group024-rg/providers/Microsoft.ContainerRegistry/registries/group024amlcr001",
+        "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-group043-rg/providers/Microsoft.ContainerRegistry/registries/group043amlcr001",
+        "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-group066-rg/providers/Microsoft.ContainerRegistry/registries/pgroup066amlcr001",
+        "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-group077-rg/providers/Microsoft.ContainerRegistry/registries/pzeausgroup077amlacr001",
+        "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-oraaopt-rg/providers/Microsoft.ContainerRegistry/registries/bapzeausoraaoptrgregistry",
+        "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-oraaopt-rg/providers/Microsoft.ContainerRegistry/registries/bazeausorafaccaproeastuscr",
+        "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-iocdisppln-rg",
+        "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-group088-rg",          
+        "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/generative-ai-pocs​/providers/Microsoft.ContainerRegistry/registries/openaiamlcr001",
+        "/subscriptions/d32b12be-735a-4698-aac8-e621890b7218/resourceGroups/aa-sales-vgc-dev/providers/Microsoft.ContainerRegistry/registries/aasalesvgcacrdev",
+        "/subscriptions/d468b5ca-4400-4521-8115-2bba3467f651/resourceGroups/ct-p-zeaus-boardingpass-rg/providers/Microsoft.ContainerRegistry/registries/ctpzeausboardingpassprodaks",
+        "/subscriptions/d468b5ca-4400-4521-8115-2bba3467f651/resourceGroups/ct-p-zeaus-mws-rg/providers/Microsoft.ContainerRegistry/registries/ctpzeausmwsprodaks",
+        "/subscriptions/d468b5ca-4400-4521-8115-2bba3467f651/resourceGroups/ct-p-zeaus-resagent-rg/providers/Microsoft.ContainerRegistry/registries/ctpresagentcr",
+        "/subscriptions/d468b5ca-4400-4521-8115-2bba3467f651/resourceGroups/ct-p-zweus-boardingpass-rg/providers/Microsoft.ContainerRegistry/registries/ctpzweusboardingpassprodaks",
+        "/subscriptions/d468b5ca-4400-4521-8115-2bba3467f651/resourceGroups/ct-p-zweus-cbncln-rg/providers/Microsoft.ContainerRegistry/registries/ccacrprodwestus",
+        "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourcegroups/corp-p-zeaus-rm-yldmgorapp-rg/providers/microsoft.containerregistry/registries/corppyldmgorappcr",
+        "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/corp-p-zweus-rm-yldmgorapp-rg",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourcegroups/aa-aot-pilot-cca-prod-westus-rg/providers/microsoft.containerregistry/registries/aaaotpltccaprodwestuscr",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourcegroups/aa-aot-ttsfa-prod-eastus-rg/providers/microsoft.containerregistry/registries/aotpzeausttsreg",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourcegroups/aa-aot-ttsfa-prod-westus-rg/providers/microsoft.containerregistry/registries/aotpzweusttsreg",
+        "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourcegroups/cor-p-zeaus-benefitsmanagement-aps-rg",
+        "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourcegroups/ba-p-zeaus-aacom-rg",
+        "/subscriptions/c450f3d1-583c-495f-b5d3-0b38b99e70c0/resourceGroups/ba-p-zeaus-group028-rg",
+        "/subscriptions/996d0114-a89a-42d0-91c2-278407bcd335"
+      ],
+      "parameters": {
+        "listOfResourceTypesNotAllowed": {
+          "value": [
+            "microsoft.containerregistry/registries"          
+          ]
+        },
+        "effect":{
+          "value": "Deny"
+        }
+      },
+      "description": "",
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        "Creation of new container registries is not allowed. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "SvRYdPiIu3fhcNnVK2GmlQV1"
+}

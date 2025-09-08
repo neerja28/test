@@ -1,0 +1,31 @@
+{
+  "properties": {
+    "displayName": "Restrict creation of Azure NAT gateways",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6c112d4e-5bc7-47ae-a041-ea2d9dccd749",
+    "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+    "notScopes": [
+      "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-cmecore-prod-eastus-rg/providers/Microsoft.Network/natGateways/aa-cme-nat-prod-eastus",
+      "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-cmecore-prod-westus-rg/providers/Microsoft.Network/natGateways/aa-cme-nat-prod-westus",
+      "/subscriptions/0420487b-a06d-4f2c-9379-7811da80ebfc/resourceGroups/ct-p-zeaus-wfmres-rg/providers/Microsoft.Network/natGateways/aa-ct-nat-prod"
+    ],
+    "parameters": {
+      "listOfResourceTypesNotAllowed": {
+        "value": [
+          "Microsoft.network/natgateways"
+        ]
+      },
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "DoNotEnforce",
+    "nonComplianceMessages": [
+      "Azure NAT gateway is restricted to ensure product teams are following AA security best practices. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code."
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "CZCJvZxtSKVtYjtbfth0XNee"
+}

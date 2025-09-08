@@ -1,0 +1,32 @@
+{
+  "properties": {
+    "displayName": "Restrict creation of Azure Arc-enabled servers",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6c112d4e-5bc7-47ae-a041-ea2d9dccd749",
+    "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+    "notScopes": [
+      "/subscriptions/8e5e91ba-9fca-4b3d-9858-4f6fcba19ee1/resourceGroups/dt-p-zeaus-windowsesu-arc-rg",
+      "/subscriptions/36ae79ae-e3b0-409e-874c-aaecfc5d5cd3/resourceGroups/cstrm-n-zeaus-vulnscan-ibm-prod-rg",
+      "/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourceGroups/cstrm-p-zeaus-vulnscan-oci-prod-rg"
+    ],
+    "parameters": {
+      "listOfResourceTypesNotAllowed": {
+        "value": [
+          "Microsoft.hybridcompute/machines",
+          "Microsoft.HybridCompute/privateLinkScopes"
+        ]
+      },
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "description": "",
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      "Restricting Azure Arc-enabled servers that fall into either the 'Not the droids' category or do not have a Tech Radar disposition. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code."
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "003J40fOxFQ0w47M1TOoQJgq"
+}

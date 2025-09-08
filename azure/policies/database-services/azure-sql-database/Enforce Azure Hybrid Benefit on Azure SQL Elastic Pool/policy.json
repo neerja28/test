@@ -1,0 +1,71 @@
+{
+  "properties": {
+    "displayName": "Enforce Azure Hybrid Benefit on Azure SQL Elastic Pool",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Azure Hybrid Benefit is a licensing benefit that helps you to significantly reduce the costs of running your workloads in the cloud. It works by letting you use your on-premises Software Assurance-enabled Windows Server and SQL Server licenses on Azure",
+    "metadata": {
+      "category": "SQL",
+      "version": "1.0.0",
+      "createdBy": "",
+      "createdOn": "",
+      "updatedBy": null,
+      "updatedOn": null
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "Modify",
+          "Disabled"
+        ],
+        "defaultValue": "Modify"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [{
+            "field": "type",
+            "equals": "Microsoft.Sql/servers/elasticPools"
+          },
+          {
+            "anyOf": [{
+                "field": "Microsoft.Sql/servers/elasticpools/sku.tier",
+                "equals": "BusinessCritical"
+              },
+              {
+                "field": "Microsoft.Sql/servers/elasticpools/sku.tier",
+                "equals": "GeneralPurpose"
+              }
+            ]
+          },
+          {
+            "field": "Microsoft.Sql/servers/elasticpools/licenseType",
+            "notEquals": "BasePrice"
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]",
+        "details": {
+          "roleDefinitionIds": [
+            "/providers/microsoft.authorization/roleDefinitions/6d8ee4ec-f05a-4a1d-8b00-a9b17e38b437"
+          ],
+          "conflictEffect": "deny",
+          "operations": [{
+            "operation": "addOrReplace",
+            "field": "Microsoft.Sql/servers/elasticpools/licenseType",
+            "value": "BasePrice"
+          }]
+        }
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "2014db5e-149d-4456-a1dd-6b2af766b860"
+}

@@ -1,0 +1,75 @@
+{
+  "properties": {
+    "displayName": "Microsoft Defender Configuration Policies",
+    "policyType": "Custom",
+    "description": "This is the default set of policies monitored by Azure Security Center. It was automatically assigned as part of onboarding to Security Center. The default assignment contains only audit policies. For more information please visit https://aka.ms/ascpolicies",
+    "metadata": {
+      "category": "Security"
+    },
+    "parameters": {},
+    "policyDefinitions": [
+      {
+        "policyDefinitionReferenceId": "Kubernetes clusters should not use the default namespace",
+        "policyDefinitionId": "/providers/microsoft.authorization/policydefinitions/9f061a12-e40d-4183-a00e-171812443373",
+        "parameters": {}
+      },
+      {
+        "policyDefinitionReferenceId": "Kubernetes Services should be upgraded to a non-vulnerable Kubernetes version",
+        "policyDefinitionId": "/providers/microsoft.authorization/policydefinitions/fb893a29-21bb-418c-a157-e99480ec364c",
+        "parameters": {}
+      },
+      {
+        "policyDefinitionReferenceId": "Kubernetes cluster containers should only use allowed images",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/febd0533-8e55-448f-b837-bd0e06f16469",
+        "parameters": {
+          "allowedContainerImagesRegex": { 
+            "value": "AA-shortname-image"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "",
+        "policyDefinitionId": "",
+        "parameters": {}
+      },
+      {
+        "policyDefinitionReferenceId": "Kubernetes clusters should ensure that the cluster-admin role is only used where required",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a3dc4946-dba6-43e6-950d-f96532848c9f",
+        "parameters": {}
+      },
+      {
+        "policyDefinitionReferenceId": "Kubernetes clusters should minimize wildcard use in role and cluster role",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ca8d5704-aa2b-40cf-b110-dc19052825ad",
+        "parameters": {}
+      },
+      {
+        "policyDefinitionReferenceId": "Kubernetes cluster should not allow privileged containers",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/95edb821-ddaf-4404-9732-666045e056b4",
+        "parameters": {}
+      },
+      {
+        "policyDefinitionReferenceId": "Kubernetes cluster containers should not share host process ID or host IPC namespace",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/47a1ee2f-2a2a-4576-bf2a-e0e36709c2b8",
+        "parameters": {}
+      },
+      {
+        "policyDefinitionReferenceId": "Kubernetes clusters should not allow container privilege escalation",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1c6e92c9-99f0-4e55-9cf2-0c234dc48f99",
+        "parameters": {}
+      },
+      {
+        "policyDefinitionReferenceId": "Kubernetes cluster pods and containers should only use allowed SELinux options",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e1e6c427-07d9-46ab-9689-bfa85431e636",
+        "parameters": {}
+      },
+      {
+        "policyDefinitionReferenceId": "Azure running container images should have vulnerabilities resolved",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/17f4b1cc-c55c-4d94-b1f9-2978f6ac2957",
+        "parameters": {}
+      }
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policySetDefinitions",
+  "name": "4cde75ae-74fc-4586-8449-da344b792c60"
+}

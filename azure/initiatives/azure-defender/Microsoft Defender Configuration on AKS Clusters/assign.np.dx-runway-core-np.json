@@ -1,0 +1,23 @@
+{
+    "identity": {
+      "type": "SystemAssigned",
+      "roleAssignments": []
+    },
+    "properties": {
+      "displayName": "Microsoft Defender Configuration Enablement",
+      "policyDefinitionId": "",
+      "scope": "/subscriptions/2fe97b8d-f7b5-4964-85b0-48740441865e/resourceGroups/dx-runway-core-np",
+      "notScopes": [],
+      "parameters": {},
+      "metadata": {},
+      "enforcementMode": "DoNotEnforce",
+      "nonComplianceMessages": [
+        "Your resource/resource group is not compliant with the Governance policy 'Microsoft Defender Configuration Enablement'. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "GaaSPolicygEsCUhHy5nnt5Q",
+    "location": "eastus"
+  }
+  

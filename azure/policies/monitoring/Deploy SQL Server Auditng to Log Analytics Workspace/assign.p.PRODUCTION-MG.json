@@ -1,0 +1,30 @@
+{
+  "properties": {
+    "displayName": "Deploy SQL Server Auditing to Log Analytics Workspace",
+    "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+    "notScopes": [],
+    "parameters": {
+      "logAnalyticsWorkspaceId": {
+        "value": "/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c/resourcegroups/cstrm-p-eaus-cir-securityanalytics-rg/providers/microsoft.operationalinsights/workspaces/cstrm-p-eaus-cir-securityanalytics-sqlaudit-la"
+      }
+    },
+    "description": "Deploys the diagnostic settings for SQL Databases to stream resource logs to a Log Analytics workspace when any SQL Database which is missing this diagnostic settings is created or updated.",
+    "metadata": {},
+    "enforcementMode": "DoNotEnforce",
+    "nonComplianceMessages": [
+      "SQL Server Auditing configuration doesn't meet AA SCCF Benchmark control: SQL Server must have auditing enabled"
+    ]
+  },
+  "identity": {
+    "type": "SystemAssigned",
+    "roleAssignments": [
+      "SQL Security Manager",
+      "Log Analytics Contributor",
+      "Log Analytics Contributor:/subscriptions/04b33af8-29f6-436d-9639-d07a1300084c"
+    ]
+  },
+"id": "",
+"type": "Microsoft.Authorization/policyAssignments",
+"name": "GaaSPolicyOdHsmhKRaEqIOG",
+"location": "eastus"
+}

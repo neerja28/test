@@ -1,0 +1,36 @@
+{
+  "identity": {
+    "principalId": "f5b0a9d7-e72d-4cbb-aca4-264edfa63968",
+    "tenantId": "49793faf-eb3f-4d99-a0cf-aef7cce79dc1",
+    "type": "SystemAssigned"
+  },
+  "properties": {
+    "displayName": "Enforce AA Standard Tags on Resource Groups",
+    "policyDefinitionId": "",
+    "scope": "/providers/Microsoft.Management/managementGroups/NON-PRODUCTION-MG",
+    "notScopes": [
+      "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/ct-n-zeaus-aavaca-rg",
+      "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/MC_dp-XkfHXoIxphffgOb2-eastus-1_eastus",
+      "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/mgmt-rg-upm-eastus-prj_XkfHXoIxphffgOb2",
+      "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/dp-XkfHXoIxphffgOb2-rg-eastus-1",
+      "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/XkfHXoIxphffgOb2-rg-eastus-management-ynei0wr8",
+      "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/MC_dp-XkfHXoIxphffgOb2-southcentralus-1_southcentralus",
+      "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/mgmt-rg-upm-southcentralus-prj_XkfHXoIxphffgOb2",
+      "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/dp-XkfHXoIxphffgOb2-rg-southcentralus-1",
+      "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/XkfHXoIxphffgOb2-rg-southcentralus-management-n06h4qa8",
+      "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/MC_dp-XkfHXoIxphffgOb2-westus2-1_westus2",
+      "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/mgmt-rg-upm-westus2-prj_XkfHXoIxphffgOb2",
+      "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/dp-XkfHXoIxphffgOb2-rg-westus2-1",
+      "/subscriptions/0bc507f3-ad14-4edd-8f76-a91458390da2/resourceGroups/XkfHXoIxphffgOb2-rg-westus2-management-1k0x78d3",
+      "/subscriptions/ae0b13d9-e09c-4e54-b1e6-8e777d8fbe14"
+    ],
+    "parameters": {},
+    "metadata": {},
+    "enforcementMode": "Default",
+    "nonComplianceMessages": ["This aa-app-shortname or aa-sdlc-environment tag value is not valid. If the aa-app-shortname value is a valid Archer shortname, it may not be onboarded in Azure. Please complete the 'Onboard New App to Azure' form on https://developer.aa.com/create/templates/default/gaas-app-onboard"]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "nmfdb2eq0x2kwhw0gjcnngzy",
+  "location": "eastus"
+}

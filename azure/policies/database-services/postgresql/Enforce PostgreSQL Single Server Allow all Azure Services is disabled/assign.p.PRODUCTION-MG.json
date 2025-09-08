@@ -1,0 +1,32 @@
+{
+  "properties": {
+      "displayName": "Enforce PostgreSQL Single Server 'Allow access to Azure services' is disabled",
+      "scope": "/providers/Microsoft.Management/managementGroups/PRODUCTION-MG",
+      "notScopes": [
+        "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/corp-p-zeaus-rptinfraportal-rg",
+        "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/corp-p-zweus-rptinfraportal-rg",
+        "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-zeaus-gnd-project42-prod-rg/providers/Microsoft.DBforPostgreSQL/servers/cor-p-zeaus-gnd-project42-psql",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-cers-prod-eastus-rg",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-cers-prod-westus-rg",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aa-aot-setool-prod-westus-rg",
+        "/subscriptions/37443b6e-3d25-44fa-a07a-79f4a90242ba/resourceGroups/aot-p-eaus-sec-setool-rg",
+        "/subscriptions/bf5d63b1-2c02-4d9e-a096-f91d4ed04b4a/resourceGroups/dt-p-zeaus-okrtool-rg",
+        "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-sales-eaus-vgc-rg/providers/Microsoft.DBforPostgreSQL/servers/aa-sales-vgc-prod-pgdb-eastus",
+        "/subscriptions/1912897a-7482-4a27-aa97-18da028f05eb/resourceGroups/cor-p-sales-eaus-vgc-rg/providers/Microsoft.DBforPostgreSQL/servers/aa-sales-vgc-prod-pgdb-westus"
+      ],
+      "parameters": {
+          "effect": {
+              "value": "Deny"
+          }
+      },
+      "description": "Ensure 'Allow access to Azure services' is disabled for Azure PostgreSQL Single Server Access",
+      "metadata": {},
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+         "PostgreSQL single server connection security settings do not meet AA SCCF Benchmark control: 'Allow access to Azure services' must be disabled for PostgreSQL single servers. If you would like to seek an exception for this policy, please reference this guide. https://developer.aa.com/docs/default/component/gaas-policy_as_code"
+      ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyAssignments",
+  "name": "BRGJEDCgb0IuJI6ac30q0sbx"
+}

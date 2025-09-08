@@ -1,0 +1,167 @@
+{
+  "properties": {
+    "displayName": "Auto Tag Vital Resources with aa-criticality Tag",
+    "policyType": "Custom",
+    "mode": "Indexed",
+    "description": "Adds aa-criticality tag and its corresponding value as per Archer record to Resource.",
+    "metadata": {},
+    "parameters": {
+      "tagName": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Tag Name",
+          "description": "Name of the tag, such as 'aa-app-shortname'"
+        },
+        "defaultValue": "aa-app-shortname"
+      },
+      "tagValue": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "Tag Value",
+          "description": "Value of the tag, such as 'CldGovAuto'"
+        },
+        "defaultValue": [
+          "AACom",
+          "AAFltPlan",
+          "AAHub",
+          "ACARS",
+          "AD",
+          "Aircom",
+          "APIMgmt",
+          "APIMgmtGQL",
+          "AptAgNext",
+          "AVTEC",
+          "BagPlatfrm",
+          "BuyBookRes",
+          "CargoFOS",
+          "Checkout",
+          "CloudPKI",
+          "CorpSvcBus",
+          "CrewChkIn",
+          "CrewHub",
+          "CustCntPlt",
+          "CustFltSch",
+          "CustMobile",
+          "DDI",
+          "DECS",
+          "DgtlSign",
+          "DirSvc",
+          "DispFltFol",
+          "EAHub",
+          "EAHubOps",
+          "EntVirtSvc",
+          "ENYFltExec",
+          "ENYFltPlan",
+          "FACrewFOS",
+          "FedSvc",
+          "Firewall",
+          "FlightHub",
+          "FlightPlan",
+          "FlightTrck",
+          "FltPlnNext",
+          "FOS",
+          "FOSPilQual",
+          "GateReader",
+          "HostTerm",
+          "HrznApHost",
+          "Internet",
+          "IOCComm",
+          "KaaS",
+          "LoadBal",
+          "LoadPlan",
+          "MFA",
+          "MOCCA",
+          "MQ",
+          "OpsHubNext",
+          "OracleDB",
+          "PaymntSvcs",
+          "PCLoadPlan",
+          "PDTSabrSte",
+          "PilCrewFOS",
+          "PSASabrSte",
+          "PSAVirtDsk",
+          "PSAVirtSvc",
+          "PSS",
+          "QIKCHK",
+          "Ramplink",
+          "RefDataSvc",
+          "RGNAeroDta",
+          "RGNAppMon",
+          "RGNOpsSte",
+          "RGNVrtHost",
+          "RGNWthrSys",
+          "RtrvResSvc",
+          "SAFEComSvc",
+          "SafeLinMOC",
+          "SCEPTRE",
+          "SecretsMgt",
+          "SonusIntl",
+          "SonusSBC",
+          "SPEClient",
+          "SQLDB",
+          "SSM",
+          "Storage",
+          "TechOpsAKS",
+          "Ticketing",
+          "TkoffPerf",
+          "UnxVirtSvc",
+          "UpdtResSvc",
+          "VPN",
+          "WANLAN",
+          "WeatherDD",
+          "WeatherSS",
+          "WebAppDef"
+        ]
+      },
+      "criticalityTagName": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Criticality Tag Name",
+          "description": "Name of the tag, such as 'aa-criticality'"
+        },
+        "defaultValue": "aa-criticality"
+      },
+      "criticalityTagValue": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Criticality Tag Value",
+          "description": "Value of the tag, such as 'vital'"
+        },
+        "defaultValue": "vital"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "[concat('tags[',parameters('tagName'), ']')]",
+            "in": "[parameters('tagValue')]"
+          },
+          {
+            "field": "[concat('tags[',parameters('criticalityTagName'), ']')]",
+            "notEquals": "[parameters('criticalityTagValue')]"
+          }
+        ]
+      },
+      "then": {
+        "effect": "modify",
+        "details": {
+          "roleDefinitionIds": [
+            "/providers/Microsoft.Authorization/roleDefinitions/4a9ae827-6dc8-4573-8ac7-8239d42aa03f"
+          ],
+          "conflictEffect": "deny",
+          "operations": [
+            {
+              "operation": "addOrReplace",
+              "field": "[concat('tags[',parameters('criticalityTagName'), ']')]",
+              "value": "[parameters('criticalityTagValue')]"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "c4e61615-7f18-4c71-be19-551fde5ba65b"
+}

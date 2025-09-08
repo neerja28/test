@@ -1,0 +1,30 @@
+{
+  "properties": {
+    "displayName": "Enforce AA Standard Tags on Resource Groups",
+    "policyType": "Custom",
+    "description": "When creating a new Resource Group, the AA Standard Tags must be assigned. For automation, the RG may need to be created in advance to work properly.",
+    "metadata": {
+      "category": "AA Standards"
+    },
+    "parameters": {},
+    "policyDefinitions": [
+      {
+        "policyDefinitionReferenceId": "",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/AA_GLOBAL-MG/providers/Microsoft.Authorization/policyDefinitions/0c8c6b4f-33b5-4d06-845e-aab3436cbe36",
+        "parameters": {}
+      },
+      {
+        "policyDefinitionReferenceId": "",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementgroups/AA_GLOBAL-MG/providers/Microsoft.Authorization/policyDefinitions/c09ac821-4694-4f9c-89dd-d31a57d05dee",
+        "parameters": {
+          "tagName": {
+            "value": "aa-app-shortname"
+          }
+        }  
+      }
+    ]
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policySetDefinitions",
+  "name": "0c8c6b4f-33b5-4d06-845e-aab3436cbe3a"
+}

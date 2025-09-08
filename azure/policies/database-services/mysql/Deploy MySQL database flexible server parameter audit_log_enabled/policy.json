@@ -1,0 +1,79 @@
+{
+  "properties": {
+    "displayName": "Deploy MySQL flexible server parameter audit_log_enabled ON",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Ensure audit_log_enabled parameter set to ON on Azure database for MySQL flexible Servers",
+    "metadata": {
+      "version": "1.0.0",
+      "category": "AA SCCF benchmark"
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "AuditIfNotExists",
+          "DeployIfNotExists",
+          "Disabled"
+        ],
+        "defaultValue": "DeployIfNotExists"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "equals": "Microsoft.DBforMySQL/flexibleServers",
+        "field": "type"
+      },
+      "then": {
+        "details": {
+          "deployment": {
+            "properties": {
+              "mode": "incremental",
+              "parameters": {
+                "serverName": {
+                  "value": "[field('name')]"
+                }
+              },
+              "template": {
+                "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+                "contentVersion": "1.0.0.0",
+                "parameters": {
+                  "serverName": {
+                    "type": "string"
+                  }
+                },
+                "resources": [{
+                  "apiVersion": "2021-12-01-preview",
+                  "name": "[concat(parameters('serverName'), '/audit_log_enabled')]",
+                  "properties": {
+                    "source": "user-override",
+                    "value": "ON"
+                  },
+                  "type": "Microsoft.DBforMySQL/flexibleServers/configurations"
+                }]
+              }
+            }
+          },
+          "evaluationDelay": "AfterProvisioning",
+          "existenceCondition": {
+            "equals": "ON",
+            "field": "Microsoft.DBforMySQL/flexibleServers/configurations/value"
+          },
+          "name": "[concat(field('name'), '/audit_log_enabled')]",
+          "roleDefinitionIds": [
+            "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+          ],
+          "type": "Microsoft.DBforMySQL/flexibleServers/configurations"
+        },
+        "effect": "[parameters('effect')]"
+      }
+    }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "0fb6808a-f69f-4117-990d-8a661d465af9"
+}

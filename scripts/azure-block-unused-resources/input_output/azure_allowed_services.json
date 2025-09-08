@@ -1,0 +1,7 @@
+{
+    "Service": [
+        "microsoft.communication/communicationservices",
+        "microsoft.communication/registeredsubscriptions",
+        "microsoft.communication/emailservices"
+    ]
+}

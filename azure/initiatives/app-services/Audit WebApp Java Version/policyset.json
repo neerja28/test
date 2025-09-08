@@ -1,0 +1,32 @@
+{
+    "properties": {
+      "displayName": "Audit WebApp Java Version",
+      "policyType": "Custom",
+      "description": "Web apps should use a supported version of Java",
+      "metadata": {},
+      "parameters": {},
+      "policyDefinitions": [
+        {
+          "policyDefinitionReferenceId": "",
+          "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/AA_GLOBAL-MG/providers/Microsoft.Authorization/policyDefinitions/1bc20e11-12ff-48e8-adb8-f2e35d1aa74b",
+          "parameters": {
+            "JavaVersion": {
+              "value": "7"
+            }
+          }
+        },
+        {
+            "policyDefinitionReferenceId": "",
+            "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/AA_GLOBAL-MG/providers/Microsoft.Authorization/policyDefinitions/6302403b-6a37-40ba-a9a1-b4497ea0f005",
+            "parameters": {
+              "JavaVersion": {
+                "value": "7"
+              }
+            }
+          }
+      ]
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/policySetDefinitions",
+    "name": "1d3ce872-0375-4bf7-8c5b-4420febdc0c2"
+  }

@@ -1,0 +1,50 @@
+{
+  "properties": {
+    "displayName": "Enforce no MySQL Flexible Server has Firewall rule 0.0.0.0 - 255.255.255.255",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "In order to reduce the potential attack surface for existing MySQL Flexible servers, firewall rules should be defined with more granular IP addresses by referencing the range of addresses available from trusted sources.",
+    "metadata": {
+      "category": "AA SCCF benchmark"
+      },
+      "parameters": {
+        "effect": {
+          "type": "String",
+          "metadata": {
+            "displayName": "Effect",
+            "description": "Enable or disable the execution of the policy"
+          },
+          "allowedValues": [
+            "Audit",
+            "Disabled",
+            "Deny"
+          ],
+          "defaultValue": "Deny"
+        }
+      },
+      "policyRule": {
+        "if": {
+          "allOf": [
+            {
+              "field": "type",
+              "equals": "Microsoft.DBforMySql/flexibleServers/firewallRules"
+            },
+            {
+              "field": "Microsoft.DBForMySql/flexibleServers/firewallRules/startIpAddress",
+              "equals": "0.0.0.0"
+            },
+            {
+              "field": "Microsoft.DBForMySql/flexibleServers/firewallRules/endIpAddress",
+              "equals": "255.255.255.255"
+            }
+          ]
+        },
+        "then": {
+          "effect": "[parameters('effect')]"
+        }
+      }
+  },
+  "id": "",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "bacfb59d-a394-4f39-ab34-9de144ec6853"
+}
